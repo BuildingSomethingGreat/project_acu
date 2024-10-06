@@ -1,0 +1,384 @@
+---
+import "./app.css"
+
+
+---
+
+<head>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.css" integrity="sha512-/AilQf/shuEGfh8c3DoIqcIqHZCKpiImSyt+fxIKJphHiNa6QMPb6AbDly6rkjmGr/5OZd35JtvVkbEKnCZO+A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.29/fullpage.min.css" integrity="sha512-cdMjnD4i86qiUIK3pyOMeYKdJ2I0gy0CVZm2AvGuXgMRDFdoIEI2I/x39pZlRsMaI4IEZBJbsNuWVawly1nY/A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.29/fullpage.min.js" integrity="sha512-jedW9bHnXiSMKNbXfrEQ1gDCRYO8ewRlWPWPf4Fv1LpUyYB0fphiWlUVSGI2Dvwem1gUk0x1Y+cWs4lCwoEo8w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.extensions.min.js" integrity="sha512-0xW5KFMtT462F65vVvIejNawM1U2Fp/yhItmQVFUwdYP+R9tQFCn4QtLEhkp6RoGovZ6YCvbxy+GVCtGv0+nvA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.29/vendors/easings.js" integrity="sha512-FFmLOg/pFlqTgDEWhqL3zxfLRRjv54Dx170T9CgCiTx4+iVVEMPXku6egqJ9wau9y9ORJIaPFuLYR3nsFBm5uQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+
+
+<body>
+
+	<!-- fullPage.js HTML -->
+	<div class="h-full" id="fullpage">
+		<div class="section overflow-hidden  gradient-animated-back  h-full flex items-center justify-center ">
+			<div class="w-[300px] h-[300px] z-20 ping-1 absolute top-0 bottom-0 left-0 right-0 m-auto circle rounded-full transparent border-white border-2"></div>
+			<div class="w-[600px] h-[600px] z-20  ping-2 absolute top-0 bottom-0 left-0 right-0 m-auto circle rounded-full transparent border-white border-2"></div>
+			<div class="w-[300px] h-[300px] z-20  opacity-30 ping-rotate-1 absolute top-0 bottom-0 left-0 right-0 m-auto circle rounded-full transparent border-white border-2 border-dashed"></div>
+			
+			<img class="absolute opacity-50 z-10 top-0 left-0 w-[100%] h-full " src="gradient-back.jpg" alt=""/> 
+
+			<div class="absolute z-20  top-10 right-0 left-0 m-auto w-[90%] flex items-center justify-between">
+				<img class="w-[10%] h-auto" src="./acu_logo.png" alt="logo"/>
+
+				<div class="links w-[20%] flex items-center justify-end ">
+					<a href="/" class="text-md text-white">About</a>
+					<a href="/" class="text-md text-white mx-5">Benefits</a>
+					<a href="/" class="text-md text-white">Contact</a>
+				</div>
+			</div>
+
+			<div class="absolute top-0 right-0 bottom-0 left-0 flex flex-col items-center justify-center">
+				
+				
+				<div class="z-20 w-[50%] flex flex-col items-center justify-center">
+					<h1 class="h-fit poppins-bold text-7xl text-white">
+						Formation <br>
+						starts inside.
+					</h1>
+					<p class="my-4 text-md text-white w-[100%]">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+						enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+						nisi ut aliquip ex ea commodo consequat
+					</p>
+				</div>
+				
+				<img class="absolute z-20 bottom-0 left-0 right-0 m-auto animate-pulse w-[10%] h-auto "src="./scroller.gif" alt="">
+			</div>
+			
+		</div>
+		<div class="section relative overflow-hidden   bg-slate-900 flex flex-col items-center justify-center">
+			<img src="01.png" class="w-[40%] h-auto z-10 absolute top-0 left-0 h-fit opacity-10" alt="" />
+
+			<div class="content absolute top-0 left-0 right-0  bottom-0 overflow-hidden max-h-[95%] z-20 w-[90%] h-auto m-auto   flex flex-col items-center justify-center" >
+				<h2 class="raleway-thin my-5 text-5xl w-[60%]">
+					Learn how ACU is reinventing digital spaces.
+				</h2>
+
+				<div class="relative w-[60%] my-4 m-auto  rounded-lg overflow-hidden ">
+					<img class="absolute z-10 bg-blend-multiply opacity-50 w-full h-auto left-0 bottom-0 " src="overlay.png" alt="" />
+					<video width="100%" height="100%"  autoplay muted playsinline loop>
+						<source data-src="lecture.mp4" type="video/mp4">
+					</video>
+				</div>
+
+				<div class="w-[50%] my-3 grid  grid-cols-4 grid-rows-1 gap-10">
+					<div class="max-h-[85px] min-h-[85px] col-span-1 grid grid-cols-1 grid-rows-2 gap-4 " >
+						<h4 class="raleway-reg row-span-1 font-bold text-5xl text-center">23k</h4>
+						<p class="opacity-80 row-span-1 text-sm text-center">Students</p>
+					</div>
+					<div class="max-h-[85px] min-h-[85px] col-span-1 grid grid-cols-1 grid-rows-2 gap-4  " >
+						<h4 class="raleway-reg row-span-1 font-bold text-5xl text-center">300</h4>
+						<p class="opacity-80 row-span-1 text-sm text-center">Courses</p>
+					</div>
+					<div class="max-h-[85px] min-h-[85px] col-span-1 grid grid-cols-1 grid-rows-2 gap-4 " >
+						<h4 class="raleway-reg row-span-1 font-bold text-5xl text-center">10k</h4>
+						<p class="opacity-80 row-span-1 text-sm text-center">Certificates completed</p>
+					</div>
+					<div class="max-h-[85px] min-h-[85px] col-span-1 grid grid-cols-1 grid-rows-2 gap-4  " >
+						<h4 class="raleway-reg row-span-1 font-bold text-5xl text-center">10:1</h4>
+						<p class="opacity-80 row-span-1 text-sm text-center">Student-teacher raion</p>
+					</div>
+				</div>
+
+			</div>
+
+			
+			<!-- <div class="slide"><h1>Section 2</h1></div>
+			<div class="slide"><h1>Slide 2.2</h1></div>
+			<div class="slide"><h1>Slide 2.3</h1></div> -->
+		</div>
+		<div class="section bg-stone-200" >
+			<img src="02.png" class="w-[40%] h-auto z-10 absolute top-0 left-0 h-fit opacity-10" alt="" />
+		
+			<div class="content absolute top-0 left-0 right-0  bottom-0 overflow-hidden max-h-[95%] z-20 w-[90%] h-auto m-auto   flex flex-col items-center justify-center" >
+				<h2 class="raleway-thin text-black my-5 text-5xl w-[60%]">
+					Discover your purpose <br> 
+					without limits.
+				</h2>
+
+				<div class="w-full my-3 grid  grid-cols-3 grid-rows-1 gap-4 ">
+					<div class="accordion-nav col-span-1">
+						<div id="accordion-collapse" data-accordion="collapse" data-active-classes="bg-transparent" >
+							<h2 id="accordion-collapse-heading-1">
+							<button type="button" class="flex flex-row items-start justify-center w-full  py-3 font-medium rtl:text-right text-gray-500  rounded-t-xl  gap-3" data-accordion-target="#accordion-collapse-body-1" aria-expanded="true" aria-controls="accordion-collapse-body-1">
+								<div class="tab-indicator w-[10px] h-[50px] m-auto rounded-lg bg-black"></div>
+								<h1 class=" text-black font-bold text-6xl">Vocatio Talks</h1>
+							</button>
+							</h2>
+							<div id="accordion-collapse-body-1" class="hidden opacity-0" aria-labelledby="accordion-collapse-heading-1">
+								<div class="px-5 py-1 flex flex-col items-start ">
+									<p class="mb-4 text-black text-md text-left">
+										Unique perspective on Vocational Formation from
+										profound leaders. 
+									</p>
+									<a class="py-3 px-4 w-[40%] text-black font-bold border-2 border-black rounded-full ">
+										Learn More
+									</a>
+								</div>
+							</div>
+
+							<h2 id="accordion-collapse-heading-2">
+							<button type="button" class="flex flex-row  items-start justify-start w-full  py-3 font-medium rtl:text-right text-gray-500 " data-accordion-target="#accordion-collapse-body-2" aria-expanded="false" aria-controls="accordion-collapse-body-2">
+								<div class="tab-indicator w-[10px] h-[50px] my-auto mx-4 rounded-lg bg-black"></div>
+								
+								<h1 class="ms-4 text-black font-bold text-6xl">Podcasts</h1>
+							</button>
+							</h2>
+							<div id="accordion-collapse-body-2" class="hidden" aria-labelledby="accordion-collapse-heading-2">
+								<div class="px-5 py-1 flex flex-col items-start ">
+									<p class="mb-4 text-black text-md text-left">
+										Unique perspective on Vocational Formation from
+										profound leaders. 
+									</p>
+									<a class="py-3 px-4 w-[40%] text-black font-bold border-2 border-black rounded-full ">
+										Learn More
+									</a>
+								</div>
+							</div>
+							<h2 id="accordion-collapse-heading-3">
+								<button type="button" class="flex flex-row  items-start justify-start w-full  py-3 font-medium rtl:text-right text-gray-500 " data-accordion-target="#accordion-collapse-body-3" aria-expanded="false" aria-controls="accordion-collapse-body-3">
+									<div class="tab-indicator w-[10px] h-[50px] my-auto mx-4 rounded-lg bg-black"></div>
+								
+									<h1 class="ms-4 text-black font-bold text-6xl">Courses</h1>
+								</button>
+							</h2>
+							<div id="accordion-collapse-body-3" class="hidden" aria-labelledby="accordion-collapse-heading-3">
+								<div class="px-5 py-1 flex flex-col items-start ">
+									<p class="mb-4 text-black text-md text-left">
+										Unique perspective on Vocational Formation from
+										profound leaders. 
+									</p>
+									<a class="py-3 px-4 w-[40%] text-black font-bold border-2 border-black rounded-full ">
+										Learn More
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="relative   h-full w-full col-span-2 "  >
+						<div class="accordion-content pb-3 overflow-x-auto overflow-y-hidden w-full h-full absolute top-0 left-0 hidden opacity-0 items-start whitespace-nowrap" aria-controls="accordion-collapse-body-1">
+							<div class="min-w-[300px] max-w-[300px] h-full inline-block me-4 rounded-lg bg-red-500 shadow-md"></div>
+							<div class="min-w-[300px] max-w-[300px] h-full inline-block me-4 rounded-lg bg-red-500 shadow-md"></div>
+							<div class="min-w-[300px] max-w-[300px]  h-full inline-block  rounded-lg bg-red-500 shadow-md"></div>
+						</div>
+						<div class="accordion-content pb-3 overflow-x-auto overflow-y-hidden w-full h-full absolute top-0 left-0 hidden opacity-0 items-start whitespace-nowrap" aria-controls="accordion-collapse-body-2">
+							<div class="min-w-[300px] max-w-[300px] h-full inline-block me-4 rounded-lg bg-stone-500 shadow-md"></div>
+							<div class="min-w-[300px] max-w-[300px] h-full inline-block me-4 rounded-lg bg-stone-500 shadow-md"></div>
+							<div class="min-w-[300px] max-w-[300px]  h-full inline-block  rounded-lg bg-stone-500 shadow-md"></div>
+						</div>
+						<div class="accordion-content  pb-3 overflow-x-auto overflow-y-hidden w-full h-full absolute top-0 left-0 hidden opacity-0 items-start whitespace-nowrap" aria-controls="accordion-collapse-body-3">
+							<div class="min-w-[300px] max-w-[300px] h-full inline-block me-4 rounded-lg bg-blue-500 shadow-md"></div>
+							<div class="min-w-[300px] max-w-[300px] h-full inline-block me-4 rounded-lg bg-blue-500 shadow-md"></div>
+							<div class="min-w-[300px] max-w-[300px]  h-full inline-block  rounded-lg bg-blue-500 shadow-md"></div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div id="onlineChurhSection" class="section onlineChuch  bg-slate-900" data-anchor="onlineChurch">
+			<img src="03.png" class="w-[40%] h-auto z-10 absolute top-0 left-0 h-fit opacity-10" alt="" />
+			<img src="onlinechurch-mock.png" class="w-[25%] h-auto z-20 absolute top-0 left-0 bottom-0 right-0 m-auto h-fit " alt="" />
+			<img src="blob-1.png" class="w-[80%] h-auto z-30 absolute top-0 left-[0%] bottom-0  m-auto h-fit " alt="" />
+			<img src="blob-2.png" class="w-[60%] h-auto z-10 absolute top-[20%] left-[30%] bottom-0  m-auto h-fit " alt="" />
+			<img src="boundNolongerText.png" class="boundText w-[100%] h-auto z-40 absolute top-[20%] left-0 right-0 m-auto h-fit " alt="" />
+
+			<div class="absolute bottom-10 left-0 right-0 m-auto grid grid-cols-1 grid-rows-2 gap-4">
+				<div class="col-span-1 grid grid-cols-3 grid-rows-1 gap-4">
+					<div class="col-span-1 flex items-center justify-center">
+						<p class="text-lg text-left m-auto w-[60%] ">
+							We're now offering students Chapen credits when
+							attending online service.
+						</p>
+					</div>
+					<div class="col-span-1">
+	
+					</div>
+					<div class="col-span-1">
+						<p>Connect with others virtually</p>
+						<p>Rich theology</p>
+						<p>Verifiable through Suitable</p>
+	
+					</div>
+				</div>
+
+				<div class="z-50 w-[40%] m-auto flex flex-row items-center justify-center">
+					<a class="py-3 px-4 w-[40%] me-5 text-black font-bold border-2 bg-white border-white rounded-full ">
+						Go to online church
+					</a>
+					<a class="py-3 px-4 w-[40%] text-white font-bold border-2 border-white rounded-full ">
+						Learn More
+					</a>
+				</div>
+			
+			</div>
+		</div> 
+	</div>
+
+	<script>
+		(function() {
+			var myFullpage = new fullpage("#fullpage", {
+				// Get your license at https://alvarotrigo.com/fullPage/pricing
+				licenseKey: "M9D46-QB92H-PJH47-SR3PK-YYTON",
+				onLeave: function( origin, destination, direction, trigger){
+						var loadedSlide = this;
+						if(origin.index == 2 && direction =='down'){
+							$("#onlineChurhSection").find(".boundText").addClass("zoom");
+						}
+						if(origin.index == 3 && direction =='up'){
+							$("#onlineChurhSection").find(".boundText").removeClass("zoom");
+						}
+					}
+				});
+
+			$(document).ready(function() {
+				$("button").each(function(index) {
+					if ($(this).attr("aria-expanded") == "false") {
+						$(this).addClass("opacity-50");
+						$(this).find(".tab-indicator").addClass("hidden");
+
+					}
+
+					if ($(this).attr("aria-expanded") == "true") {
+					var controls = $(this).attr("aria-controls");
+						
+						$("#" + controls).addClass("animate-fade");
+						$(this).find(".tab-indicator").removeClass("hidden");
+
+						$(".accordion-content").each(function( index) {
+							console.log($(this).attr("aria-controls") );
+							if ($(this).attr("aria-controls") == controls) {
+								$(this).removeClass("hidden");
+								$(this).addClass("animate-fade animation-delay-600 flex");
+							}
+						})
+
+					}
+				});
+
+				$("button").on("click", function() {
+					var controls = $(this).attr("aria-controls");
+
+
+					$("button").each(function(index) {
+						if ($(this).attr("aria-expanded") == "true") {
+							$(this).addClass("opacity-50");
+							$(this).find(".tab-indicator").addClass("hidden");
+						}
+					});
+
+					$(".accordion-content").each(function( index) {
+						console.log($(this).attr("aria-controls") );
+						if ($(this).attr("aria-controls") == controls) {
+							$(this).removeClass("hidden");
+							$(this).addClass("animate-fade animation-delay-600 flex");
+						} else {
+							$(this).addClass("hidden");
+							$(this).removeClass("animate-fade animation-delay-600 flex");
+						}
+					})
+
+					$(this).removeClass("opacity-50");
+					$(this).removeClass("bg-gray-100");
+					$(this).find(".tab-indicator").removeClass("hidden");
+
+					$("#" + controls).addClass("animate-fade");
+
+					
+
+				})
+			});
+		})();
+		
+	</script>
+
+<script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+
+</body>
+
+
+<style>
+
+.section{
+    text-align:center;
+    font-family: arial,helvetica;
+    color: #fff;
+}
+
+.ping-1 {
+	animation: ping 10s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.ping-2 {
+	animation: ping 15s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.ping-rotate-1 {
+	animation: pingRotate 50s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes pingRotate {
+  75%, 100% {
+    transform:  rotate(100deg);
+    /* opacity: 0; */
+  }
+} 
+
+.gradient-animated-back {
+    background: linear-gradient(90deg, #14075b, #8c1792, #1b5267);
+    background-size: 600% 600%;
+
+    -webkit-animation: AnimationName 50s ease infinite;
+    -moz-animation: AnimationName 50s ease infinite;
+    animation: AnimationName 50s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 2%}
+    50%{background-position:100% 99%}
+    100%{background-position:0% 2%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 2%}
+    50%{background-position:100% 99%}
+    100%{background-position:0% 2%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 2%}
+    50%{background-position:100% 99%}
+    100%{background-position:0% 2%}
+}
+
+.zoom {
+	animation: zoom 50s cubic-bezier(0, 0, 0.2, 1) infinite alternate;
+}
+
+@keyframes zoom {
+    0%{transform: scale(1);}
+    100%{transform: scale(1.2);}
+}
+
+
+</style>
