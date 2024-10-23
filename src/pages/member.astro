@@ -1,0 +1,284 @@
+---
+import "./app.css"
+---
+
+    <head>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.css" integrity="sha512-/AilQf/shuEGfh8c3DoIqcIqHZCKpiImSyt+fxIKJphHiNa6QMPb6AbDly6rkjmGr/5OZd35JtvVkbEKnCZO+A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.29/fullpage.min.css" integrity="sha512-cdMjnD4i86qiUIK3pyOMeYKdJ2I0gy0CVZm2AvGuXgMRDFdoIEI2I/x39pZlRsMaI4IEZBJbsNuWVawly1nY/A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.29/fullpage.min.js" integrity="sha512-jedW9bHnXiSMKNbXfrEQ1gDCRYO8ewRlWPWPf4Fv1LpUyYB0fphiWlUVSGI2Dvwem1gUk0x1Y+cWs4lCwoEo8w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.extensions.min.js" integrity="sha512-0xW5KFMtT462F65vVvIejNawM1U2Fp/yhItmQVFUwdYP+R9tQFCn4QtLEhkp6RoGovZ6YCvbxy+GVCtGv0+nvA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.29/vendors/easings.js" integrity="sha512-FFmLOg/pFlqTgDEWhqL3zxfLRRjv54Dx170T9CgCiTx4+iVVEMPXku6egqJ9wau9y9ORJIaPFuLYR3nsFBm5uQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </head>
+
+    <body>
+        <div class="h-screen">
+            <!-- gradient-animated-back -->
+            <div class="relative mb-10 dashboard-wrapper h-auto gradient-animated-back  flex flex-col items-center "> 
+                <img class="absolute z-10 bg-blend-multiply opacity-50 w-full h-auto left-0 bottom-0 " src="overlay.png" alt="" />
+                
+                <!-- top nav -->
+                <div class="relative z-20 mt-10 mb-10   m-auto w-[90%] flex items-center justify-between">
+                    <img class="w-[10%] h-auto" src="./acu_logo.png" alt="logo"/>
+
+                    <div class="links w-[20%] flex items-center justify-end ">
+                        <a href="/" class="text-md text-white">About</a>
+                        <a href="/" class="text-md text-white mx-5">Benefits</a>
+                        <a href="/" class="text-md text-white">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Dashboard -->
+                <div class="relative pb-10 top-0 bottom-0  right-0 left-0 m-auto dashboard z-20 w-[90%] h-auto grid grid-cols-5 grid-rows-3 gap-4">
+                    
+                    <!-- Dashboard nav-->
+                    <div class="sidenav col-span-1 row-span-1  rounded-lg">
+                        <ul>
+                            <li class="raleway-reg text-white my-5 text-4xl cursor-pointer">Dashboard</li>
+                            <li class="raleway-reg text-white my-5 text-4xl opacity-50 hover:opacity-100 cursor-pointer">Modules</li>
+                            <li class="raleway-reg text-white my-5 text-4xl opacity-50 hover:opacity-100 cursor-pointer">Resources</li>
+                            <li class="raleway-reg text-white my-5 text-4xl opacity-50 hover:opacity-100 cursor-pointer">The Table</li>
+                        </ul>
+                    </div>
+                
+                    <!-- dynamic content -->
+                    <div class=" main my-4 p-3 mb-10   items-start grid-cols-4 grid-rows-6 gap-4 col-span-4 row-span-3 border-2 h-auto border-white rounded-lg">
+                        <!-- main header -->
+                        <div  class=" p-3 m-0 col-span-4 row-span-1 rounded-lg flex items-center justify-between">
+                            <div class="">
+                                <h4 class="raleway-thin text-white text-xl opacity-50 my-1">Good Afternoon,</h4>
+                                <h1 class="raleway-thin text-white text-3xl">Trish Beck</h1>
+
+                            </div>
+                            <div class="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+                                <svg class="absolute w-12 h-12 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+                            </div>
+                        </div>
+
+                        <!-- main content -->
+                        <div class="p-3 col-span-4 row-span-2 rounded-lg grid grid-cols-2 grid-rows-1 gap-2 ">
+                            <div class="col-span-1 text-white ">
+                                <h4 class="my-3">Weekly Formation</h4>
+                                <h1 class="my-3 raleway-thin text-white text-3xl">Bearing Witness</h1>
+                                <p class="font-bold opacity-50 my-3">Dr. Christopher Cobbler</p>
+                                <p style="line-height: 25px;"class="text-sm my-3">Our days are often consumed with crowded agendas, expiring "to do" lists and diminishing capacity to accomplish all we deem necessary. With so much to do I wonder if we have forgotten the important art of bearing witness. Witness is not explanation; it is not justification or summary. Witness is naming what exists. It is about having the courage to eliminate the expectations we bring to a moment, it is about creating inner spaciousness, and learning to glean from the wisdom of God that is present in the world around us. There is an outer and inner dimension of bearing witness; naming the hopes, fears, anxieties, and other emotions that are present within us is an important part of our 
+                                    journey. May we grow in the grace of stillness and return to the art of bearing witness. What do you see? 
+                                </p>
+                            </div>
+
+                            <div class="col-span-1 row-span-1  overflow-hidden rounded-lg object-fill border border-black">
+                                <img style="" src="formation-thumb.png" class="w-full scale-110 " alt="" />
+                            </div>
+                        </div>
+                        
+                        <div class="my-4 col-span-4 row-span-1 flex flex-row items-center justify-center">
+                            <div class="bg-gray-400 rounded-full w-2 h-2"></div>
+                            <div class="bg-gray-400 rounded-full w-2 h-2 mx-3"></div>
+                            <div class="bg-gray-400 rounded-full w-2 h-2"></div>
+                        </div>
+
+                        <div class="grid grid-cols-4 grid-rows-1">
+                                    <!-- main actionables -->
+                                    <div class="col-span-2 row-span-2 rounded-lg  flex flex-col justify-center p-3">
+                                        <h4 class="text-white font-bold my-3">Active Modules</h4>
+                                        <div class="module rounded-lg bg-white p-3 flex items-center justify-between">
+                                            <div class="">
+                                                <h1 class="text-3xl raleway-reg">Every Moment Holy</h1>
+                                                <div class="my-2 flex items-center justify-between">
+                                                    <div class="flex items-start">
+                                                        <div class="relative w-7 h-7 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+                                                            <svg class="absolute w-9 h-9 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+                                                        </div>
+                                                        <div class="relative  w-7 h-7 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+                                                            <svg class="absolute w-9 h-9 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+                                                        </div>
+                                                        <div class="relative w-7 h-7  overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+                                                            <svg class="absolute w-9 h-9 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text-teal-400 text-sm">
+                                                        4.6K completed the module
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="relative flex items-center justify-center" >
+                                                <svg  class=" relative top-0 right-0 left-0 bottom-0 m-auto" width="100" height="100" viewBox="0 0 250 250">
+                                                    <circle class="bg"
+                                                    cx="125" cy="125" r="115" fill="none" stroke="#ddd" stroke-width="20"
+                                                    ></circle>
+                                                    <circle class="fg"
+                                                    cx="125" cy="125" r="115" fill="none" stroke="#5394fd" stroke-width="20"
+                                                    stroke-dasharray="361.25 361.25"
+                                                    ></circle>
+                                                    <p class="absolute top-0 right-0 left-0 bottom-0 h-fit w-fit text-center font-bold opacity-50 m-auto">
+                                                        20%
+                                                    </p>
+                                                </svg>
+                                            </div>
+                                        
+                                        </div>
+                                        <div class="module my-3 rounded-lg bg-white p-3 flex items-center justify-between">
+                                            <div class="">
+                                                <h1 class="text-3xl raleway-reg">Every Moment Holy</h1>
+                                                <div class="my-2 flex items-center justify-between">
+                                                    <div class="flex items-start">
+                                                        <div class="relative w-7 h-7 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+                                                            <svg class="absolute w-9 h-9 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+                                                        </div>
+                                                        <div class="relative  w-7 h-7 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+                                                            <svg class="absolute w-9 h-9 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+                                                        </div>
+                                                        <div class="relative w-7 h-7  overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+                                                            <svg class="absolute w-9 h-9 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text-teal-400 text-sm">
+                                                        4.6K completed the module
+                                                    </p>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="relative flex items-center justify-center" >
+                                                <svg  class=" relative top-0 right-0 left-0 bottom-0 m-auto" width="100" height="100" viewBox="0 0 250 250">
+                                                    <circle class="bg"
+                                                    cx="125" cy="125" r="115" fill="none" stroke="#ddd" stroke-width="20"
+                                                    ></circle>
+                                                    <circle class="fg"
+                                                    cx="125" cy="125" r="115" fill="none" stroke="#5394fd" stroke-width="20"
+                                                    stroke-dasharray="361.25 361.25"
+                                                    ></circle>
+                                                    <p class="absolute top-0 right-0 left-0 bottom-0 h-fit w-fit text-center font-bold opacity-50 m-auto">
+                                                        20%
+                                                    </p>
+                                                </svg>
+                                                
+                                            </div>
+                                        
+                                        </div>
+                                        <div class="module rounded-lg bg-white p-3 flex items-center justify-between">
+                                            <div class="">
+                                                <h1 class="text-3xl raleway-reg">Every Moment Holy</h1>
+                                                <div class="my-2 flex items-center justify-between">
+                                                    <div class="flex items-start">
+                                                        <div class="relative w-7 h-7 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+                                                            <svg class="absolute w-9 h-9 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+                                                        </div>
+                                                        <div class="relative  w-7 h-7 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+                                                            <svg class="absolute w-9 h-9 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+                                                        </div>
+                                                        <div class="relative w-7 h-7  overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+                                                            <svg class="absolute w-9 h-9 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text-teal-400 text-sm">
+                                                        4.6K completed the module
+                                                    </p>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <div class="relative flex items-center justify-center" >
+                                                <svg  class=" relative top-0 right-0 left-0 bottom-0 m-auto" width="100" height="100" viewBox="0 0 250 250">
+                                                    <circle class="bg"
+                                                    cx="125" cy="125" r="115" fill="none" stroke="#ddd" stroke-width="20"
+                                                    ></circle>
+                                                    <circle class="fg"
+                                                    cx="125" cy="125" r="115" fill="none" stroke="#5394fd" stroke-width="20"
+                                                    stroke-dasharray="361.25 361.25"
+                                                    ></circle>
+                                                    <p class="absolute top-0 right-0 left-0 bottom-0 h-fit w-fit text-center font-bold opacity-50 m-auto">
+                                                        20%
+                                                    </p>
+                                                </svg>
+                                                
+                                            </div>
+                                        
+                                        </div>
+                                    </div>
+
+                                    <!-- main actionables -->
+                                    <div class="col-span-2 row-span-2  gap-4 rounded-lg   p-3">
+                                        <h4 class="text-white font-bold my-3 ">Active Modules</h4>
+                                       
+                                         <div class="col-span-2 row-span-2 grid grid-rows-2 grid-cols-2 gap-4 h-full rounded-lg   p-3">
+                                            <div class="col-span-1 flex items-start">
+                                                <svg  class=" relative top-0 right-0 left-0 bottom-0 m-auto" width="100" height="100" viewBox="0 0 250 250">
+                                                    <circle class="bg"
+                                                    cx="125" cy="125" r="115" fill="none" stroke="#ddd" stroke-width="20"
+                                                    ></circle>
+                                                    <circle class="fg"
+                                                    cx="125" cy="125" r="115" fill="none" stroke="#5394fd" stroke-width="20"
+                                                    stroke-dasharray="361.25 361.25"
+                                                    ></circle>
+                                                </svg>
+                                            </div>
+
+                                            <div class="col-span-1 flex items-start">
+                                                <svg  class=" relative top-0 right-0 left-0 bottom-0 m-auto" width="100" height="100" viewBox="0 0 250 250">
+                                                    <circle class="bg"
+                                                    cx="125" cy="125" r="115" fill="none" stroke="#ddd" stroke-width="20"
+                                                    ></circle>
+                                                    <circle class="fg"
+                                                    cx="125" cy="125" r="115" fill="none" stroke="#5394fd" stroke-width="20"
+                                                    stroke-dasharray="361.25 361.25"
+                                                    ></circle>
+                                                </svg>
+                                            </div>
+
+                                            <div class="col-span-1 flex items-start">
+                                                <svg  class=" relative top-0 right-0 left-0 bottom-0 m-auto" width="100" height="100" viewBox="0 0 250 250">
+                                                    <circle class="bg"
+                                                    cx="125" cy="125" r="115" fill="none" stroke="#ddd" stroke-width="20"
+                                                    ></circle>
+                                                    <circle class="fg"
+                                                    cx="125" cy="125" r="115" fill="none" stroke="#5394fd" stroke-width="20"
+                                                    stroke-dasharray="361.25 361.25"
+                                                    ></circle>
+                                                </svg>
+                                            </div>
+
+                                            <div class="col-span-1 flex items-start">
+                                                <svg  class=" relative top-0 right-0 left-0 bottom-0 m-auto" width="100" height="100" viewBox="0 0 250 250">
+                                                    <circle class="bg"
+                                                    cx="125" cy="125" r="115" fill="none" stroke="#ddd" stroke-width="20"
+                                                    ></circle>
+                                                    <circle class="fg"
+                                                    cx="125" cy="125" r="115" fill="none" stroke="#5394fd" stroke-width="20"
+                                                    stroke-dasharray="361.25 361.25"
+                                                    ></circle>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+        <script defer src="https://unpkg.com/alpinejs@3.2.4/dist/cdn.min.js"></script>
+</body>
+
+<style>
+
+circle.fg {
+  transform: rotate(-90deg);
+  transform-origin: 125px 125px;
+}
+
+    .dashboard .main {
+        /* From https://css.glass */
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+</style>
