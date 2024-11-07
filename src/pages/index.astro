@@ -21,12 +21,8 @@ import "./app.css"
 
 	<!-- fullPage.js HTML -->
 	<div class="h-full" id="fullpage">
-		<div class="section overflow-hidden  gradient-animated-back  h-full flex items-center justify-center ">
-			<div class="w-[300px] h-[300px] z-20 ping-1 absolute top-0 bottom-0 left-0 right-0 m-auto circle rounded-full transparent border-white border-2"></div>
-			<div class="w-[600px] h-[600px] z-20  ping-2 absolute top-0 bottom-0 left-0 right-0 m-auto circle rounded-full transparent border-white border-2"></div>
-			<div class="w-[300px] h-[300px] z-20  opacity-30 ping-rotate-1 absolute top-0 bottom-0 left-0 right-0 m-auto circle rounded-full transparent border-white border-2 border-dashed"></div>
-			
-			<img class="absolute opacity-50 z-10 top-0 left-0 w-[100%] h-full " src="gradient-back.jpg" alt=""/> 
+		<div class="section overflow-hidden  bg-black h-full flex items-center justify-center ">
+		
 
 			<div class="absolute z-20  top-10 right-0 left-0 m-auto w-[90%] flex items-center justify-between">
 				<img class="w-[10%] h-auto" src="./acu_logo.png" alt="logo"/>
@@ -40,9 +36,8 @@ import "./app.css"
 
 			<div class="absolute top-0 right-0 bottom-0 left-0 flex flex-col items-center justify-center">
 				
-				
 				<div class="z-20 w-[50%] flex flex-col items-center justify-center">
-					<h1 class="h-fit poppins-bold text-7xl text-white">
+					<h1 class="h-fit raleway-bold text-7xl text-white">
 						Formation <br>
 						starts inside.
 					</h1>
@@ -54,7 +49,9 @@ import "./app.css"
 					</p>
 				</div>
 				
-				<img class="absolute z-20 bottom-0 left-0 right-0 m-auto animate-pulse w-[10%] h-auto "src="./scroller.gif" alt="">
+				<video class="absolute top-0 rounded-lg overflow-hidden object-fill" width="100%" height="100%"  muted playsinline loop controls>
+					<source src="lecture.mp4" type="video/mp4">
+				</video>
 			</div>
 			
 		</div>
