@@ -183,6 +183,10 @@
   }
 } 
 
+.fp-watermark {
+  display: none !important;
+}
+
 .gradient-animated-back {
     background-color: black;
     /* background: linear-gradient(90deg, #14075b, #8c1792, #1b5267);
