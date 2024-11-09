@@ -37,19 +37,21 @@ import "./app.css"
 			<div class="absolute top-0 right-0 bottom-0 left-0 flex flex-col items-center justify-center">
 				
 				<div class="z-20 w-[50%] flex flex-col items-center justify-center">
-					<h1 class="h-fit raleway-bold text-7xl text-white">
+					<h1 class="h-fit raleway-thin text-7xl text-white">
 						Formation <br>
 						starts inside.
 					</h1>
 					<p class="my-4 text-md text-white w-[100%]">
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
 						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
-						enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-						nisi ut aliquip ex ea commodo consequat
+						enim ad minim veniam, quis nostrud.
 					</p>
+					<button class="my-4 w-[220px] h-[50px] bg-white hover:bg-black hover:text-white rounded-lg text-black text-center"> 
+						Explore resources
+						</button>
 				</div>
 				
-				<video class="absolute top-0 rounded-lg overflow-hidden object-fill" width="100%" height="100%" autoplay data-autoplay muted playsinline loop controls>
+				<video class="absolute opacity-75 top-0 rounded-lg overflow-hidden object-fill" width="100%" height="100%" autoplay data-autoplay muted playsinline loop>
 					<source data-src="https://acu-cdn-pull.b-cdn.net/modern.mp4" type="video/mp4">
 				</video>
 			</div>
@@ -136,8 +138,8 @@ import "./app.css"
 							<div id="accordion-collapse-body-2" class="hidden" aria-labelledby="accordion-collapse-heading-2">
 								<div class="px-5 py-1 flex flex-col items-start ">
 									<p class="mb-4 text-black text-md text-left">
-										Unique perspective on Vocational Formation from
-										profound leaders. 
+										Introspective conversations about how to embark on formation around
+										us.
 									</p>
 									<a class="py-3 px-4 w-[40%] text-black font-bold border-2 border-black rounded-full ">
 										Learn More
@@ -145,7 +147,7 @@ import "./app.css"
 								</div>
 							</div>
 							<h2 id="accordion-collapse-heading-3">
-								<button type="button" class="flex flex-row  items-start justify-start w-full  py-3 font-medium rtl:text-right text-gray-500 " data-accordion-target="#accordion-collapse-body-3" aria-expanded="false" aria-controls="accordion-collapse-body-3">
+								<button type="button" class="flex flex-row  items-start justify-start w-full  py-3 font-medium rtl:text-right text-gray-500 cursor-pointer" data-accordion-target="#accordion-collapse-body-3" aria-expanded="false" aria-controls="accordion-collapse-body-3">
 									<div class="tab-indicator w-[10px] h-[50px] my-auto mx-4 rounded-lg bg-black"></div>
 								
 									<h1 class="ms-4 text-black font-bold text-6xl">Courses</h1>
@@ -154,8 +156,7 @@ import "./app.css"
 							<div id="accordion-collapse-body-3" class="hidden" aria-labelledby="accordion-collapse-heading-3">
 								<div class="px-5 py-1 flex flex-col items-start ">
 									<p class="mb-4 text-black text-md text-left">
-										Unique perspective on Vocational Formation from
-										profound leaders. 
+										Learn from ACU's dynamic professors and thought leaders. 
 									</p>
 									<a class="py-3 px-4 w-[40%] text-black font-bold border-2 border-black rounded-full ">
 										Learn More
@@ -178,9 +179,18 @@ import "./app.css"
 							<div class="min-w-[300px] max-w-[300px]  h-full inline-block  rounded-lg bg-stone-500 shadow-md"></div>
 						</div>
 						<div class="accordion-content  pb-3 overflow-x-auto overflow-y-hidden w-full h-full absolute top-0 left-0 hidden opacity-0 items-start whitespace-nowrap" aria-controls="accordion-collapse-body-3">
-							<div class="min-w-[300px] max-w-[300px] h-full inline-block me-4 rounded-lg bg-blue-500 shadow-md"></div>
-							<div class="min-w-[300px] max-w-[300px] h-full inline-block me-4 rounded-lg bg-blue-500 shadow-md"></div>
-							<div class="min-w-[300px] max-w-[300px]  h-full inline-block  rounded-lg bg-blue-500 shadow-md"></div>
+							<div class="relative overflow-hidden min-w-[300px] max-w-[300px] h-full inline-block me-4 rounded-lg bg-blue-500 shadow-md">
+								<img class="absolute z-20  opacity-80 mix-blend-multiply w-full h-auto left-0 bottom-0 " src="https://www.pngall.com/wp-content/uploads/15/Black-Shadow-PNG-HD-Image.png" alt="" />
+								<img class="h-full w-auto object-cover z-10" src="/profess1.jpg" alt="" />
+ 							</div>
+							 <div class="overflow-hidden min-w-[300px] max-w-[300px] h-full inline-block me-4 rounded-lg bg-blue-500 shadow-md">
+								<img class="absolute z-20  opacity-80 mix-blend-multiply w-full h-auto left-0 bottom-0 " src="https://www.pngall.com/wp-content/uploads/15/Black-Shadow-PNG-HD-Image.png" alt="" />
+								<img class="h-full w-auto object-cover" src="/profess2.jpg" alt="" />
+ 							</div>
+							 <div class="overflow-hidden min-w-[300px] max-w-[300px] h-full inline-block me-4 rounded-lg bg-blue-500 shadow-md">
+								<img class="absolute z-20  opacity-80 mix-blend-multiply w-full h-auto left-0 bottom-0 " src="https://www.pngall.com/wp-content/uploads/15/Black-Shadow-PNG-HD-Image.png" alt="" />
+								<img class="h-full w-auto object-cover" src="/profess3.jpg" alt="" />
+ 							</div>
 						</div>
 					</div>
 
@@ -188,7 +198,7 @@ import "./app.css"
 			</div>
 		</div>
 
-		<div id="onlineChurhSection" class="section onlineChuch  bg-slate-900" data-anchor="onlineChurch">
+		<div id="onlineChurhSection" class="section relative onlineChuch overflow-hidden  bg-slate-900" data-anchor="onlineChurch">
 			<img src="03.png" class="w-[40%] h-auto z-10 absolute top-0 left-0 h-fit opacity-10" alt="" />
 			<img src="onlinechurch-mock.png" class="w-[25%] h-auto z-20 absolute top-0 left-0 bottom-0 right-0 m-auto h-fit " alt="" />
 			<img src="blob-1.png" class="w-[80%] h-auto z-30 absolute top-0 left-[0%] bottom-0  m-auto h-fit " alt="" />
@@ -280,7 +290,6 @@ import "./app.css"
 					});
 
 					$(".accordion-content").each(function( index) {
-						console.log($(this).attr("aria-controls") );
 						if ($(this).attr("aria-controls") == controls) {
 							$(this).removeClass("hidden");
 							$(this).addClass("animate-fade animation-delay-600 flex");
@@ -291,13 +300,10 @@ import "./app.css"
 					})
 
 					$(this).removeClass("opacity-50");
-					$(this).removeClass("bg-gray-100");
 					$(this).find(".tab-indicator").removeClass("hidden");
+					$(this).attr("aria-expanded", false)
 
 					$("#" + controls).addClass("animate-fade");
-
-					
-
 				})
 			});
 		})();
