@@ -1,10 +1,32 @@
 ---
-import "./app.css"
+import "./../app.css"
+export function getStaticPaths() {
+  return [
+    {params: {pod: '1'}},
+    {params: {pod: '2'}},
+    {params: {pod: '3'}},
+    {params: {pod: '4'}}
+  ];
+}
 
 var videos =  [
-     {title: "Ep", creator: "d", thumbnail: "/vocatiothumb.png", url: ""},
+     {id:"1", title: "Episode 1 : Creating Space in a Distracted World", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%201%20Creating%20Space%20in%20a%20Distractred%20World.m4v"},
+     {id:"2", title: "Episode 2 : Radical Hospitality", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%202%20Radical%20Hospitality.m4v"},
+     {id:"3", title: "Episode 3 : The spiritual Art of Slowing Down", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%203%20The%20Spiritual%20Art%20of%20Slowing%20Down.m4v"},
+     {id:"4", title: "Episode 4 : When Your Calling and Career Don't Align", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: ""},
 ]
----
+
+const { pod } = Astro.params;
+
+var res = {}
+for (var vid of videos) {
+    if (pod == vid.id) {
+        res = vid;
+    }
+}
+
+--- 
+
 
 <head>
 
@@ -20,6 +42,8 @@ var videos =  [
 <body>
     <div class="h-full" id="fullpage">
 		<div style="background: #313638" class="section  overflow-hidden  bg-[#313638] h-full flex flex-col items-center justify-center ">
+		    <img class="absolute z-10 bg-blend-multiply opacity-50 w-full h-auto left-0 bottom-0 " src="/overlay.png" alt="" />
+           
             <div class="absolute z-20  top-10 right-0 left-0 m-auto w-[90%] flex items-center justify-between">
 				<img class="w-[10%] h-auto" src="/acu_logo.png" alt="logo"/>
 
@@ -30,25 +54,27 @@ var videos =  [
 				</div>
 			</div>
 
-            <div class=" absolute top-0 right-0  bottom-0 left-0  m-auto   w-fit h-fit  ">
+            
+            <div class="z-20 absolute top-0 right-0  bottom-0 left-0  m-auto   w-fit h-fit  ">
              <!-- <img id="controlplay" class="absolute w-20 h-20 z-50 bottom-3 right-3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM3pOh5Jpss90QbjOiLKG1HB-Qx3DZQsjoFA&s" alt="" /> -->
              <div class="relative rounded-lg overflow-hidden shadow-lg" >
-                <svg id="play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class=" absolute z-30 bottom-3 right-3  size-8">
+                <svg id="play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class=" absolute z-30 bottom-3 right-3  size-8">
                     <path fill-rule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z" clip-rule="evenodd" />
                 </svg>
-                <svg id="pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="hidden z-30 absolute bottom-3 right-3 size-8">
+                <svg id="pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="hidden z-30 absolute bottom-3 right-3 size-8">
                     <path fill-rule="evenodd" d="M6.75 5.25a.75.75 0 0 1 .75-.75H9a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H7.5a.75.75 0 0 1-.75-.75V5.25Zm7.5 0A.75.75 0 0 1 15 4.5h1.5a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H15a.75.75 0 0 1-.75-.75V5.25Z" clip-rule="evenodd" />
                   </svg>
                   
                 <video id="vid" class=" opacity-75 m-auto  rounded-lg overflow-hidden object-cover" width="700px" height="auto"  playsinline>
-					<source data-src="https://acu-cdn-pull.b-cdn.net/Episode%201%20Creating%20Space%20in%20a%20Distractred%20World.m4v" type="video/mp4">
+					<source data-src={res.url} type="video/mp4">
                 </video>
             </div> 
 
-            <div class="mt-4 mb-3 text-white">
-                <p class="font-bold opacity-50 text-md">Dr. Christopher Cobbler</p>
-                <h2 class=" my-2 raleway-thin text-2xl">Episode 1 : Learning to be You</h2>
-                <button class="hover:bg-stone-700 hover:text-white  my-3  rounded-full w-[200px] h-[50px] bg-white text-black text-sm p-3">
+            <div class="z-30 mt-4 mb-3 text-white  ">
+                    <p class="font-bold opacity-50 text-md">{res.creator}</p>
+                    <h2 class=" my-2 raleway-thin text-2xl">{res.title}</h2>
+               
+                <button class="col-span-1 hover:bg-stone-700 hover:text-white  my-3  rounded-full w-[200px] h-[50px] bg-white text-black text-sm p-3">
                     Explore more
                 </button>
             </div>
@@ -58,50 +84,31 @@ var videos =  [
 		</div>
 		<div class="section bg-stone-200" >
             <div class=" catalogue grid gap-10 grid-cols-2 h-screen  p-3">
-                <div class="m-auto col-span-1 w-full  h-full rounded-lg bg-black">
-
+                <div class="relative m-auto col-span-1 w-full flex items-center justify-center h-full rounded-lg bg-black">
+                    <div class="z-20 m-auto ">
+                        <img class="w-1/2 m-auto" src="/vocatiologo.png" alt="" />
+                        <div class="m-auto my-3 w-[60%] text-white text-center">
+                            <p>Explore your vocatio through short-form, calming videos. From the desk of Dr. Christopher Cobbler
+                                you are able to experience a new paradigm regarding how to pursue your call.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="m-auto grid grid-cols-2 grid-rows-2 gap-4 col-span-1">
-                    <div class="grid cols-span-1 row-span-1 max-h-[400px] auto-rows-auto bg-white overflow-hidden rounded-lg p-3">
-                        <img class="w-[80%] m-auto h-auto object-fit rounded-lg" src="/vocatiothumb.png" alt="" />
-                        <div class="mt-5">
-                            <p class="font-bold text-black p-3 text-sm ">Dr. Christopher Cobbler</p>
-                            <h2 class="raleway-thin text-black my-1 text-xl">Episode 1 Learnng the tru</h2>
-                            <button class="hover:bg-stone-700 hover:text-white  my-2  rounded-full w-[200px] h-[50px] bg-white text-black text-sm p-3">
-                                Watch Now
-                            </button>
+                <div class="m-auto grid grid-cols-2  gap-4 col-span-1">
+                    {videos.map((vid) => (
+                        <div class="grid cols-span-1 row-span-1 max-h-[200px] auto-rows-auto bg-white overflow-hidden rounded-lg p-3">
+                            <img class="w-[80%] m-auto h-auto object-fit rounded-lg" src={vid.thumbnail} alt="" />
+                            <div class="mt-5">
+                                <h2 class="raleway-thin text-black my-1 text-xl">{vid.title}</h2>
+                                <p class="font-bold text-black p-3 text-sm ">{vid.creator}</p>
+
+                                <button class="hover:bg-stone-700 hover:text-white  my-2  rounded-full w-[200px] h-[50px] bg-white text-black text-sm p-3">
+                                    Watch Now
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="grid cols-span-1 row-span-1 max-h-[400px]  auto-rows-auto bg-white overflow-hidden rounded-lg p-3">
-                        <img class="w-[80%] m-auto h-auto object-fit rounded-lg" src="/vocatiothumb.png" alt="" />
-                        <div class="mt-5">
-                            <p class="font-bold text-black p-3 text-sm ">Dr. Christopher Cobbler</p>
-                            <h2 class="raleway-thin text-black my-1 text-xl">Episode 1 Learnng the tru</h2>
-                            <button class="hover:bg-stone-700 hover:text-white  my-2  rounded-full w-[200px] h-[50px] bg-white text-black text-sm p-3">
-                                Watch Now
-                            </button>
-                        </div>
-                    </div>
-                    <div class="grid cols-span-1 row-span-1 max-h-[400px]  auto-rows-auto bg-white overflow-hidden rounded-lg p-3">
-                        <img class="w-[80%] m-auto h-auto object-fit rounded-lg" src="/vocatiothumb.png" alt="" />
-                        <div class="mt-5">
-                            <p class="font-bold text-black p-3 text-sm ">Dr. Christopher Cobbler</p>
-                            <h2 class="raleway-thin text-black my-1 text-xl">Episode 1 Learnng the tru</h2>
-                            <button class="hover:bg-stone-700 hover:text-white  my-2 rounded-full w-[200px] h-[50px] bg-white text-black text-sm p-3">
-                                Watch Now
-                            </button>
-                        </div>
-                    </div>
-                    <div class="grid cols-span-1 row-span-1 max-h-[400px] auto-rows-auto bg-white overflow-hidden rounded-lg p-3">
-                        <img class="w-[80%] m-auto h-auto object-fit rounded-lg" src="/vocatiothumb.png" alt="" />
-                        <div class="mt-5">
-                            <p class="font-bold text-black p-3 text-sm ">Dr. Christopher Cobbler</p>
-                            <h2 class="raleway-thin text-black my-1 text-xl">Episode 1 Learnng the tru</h2>
-                            <button class="hover:bg-stone-700 hover:text-white  my-2  rounded-full w-[200px] h-[50px] bg-white text-black text-sm p-3">
-                                Watch Now
-                            </button>
-                        </div>
-                    </div>
+                    ))}
+
                 </div>
             </div>
         </div>
