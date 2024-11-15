@@ -13,7 +13,7 @@ var videos =  [
      {id:"1", title: "Episode 1 : Creating Space in a Distracted World", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%201%20Creating%20Space%20in%20a%20Distractred%20World.m4v", link: Astro.url.origin + "/podcasts/1"},
      {id:"2", title: "Episode 2 : Radical Hospitality", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%202%20Radical%20Hospitality.m4v"},
      {id:"3", title: "Episode 3 : The spiritual Art of Slowing Down", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%203%20The%20Spiritual%20Art%20of%20Slowing%20Down.m4v"},
-     {id:"4", title: "Episode 4 : When Your Calling and Career Don't Align", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: ""},
+     {id:"4", title: "Episode 4 : When Your Calling and Career Don't Align", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%204%20When%20Your%20Calling%20and%20Career%20Do%20Not%20Align.m4v"},
 ]
 
 const { pod } = Astro.params;
@@ -110,12 +110,12 @@ for (var vid of videos) {
 
                     <script type="text/javascript">
                         function openNewWindow(el) {
-                            window.open("/" + $(el).data("id"), "_blank");
+                            window.open("./" + $(el).data("id"), "_blank");
                         }
                     </script>
 
                     {videos.map((vid) => (
-                        <div onclick="openNewWindow()" data-id={vid.id} class="cursor-pointer grid cols-span-1 row-span-1 max-h-[300px]  transition-all ease-in-out hover:bg-black hover:text-white text-black bg-transparent auto-rows-auto  overflow-hidden rounded-lg p-3">
+                        <div onclick="openNewWindow(this)" data-id={vid.id} class="cursor-pointer grid cols-span-1 row-span-1 max-h-[300px]  transition-all ease-in-out hover:bg-black hover:text-white text-black bg-transparent auto-rows-auto  overflow-hidden rounded-lg p-3">
                             <img class="w-[100%] m-auto h-auto object-fit rounded-lg" src={vid.thumbnail} alt="" />
                             <div class="mt-5">
                                 <h2 class="raleway-thin  my-1 text-md">{vid.title}</h2>
