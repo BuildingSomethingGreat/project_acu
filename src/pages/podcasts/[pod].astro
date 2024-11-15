@@ -10,13 +10,14 @@ export function getStaticPaths() {
 }
 
 var videos =  [
-     {id:"1", title: "Episode 1 : Creating Space in a Distracted World", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%201%20Creating%20Space%20in%20a%20Distractred%20World.m4v"},
+     {id:"1", title: "Episode 1 : Creating Space in a Distracted World", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%201%20Creating%20Space%20in%20a%20Distractred%20World.m4v", link: Astro.url.origin + "/podcasts/1"},
      {id:"2", title: "Episode 2 : Radical Hospitality", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%202%20Radical%20Hospitality.m4v"},
      {id:"3", title: "Episode 3 : The spiritual Art of Slowing Down", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%203%20The%20Spiritual%20Art%20of%20Slowing%20Down.m4v"},
      {id:"4", title: "Episode 4 : When Your Calling and Career Don't Align", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: ""},
 ]
 
 const { pod } = Astro.params;
+const host = Astro.url.host;
 
 var res = {}
 for (var vid of videos) {
@@ -42,7 +43,7 @@ for (var vid of videos) {
 <body>
     <div class="h-full" id="fullpage">
 		<div style="background: #313638" class="section  overflow-hidden  bg-[#313638] h-full flex flex-col items-center justify-center ">
-		    <img class="absolute z-10 bg-blend-multiply opacity-50 w-full h-auto left-0 bottom-0 " src="/overlay.png" alt="" />
+		    <img class="absolute z-10 bg-blend-multiply opacity-50 w-full h-auto left-0 bottom-0 blur " src="/overlay.png" alt="" />
            
             <div class="absolute z-20  top-10 right-0 left-0 m-auto w-[90%] flex items-center justify-between">
 				<img class="w-[10%] h-auto" src="/acu_logo.png" alt="logo"/>
@@ -70,13 +71,17 @@ for (var vid of videos) {
                 </video>
             </div> 
 
-            <div class="z-30 mt-4 mb-3 text-white  ">
+            <div class="z-30 mt-4 mb-3 text-white flex flex-col items-start  ">
                     <p class="font-bold opacity-50 text-md">{res.creator}</p>
                     <h2 class=" my-2 raleway-thin text-2xl">{res.title}</h2>
                
-                <button class="col-span-1 hover:bg-stone-700 hover:text-white  my-3  rounded-full w-[200px] h-[50px] bg-white text-black text-sm p-3">
+                <button id="exploreMore" class="col-span-1 hover:bg-stone-700 hover:text-white  my-3  rounded-full w-[200px] h-[50px] bg-white text-black text-sm p-3">
                     Explore more
                 </button>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=google.com">
+                    Facebook
+                </a>
+                
             </div>
              
                  <!-- <img class="relative block h-auto w-full object-cover" src="/vocatio_fall.png" alt=""/> -->
@@ -84,7 +89,11 @@ for (var vid of videos) {
 		</div>
 		<div class="section bg-stone-200" >
             <div class=" catalogue grid gap-10 grid-cols-2 h-screen  p-3">
-                <div class="relative m-auto col-span-1 w-full flex items-center justify-center h-full rounded-lg bg-black">
+                <div class="relative m-auto col-span-1 w-full flex items-center justify-center h-full rounded-lg overflow-hidden bg-black">
+                    <video class="z-10 absolute top-0 left-0 opacity-50 m-auto  rounded-lg overflow-hidden object-cover" width="auto" height="100%" data-autoplay autoplay muted loop playsinline>
+                        <source data-src="https://acu-cdn-pull.b-cdn.net/modernhome.mp4" type="video/mp4">
+                    </video>
+
                     <div class="z-20 m-auto ">
                         <img class="w-1/2 m-auto" src="/vocatiologo.png" alt="" />
                         <div class="m-auto my-3 w-[60%] text-white text-center">
@@ -94,26 +103,38 @@ for (var vid of videos) {
                         </div>
                     </div>
                 </div>
-                <div class="m-auto grid grid-cols-2  gap-4 col-span-1">
-                    {videos.map((vid) => (
-                        <div class="grid cols-span-1 row-span-1 max-h-[200px] auto-rows-auto bg-white overflow-hidden rounded-lg p-3">
-                            <img class="w-[80%] m-auto h-auto object-fit rounded-lg" src={vid.thumbnail} alt="" />
-                            <div class="mt-5">
-                                <h2 class="raleway-thin text-black my-1 text-xl">{vid.title}</h2>
-                                <p class="font-bold text-black p-3 text-sm ">{vid.creator}</p>
+                <div class="m-auto grid grid-cols-3  gap-4 col-span-1">
+                    <div class="cols-span-3 row-span-1">
+                        <h1>Watch more episodes.</h1>
+                    </div>
 
-                                <button class="hover:bg-stone-700 hover:text-white  my-2  rounded-full w-[200px] h-[50px] bg-white text-black text-sm p-3">
-                                    Watch Now
-                                </button>
+                    <script type="text/javascript">
+                        function openNewWindow(el) {
+                            window.open("/" + $(el).data("id"), "_blank");
+                        }
+                    </script>
+
+                    {videos.map((vid) => (
+                        <div onclick="openNewWindow()" data-id={vid.id} class="cursor-pointer grid cols-span-1 row-span-1 max-h-[300px]  transition-all ease-in-out hover:bg-black hover:text-white text-black bg-transparent auto-rows-auto  overflow-hidden rounded-lg p-3">
+                            <img class="w-[100%] m-auto h-auto object-fit rounded-lg" src={vid.thumbnail} alt="" />
+                            <div class="mt-5">
+                                <h2 class="raleway-thin  my-1 text-md">{vid.title}</h2>
+                                {/* <p class="font-bold  p-3 text-sm ">{vid.creator}</p> */}
                             </div>
                         </div>
                     ))}
+
+
 
                 </div>
             </div>
         </div>
     </div>
+
+   
 </body>
+
+
 <script>
     (function() {
         var myFullpage = new fullpage("#fullpage", {
@@ -139,6 +160,10 @@ for (var vid of videos) {
 
         $("#play, #pause").on("click", function() {
             togglePlayPause(); 
+        });
+
+        $("#exploreMore").on("click", function() {
+            myFullpage.moveTo(2);
         });
     })();
 
