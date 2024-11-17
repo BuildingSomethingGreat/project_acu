@@ -40,7 +40,8 @@ for (var vid of videos) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.29/vendors/easings.js" integrity="sha512-FFmLOg/pFlqTgDEWhqL3zxfLRRjv54Dx170T9CgCiTx4+iVVEMPXku6egqJ9wau9y9ORJIaPFuLYR3nsFBm5uQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
-<body>
+<body class="hidden">
+
     <div class="h-full" id="fullpage">
 		<div style="background: #313638" class="section  overflow-hidden  bg-[#313638] h-full flex flex-col items-center justify-center ">
 		    <img class="absolute z-10 bg-blend-multiply opacity-50 w-full h-auto left-0 bottom-0 blur " src="/overlay.png" alt="" />
@@ -51,7 +52,7 @@ for (var vid of videos) {
 				<div class="links w-[20%] flex items-center justify-end ">
 					<a href="/" class="text-md text-white">About</a>
 					<a href="/" class="text-md text-white mx-5">Benefits</a>
-					<a href="/" class="text-md text-white">Contact</a>
+					<a href="/" class="text-md text-white">Login</a>
 				</div>
 			</div>
 
@@ -73,15 +74,16 @@ for (var vid of videos) {
 
             <div class="z-30 mt-4 mb-3 text-white flex flex-col items-start  ">
                     <p class="font-bold opacity-50 text-md">{res.creator}</p>
-                    <h2 class=" my-2 raleway-thin text-2xl">{res.title}</h2>
+                    <h2 class=" my-2 raleway-thin text-xl">{res.title}</h2>
                
-                <button id="exploreMore" class="col-span-1 hover:bg-stone-700 hover:text-white  my-3  rounded-full w-[200px] h-[50px] bg-white text-black text-sm p-3">
-                    Explore more
-                </button>
-                <a href="https://www.facebook.com/sharer/sharer.php?u=google.com">
-                    Facebook
-                </a>
-                
+                    <div class="flex items-start justify-center">
+                        <button id="exploreMore" class="col-span-1 hover:bg-stone-700 hover:text-white  my-3  rounded-full w-[200px] h-[50px] bg-white text-black text-sm p-3">
+                            Explore more
+                        </button>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=google.com">
+                            Facebook
+                        </a>
+                    </div>
             </div>
              
                  <!-- <img class="relative block h-auto w-full object-cover" src="/vocatio_fall.png" alt=""/> -->
@@ -104,7 +106,7 @@ for (var vid of videos) {
                     </div>
                 </div>
                 <div class="m-auto grid grid-cols-3  gap-4 col-span-1">
-                    <div class="cols-span-3 row-span-1">
+                    <div class="col-span-3 row-span-1">
                         <h1>Watch more episodes.</h1>
                     </div>
 
@@ -118,7 +120,7 @@ for (var vid of videos) {
                         <div onclick="openNewWindow(this)" data-id={vid.id} class="cursor-pointer grid cols-span-1 row-span-1 max-h-[300px]  transition-all ease-in-out hover:bg-black hover:text-white text-black bg-transparent auto-rows-auto  overflow-hidden rounded-lg p-3">
                             <img class="w-[100%] m-auto h-auto object-fit rounded-lg" src={vid.thumbnail} alt="" />
                             <div class="mt-5">
-                                <h2 class="raleway-thin  my-1 text-md">{vid.title}</h2>
+                                <h3 class="raleway-thin  my-1 text-md">{vid.title}</h3>
                                 {/* <p class="font-bold  p-3 text-sm ">{vid.creator}</p> */}
                             </div>
                         </div>
