@@ -6,6 +6,23 @@ a, button {
   cursor: pointer;
 }
 
+.section , section{
+  border-radius: 0 !important;
+}
+
+body {
+  width: 100%;
+  max-width: 2500px;
+  margin: auto;
+  /* border-radius: 20px; */
+  overflow: auto;
+}
+
+video {
+  max-width:  none !important;
+  max-height:  none !important;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
