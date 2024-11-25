@@ -1,6 +1,9 @@
 ---
 import Header from "../../components/header.astro"
 import Loader from "../../components/loader.astro";
+import {SEO} from "astro-seo";
+
+
 import "./../app.css"
 export function getStaticPaths() {
   return [
@@ -82,10 +85,11 @@ for (var vid of videos) {
                             <a id="exploreMore" class="col-span-1 my-3 flex items-center justify-center rounded-full w-[200px] h-[50px] bg-white text-black font-bold text-sm p-3">
                                 Explore more
                             </a>
-                            <a id="exploreMore" class="col-span-1 mx-3  flex items-center justify-center my-3  rounded-full w-[100px] h-[50px] bg-blue-600 text-white font-bold text-sm p-3">
+                           
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://vocationalformation.com" target="_blank" id="exploreMore" class="col-span-1 mx-3  flex items-center justify-center my-3  rounded-full w-[100px] h-[50px] bg-blue-600 text-white font-bold text-sm p-3">
                                 Facebook
                             </a>
-                            <a id="exploreMore" class="col-span-1    my-3 flex items-center justify-center rounded-full w-[50px] h-[50px] bg-black text-white font-bold text-sm p-3">
+                            <a href="http://twitter.com/share?text=ACU : Formation starts inside&url=https://vocationalformation.com/&hashtags=#vocationalformation,#acu,#newexperience" id="exploreMore" class="col-span-1    my-3 flex items-center justify-center rounded-full w-[50px] h-[50px] bg-black text-white font-bold text-sm p-3">
                                 X
                             </a>
                         </div>
