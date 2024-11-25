@@ -1,6 +1,21 @@
 ---
 import "./app.css"
+import Header  from "../components/header.astro";
+import Loader from "../components/loader.astro";
 
+var formationVideos =  [
+     {id:"1", title: "Colors of Fall", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatio_fall.png", url: "https://acu-cdn-pull.b-cdn.net/Colors%20of%20Fall.mp4", link: Astro.url.origin + "/podcasts/1"},
+     {id:"2", title: "Child of the Creator", creator: "Dr. Jerry Taylor", thumbnail: "/vocatio_teddy.png", url: "https://acu-cdn-pull.b-cdn.net/childOfTheCreator_formation.mp4"},
+     {id:"3", title: "Rest", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatio_rest.png", url: "https://acu-cdn-pull.b-cdn.net/Rest.m4v"},
+     {id:"4", title: "The Slow Way", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatio_slowway.png", url: "https://acu-cdn-pull.b-cdn.net/The%20Slow%20Way%20.m4v"}
+]
+
+var podcastVideos =  [
+     {id:"1", views: "1.2K", title: "Episode 1 : Creating Space in a Distracted World", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%201%20Creating%20Space%20in%20a%20Distractred%20World.m4v", link: Astro.url.origin + "/podcasts/1"},
+     {id:"2", views: "10K", title: "Episode 2 : Radical Hospitality", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%202%20Radical%20Hospitality.m4v"},
+     {id:"3", views: "4.5K", title: "Episode 3 : The spiritual Art of Slowing Down", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%203%20The%20Spiritual%20Art%20of%20Slowing%20Down.m4v"},
+     {id:"4", views: "2K", title: "Episode 4 : When Your Calling and Career Don't Align", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%204%20When%20Your%20Calling%20and%20Career%20Do%20Not%20Align.m4v"},
+]
 
 ---
 
@@ -8,31 +23,26 @@ import "./app.css"
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.css" integrity="sha512-/AilQf/shuEGfh8c3DoIqcIqHZCKpiImSyt+fxIKJphHiNa6QMPb6AbDly6rkjmGr/5OZd35JtvVkbEKnCZO+A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.29/fullpage.min.css" integrity="sha512-cdMjnD4i86qiUIK3pyOMeYKdJ2I0gy0CVZm2AvGuXgMRDFdoIEI2I/x39pZlRsMaI4IEZBJbsNuWVawly1nY/A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
 
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.29/fullpage.min.js" integrity="sha512-jedW9bHnXiSMKNbXfrEQ1gDCRYO8ewRlWPWPf4Fv1LpUyYB0fphiWlUVSGI2Dvwem1gUk0x1Y+cWs4lCwoEo8w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.extensions.min.js" integrity="sha512-0xW5KFMtT462F65vVvIejNawM1U2Fp/yhItmQVFUwdYP+R9tQFCn4QtLEhkp6RoGovZ6YCvbxy+GVCtGv0+nvA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.29/vendors/easings.js" integrity="sha512-FFmLOg/pFlqTgDEWhqL3zxfLRRjv54Dx170T9CgCiTx4+iVVEMPXku6egqJ9wau9y9ORJIaPFuLYR3nsFBm5uQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.29/vendors/easings.js" integrity="sha512-FFmLOg/pFlqTgDEWhqL3zxfLRRjv54Dx170T9CgCiTx4+iVVEMPXku6egqJ9wau9y9ORJIaPFuLYR3nsFBm5uQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 </head>
 
+<body class="">
 
+	<Loader />
 
-<body class="hidden">
-
-	
 
 	<!-- fullPage.js HTML -->
 	<div class="h-full" id="fullpage">
 		<div class="section overflow-hidden  bg-black h-full flex items-center justify-center ">
 		
 			<div class="absolute z-20  top-10 right-0 left-0 m-auto w-[90%] flex items-center justify-between">
-				<img class="w-[10%] h-auto" src="/acu_logo.png" alt="logo"/>
-
-				<div class="links w-[20%] flex items-center justify-end ">
-					<a href="/" class="text-md text-white">About</a>
-					<a href="/" class="text-md text-white mx-5">Benefits</a>
-					<a href="/" class="text-md text-white">Contact</a>
-				</div>
+				<Header />
 			</div>
 
 			<video class="absolute opacity-75 top-0 rounded-lg overflow-hidden object-fill" width="100%" height="100%" autoplay data-autoplay muted playsinline loop>
@@ -60,11 +70,11 @@ import "./app.css"
 				</div>
 			</div>
 		</div>
-		<div class="section relative overflow-hidden   bg-slate-900 flex flex-col items-center justify-center">
+		<div id="" class="section relative overflow-hidden   bg-slate-900 flex flex-col items-center justify-center">
 			<img src="01.png" class="w-[40%] h-auto z-10 absolute top-0 left-0 h-fit opacity-10" alt="" />
 
 			<div class="content absolute top-0 left-0 right-0  bottom-0 overflow-hidden max-h-[95%] z-20 w-[90%] h-auto m-auto   flex flex-col items-center justify-center" >
-				<h2 class="raleway-thin my-5 text-5xl w-[60%]">
+				<h2 class=" my-5 text-5xl w-[60%]">
 					Learn how ACU is reinventing digital spaces.
 				</h2>
 
@@ -77,19 +87,19 @@ import "./app.css"
 
 				<div class="w-[50%] my-3 grid  grid-cols-4 grid-rows-1 gap-10">
 					<div class="max-h-[85px] min-h-[85px] col-span-1 grid grid-cols-1 grid-rows-2 gap-4 " >
-						<h4 class="raleway-reg row-span-1 font-bold text-5xl text-center">23k</h4>
+						<h4 class=" row-span-1 font-bold text-5xl text-center">23k</h4>
 						<p class="opacity-80 row-span-1 text-sm text-center">Students</p>
 					</div>
 					<div class="max-h-[85px] min-h-[85px] col-span-1 grid grid-cols-1 grid-rows-2 gap-4  " >
-						<h4 class="raleway-reg row-span-1 font-bold text-5xl text-center">300</h4>
+						<h4 class=" row-span-1 font-bold text-5xl text-center">300</h4>
 						<p class="opacity-80 row-span-1 text-sm text-center">Courses</p>
 					</div>
 					<div class="max-h-[85px] min-h-[85px] col-span-1 grid grid-cols-1 grid-rows-2 gap-4 " >
-						<h4 class="raleway-reg row-span-1 font-bold text-5xl text-center">10k</h4>
+						<h4 class="row-span-1 font-bold text-5xl text-center">10k</h4>
 						<p class="opacity-80 row-span-1 text-sm text-center">Certificates completed</p>
 					</div>
 					<div class="max-h-[85px] min-h-[85px] col-span-1 grid grid-cols-1 grid-rows-2 gap-4  " >
-						<h4 class="raleway-reg row-span-1 font-bold text-5xl text-center">10:1</h4>
+						<h4 class="row-span-1 font-bold text-5xl text-center">10:1</h4>
 						<p class="opacity-80 row-span-1 text-sm text-center">Student-teacher raion</p>
 					</div>
 				</div>
@@ -101,171 +111,53 @@ import "./app.css"
 			<div class="slide"><h1>Slide 2.2</h1></div>
 			<div class="slide"><h1>Slide 2.3</h1></div> -->
 		</div>
-		<div class="section bg-stone-200" >
+		<div id="formationVideos" class="section bg-stone-200" >
 			<img src="02.png" class="w-[40%] h-auto z-10 absolute top-0 left-0 h-fit opacity-10" alt="" />
 		
-			<div class="content absolute top-0 left-0 right-0  bottom-0 overflow-hidden max-h-[95%] z-20 w-[90%] h-auto m-auto   flex flex-col items-center justify-center" >
-				<h2 class="raleway-thin text-black my-5 text-5xl w-[60%]">
+			<div class="content absolute top-0 left-0 right-0  bottom-0 overflow-hidden  z-20 w-[90%] h-full m-auto   flex flex-col items-center justify-center" >
+				<h2 class=" text-black my-5 text-5xl w-[60%]">
 					Discover your purpose <br> 
 					without limits.
 				</h2>
 
-				<div class="w-full my-3 grid  grid-cols-3 grid-rows-1 gap-4 ">
-					<div class="accordion-nav col-span-1">
-						<div id="accordion-collapse" data-accordion="collapse" data-active-classes="bg-transparent" >
+				<div class="w-full my-3 grid  grid-cols-3 grid-rows-1 h-[400px] gap-4 ">
+					<div class="accordion-nav col-span-1 flex items-center justify-center">
+						<div id="accordion-collapse" class="px-4 m-auto" data-accordion="collapse" data-active-classes="bg-transparent" >
 							<h2 id="accordion-collapse-heading-1">
-							<button type="button" class="resourceButton flex flex-row items-start justify-center w-full  py-3 font-medium rtl:text-right text-gray-500  rounded-t-xl  gap-3" data-accordion-target="#accordion-collapse-body-1" aria-expanded="true" aria-controls="accordion-collapse-body-1">
-								<div class="tab-indicator w-[10px] h-[50px] m-auto rounded-lg bg-black"></div>
-								<h1 class=" text-black font-bold text-6xl">Formation Videos</h1>
-							</button>
+								<h1 class="text-left text-black font-bold text-4xl ">Formation Videos</h1>
 							</h2>
-							<div id="accordion-collapse-body-1" class="hidden opacity-0" aria-labelledby="accordion-collapse-heading-1">
-								<div class="px-5 py-1 flex flex-col items-start ">
-									<p class="my-4 text-black text-md text-left">
-										Unique perspective on Vocational Formation from
-										profound leaders. 
-									</p>
-									<a class="py-3 px-4 w-[40%] text-black font-bold border-2 border-black rounded-full ">
-										Learn More
-									</a>
-								</div>
+							<div class="py-2 flex flex-col items-start ">
+								<p class="my-4 text-black text-md text-left">
+									Unique perspective on Vocational Formation from
+									profound leaders. 
+								</p>
+								<a href="/formation/1" class="py-3 px-4 w-[150px] text-black font-bold border-2 border-black rounded-full ">
+									Learn More
+								</a>
 							</div>
-
-							
 						</div>
 					</div>
 
-
 					<div class="relative   h-full w-full col-span-2 "  >
-						<div class="accordion-content pb-3 overflow-x-auto overflow-y-hidden w-full h-full absolute top-0 left-0 hidden opacity-0 items-start whitespace-nowrap" aria-controls="accordion-collapse-body-1">
-							<div class="relative overflow-hidden min-w-[300px] max-w-[300px] h-full inline-block me-4 rounded-lg bg-black shadow-md">
-								<img class="absolute z-10 top-0  w-full h-auto object-cover opacity-50" src="/vocatio_fall.png" alt="" />
-								<div class="whitespace-normal z-30 absolute left-0 bottom-0 p-4 flex flex-col items-start justify-center">
-									<p class="text-white opacity-80 text-md" >Dr. Christopher Cobbler</p>
-									<h2 class="my-2 w-[100%] text-white text-left raleway-thin text-3xl">Color of Fall</h2>
-									<!-- <p class="text-white text-sm opacity-50 text-md text-left" >Discover the intimacy of fall and how God is moving in the new season.</p> -->
-									<button class="hover:bg-stone-700 hover:text-white  my-3  rounded-full w-[60%] h-[50px] bg-white text-black text-sm p-3">
-										Watch Now
-									</button>
-								</div>
-							</div>
-							<div class="relative overflow-hidden min-w-[300px] max-w-[300px] h-full inline-block me-4 rounded-lg bg-black  shadow-md">
-								<img class="absolute z-10 top-0  w-full h-auto object-cover opacity-50" src="/vocatio_rest.png" alt="" />
-								<div class="whitespace-normal z-30 absolute left-0 bottom-0 p-4 flex flex-col items-start justify-center">
-									<p class="text-white opacity-80 text-md" >Dr. Christopher Cobbler</p>
-									<h2 class="my-2 w-[100%] text-white text-left raleway-thin text-3xl">Rest</h2>
-									<!-- <p class="text-white text-sm opacity-50 text-md text-left" >Discover the intimacy of fall and how God is moving in the new season.</p> -->
-									<button class="hover:bg-stone-700 hover:text-white  my-3  rounded-full w-[60%] h-[50px] bg-white text-black text-sm p-3">
-										Watch Now
-									</button>
-								</div>
-							</div>
-							<div class="relative overflow-hidden min-w-[300px] max-w-[300px] h-full inline-block me-4 rounded-lg bg-black shadow-md">
-								<img class="absolute z-10 top-0  w-full h-auto object-cover opacity-50" src="/vocatio_teddy.png" alt="" />
-								<div class="whitespace-normal z-30 absolute left-0 bottom-0 p-4 flex flex-col items-start justify-center">
-									<p class="text-white opacity-80 text-md" >Dr. Jerry Taylor</p>
-									<h2 class="my-2 w-[100%] text-white text-left raleway-thin text-3xl">Child of the Creator</h2>
-									<!-- <p class="text-white text-sm opacity-50 text-md text-left" >Explore life at it's simplest moments.</p> -->
-									<button class="hover:bg-stone-700 hover:text-white  my-3  rounded-full w-[60%] h-[50px] bg-white text-black text-sm p-3">
-										Watch Now
-									</button>
-								</div>
-							</div>
-						
-						</div>
-						<div class="accordion-content pb-3 overflow-x-auto overflow-y-hidden w-full h-full absolute top-0 left-0 hidden opacity-0 items-start whitespace-nowrap" aria-controls="accordion-collapse-body-2">
-							<div class="relative bg-white min-w-[300px]  h-full inline-grid  grid-cols-1 auto-rows-max gap-4  me-4 rounded-lg overflow-hidden shadow-md">
-								<div class="relative row-span-1 h-auto">
-									<img class="w-full h-auto object-fit" src="/vocatiothumb.png" alt="" />
-								</div>	
-								<div class="row-span-1 p-2 flex flex-col items-center justify-center ">
-									<h2 class="raleway-thin text-black text-xl">A Call to Slowness</h2>
-									<p class="my-1 text-black text-sm opacity-50 text-md" >5 mins</p>
+						<div class="accordion-content pb-3 overflow-x-auto overflow-y-hidden w-full h-full absolute top-0 left-0  items-start whitespace-nowrap" aria-controls="accordion-collapse-body-1">
+							{formationVideos.map((vid) => (
+								<div onclick="openNewWindow(this)" data-type="formation" data-id={vid.id} class="cursor-pointer relative overflow-hidden min-w-[300px] max-w-[300px] h-full inline-block me-4 rounded-lg bg-black shadow-md">
+									<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute z-50 bottom-3 right-3 text-white size-4">
+										<path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+									</svg>
+
+									<img class="absolute z-20 bg-blend-multiply opacity-100 w-full h-auto left-0 bottom-0 " src="overlay.png" alt="" />
 									
-									<button onclick="window.open('/podcasts/1', '_target')" class="hover:bg-stone-700 hover:text-white   rounded-full w-[60%] h-[50px] bg-white text-black text-sm p-3">
-										Watch Now
-									</button>
+									<img class="absolute z-10 top-0   w-full h-auto object-cover opacity-80" src={vid.thumbnail} alt="" />
+									<div class="whitespace-normal z-30 absolute left-0 bottom-0 p-4 flex flex-col items-start justify-center">
+										<h2 class="my-2 w-[100%] text-white text-left text-3xl">{vid.title}</h2>
+										<p class="text-white opacity-80 text-md" >{vid.creator}</p>
+										{/* <button class="hover:bg-stone-700 hover:text-white  my-3 font-bold rounded-full w-[150px] h-[50px] bg-white text-black text-sm p-3">
+											Watch Now
+										</button> */}
+									</div>
 								</div>
-							</div>
-							<div class="relative bg-white min-w-[300px]  h-full inline-grid  grid-cols-1 auto-rows-max gap-4  me-4 rounded-lg overflow-hidden shadow-md">
-								<div class="relative row-span-1 h-auto">
-									<img class="w-full h-auto object-fit" src="/vocatiothumb.png" alt="" />
-								</div>	
-								<div class="row-span-1 p-2 flex flex-col items-center justify-center ">
-									<h2 class="raleway-thin text-black text-xl">A Call to Slowness</h2>
-									<p class="my-1 text-black text-sm opacity-50 text-md" >5 mins</p>
-									
-									<button onclick="window.open('/podcasts/2', '_target')" class="hover:bg-stone-700 hover:text-white   rounded-full w-[60%] h-[50px] bg-white text-black text-sm p-3">
-										Watch Now
-									</button>
-								</div>
-							</div>
-							<div class="relative bg-white min-w-[300px]  h-full inline-grid  grid-cols-1 auto-rows-max gap-4  me-4 rounded-lg overflow-hidden shadow-md">
-								<div class="relative row-span-1 h-auto">
-									<img class="w-full h-auto object-fit" src="/vocatiothumb.png" alt="" />
-								</div>	
-								<div class="row-span-1 p-2 flex flex-col items-center justify-center ">
-									<h2 class="raleway-thin text-black text-xl">A Call to Slowness</h2>
-									<p class="my-1 text-black text-sm opacity-50 text-md" >5 mins</p>
-									
-									<button onclick="window.open('/podcasts/3', '_target')" class="hover:bg-stone-700 hover:text-white   rounded-full w-[60%] h-[50px] bg-white text-black text-sm p-3">
-										Watch Now
-									</button>
-								</div>
-							</div>
-							<div class="relative bg-white min-w-[300px]  h-full inline-grid  grid-cols-1 auto-rows-max gap-4  me-4 rounded-lg overflow-hidden shadow-md">
-								<div class="relative row-span-1 h-auto">
-									<img class="w-full h-auto object-fit" src="/vocatiothumb.png" alt="" />
-								</div>	
-								<div class="row-span-1 p-2 flex flex-col items-center justify-center ">
-									<h2 class="raleway-thin text-black text-xl">A Call to Slowness</h2>
-									<p class="my-1 text-black text-sm opacity-50 text-md" >5 mins</p>
-									
-									<button onclick="window.open('/podcasts/4', '_target')" class="hover:bg-stone-700 hover:text-white   rounded-full w-[60%] h-[50px] bg-white text-black text-sm p-3">
-										Watch Now
-									</button>
-								</div>
-							</div>
-						</div>
-						<div class="accordion-content  pb-3 overflow-x-auto overflow-y-hidden w-full h-full absolute top-0 left-0 hidden opacity-0 items-start whitespace-nowrap" aria-controls="accordion-collapse-body-3">
-							<div class="relative overflow-hidden min-w-[300px] max-w-[300px] h-full inline-block me-4 rounded-lg bg-blue-500 shadow-md">
-								<img class="absolute z-20  opacity-80 mix-blend-multiply w-full h-auto left-0 bottom-0 " src="https://www.pngall.com/wp-content/uploads/15/Black-Shadow-PNG-HD-Image.png" alt="" />
-								<img class="absolute z-10 top-0 h-full w-auto object-cover" src="/profess1.jpg" alt="" />
-								<div class="whitespace-normal z-30 absolute left-0 bottom-0 p-4 flex flex-col items-start justify-center">
-									<p class="text-white opacity-80 text-md" >Dr. Thomas Accrue</p>
-									<h2 class="my-2 w-[100%] text-white text-left raleway-thin text-3xl">Building Wealth Using Tech</h2>
-									<p class="text-white text-sm opacity-50 text-md" >Technology | 4 Episodes</p>
-									
-									<button class="hover:bg-stone-700 hover:text-white  my-3  rounded-full w-[60%] h-[50px] bg-white text-black text-sm p-3">
-										Enroll Now
-									</button>
-								</div>
-							</div>
-							 <div class="relative overflow-hidden min-w-[300px] max-w-[300px] h-full inline-block me-4 rounded-lg bg-blue-500 shadow-md">
-								<img class="absolute z-20  opacity-80 mix-blend-multiply w-full h-auto left-0 bottom-0 " src="https://www.pngall.com/wp-content/uploads/15/Black-Shadow-PNG-HD-Image.png" alt="" />
-								<img class="h-full w-auto object-cover" src="/profess2.jpg" alt="" />
-								<div class="whitespace-normal z-30 absolute left-0 bottom-0 p-4 flex flex-col items-start justify-center">
-									<p class="text-white text-md opacity-80 " >Christy Mink</p>
-									<h2 class="my-2 w-[100%] text-white text-left raleway-thin text-3xl">Formational Ministry</h2>
-									<p class="text-white text-sm opacity-50 text-md" >Ministry | 4 Episodes</p>
-									<button class="hover:bg-stone-700 hover:text-white my-3  rounded-full w-[60%] h-[50px] bg-white text-black text-sm p-3">
-										Enroll Now
-									</button>
-								</div>
-							</div>
-							 <div class="relative overflow-hidden min-w-[300px] max-w-[300px] h-full inline-block me-4 rounded-lg bg-blue-500 shadow-md">
-								<img class="absolute z-20  opacity-80 mix-blend-multiply w-full h-auto left-0 bottom-0 " src="https://www.pngall.com/wp-content/uploads/15/Black-Shadow-PNG-HD-Image.png" alt="" />
-								<img class="h-full w-auto object-cover" src="/profess3.jpg" alt="" />
-								<div class="whitespace-normal z-30 absolute left-0 bottom-0 p-4 flex flex-col items-start justify-center">
-									<p class="text-white text-md opacity-80 " >Mike Flow</p>
-									<h2 class="my-2 w-[100%] text-white text-left raleway-thin text-3xl">Curious Evangelism</h2>
-									<p class="text-white text-sm opacity-50 text-md" >Ministry | 2 Episodes</p>
-									<button class="hover:bg-stone-700  hover:text-white  my-3  rounded-full w-[60%] h-[50px] bg-white text-black text-sm p-3">
-										Enroll Now
-									</button>
-								</div>
- 							
-							</div>
+							))}
 						</div>
 					</div>
 
@@ -273,225 +165,85 @@ import "./app.css"
 			</div>
 		</div>
 
-		<div class="section bg-stone-500" >
+		<div id="podcasts" class="section bg-black" >
 			<img src="03.png" class="w-[40%] h-auto z-10 absolute top-0 left-0 h-fit opacity-10" alt="" />
-		
+			
 			<div class="content absolute top-0 left-0 right-0  bottom-0 overflow-hidden max-h-[95%] z-20 w-[90%] h-auto m-auto   flex flex-col items-center justify-center" >
-				<h2 class="raleway-thin text-black my-5 text-5xl w-[60%]">
-					Discover your purpose <br> 
-					without limits.
+				<h2 class=" text-white my-5 text-5xl w-[60%]">
+					Visual podcasts that  <br> 
+					lift your spirit.
 				</h2>
 
-				<div class="w-full my-3 grid  grid-cols-3 grid-rows-1 gap-4 ">
-					<div class="accordion-nav col-span-1">
-						<div id="accordion-collapse" data-accordion="collapse" data-active-classes="bg-transparent" >
-							<h2 id="accordion-collapse-heading-1">
-							<button type="button" class="resourceButton flex flex-row items-start justify-center w-full  py-3 font-medium rtl:text-right text-gray-500  rounded-t-xl  gap-3" data-accordion-target="#accordion-collapse-body-1" aria-expanded="true" aria-controls="accordion-collapse-body-1">
-								<div class="tab-indicator w-[10px] h-[50px] m-auto rounded-lg bg-black"></div>
-								<h1 class=" text-black font-bold text-6xl">Formation Videos</h1>
-							</button>
-							</h2>
-							<div id="accordion-collapse-body-1" class="hidden opacity-0" aria-labelledby="accordion-collapse-heading-1">
-								<div class="px-5 py-1 flex flex-col items-start ">
-									<p class="my-4 text-black text-md text-left">
-										Unique perspective on Vocational Formation from
-										profound leaders. 
-									</p>
-									<a class="py-3 px-4 w-[40%] text-black font-bold border-2 border-black rounded-full ">
-										Learn More
-									</a>
-								</div>
-							</div>
-
-							<h2 id="accordion-collapse-heading-2">
-							<button type="button" class="resourceButton flex flex-row  items-start justify-start w-full  py-3 font-medium rtl:text-right text-gray-500 " data-accordion-target="#accordion-collapse-body-2" aria-expanded="false" aria-controls="accordion-collapse-body-2">
-								<div class="tab-indicator w-[10px] h-[50px] my-auto mx-4 rounded-lg bg-black"></div>
-								
-								<h1 class="ms-4 text-black font-bold text-6xl">Vocatio Reimagined</h1>
-							</button>
-							</h2>
-							<div id="accordion-collapse-body-2" class="hidden" aria-labelledby="accordion-collapse-heading-2">
-								<div class="px-5 py-1 flex flex-col items-start ">
-									<p class="my-4 text-black text-md text-left">
-										Introspective video conversations about how to embark on formation around
-										us.
-									</p>
-									<a class="py-3 px-4 w-[40%] text-black font-bold border-2 border-black rounded-full ">
-										Learn More
-									</a>
-								</div>
-							</div>
-							<h2 id="accordion-collapse-heading-3">
-								<button type="button" class="resourceButton flex flex-row  items-start justify-start w-full  py-3 font-medium rtl:text-right text-gray-500 cursor-pointer" data-accordion-target="#accordion-collapse-body-3" aria-expanded="false" aria-controls="accordion-collapse-body-3">
-									<div class="tab-indicator w-[10px] h-[50px] my-auto mx-4 rounded-lg bg-black"></div>
-								
-									<h1 class="ms-4 text-black font-bold text-6xl">Courses</h1>
-								</button>
-							</h2>
-							<div id="accordion-collapse-body-3" class="hidden" aria-labelledby="accordion-collapse-heading-3">
-								<div class="px-5 py-1 flex flex-col items-start ">
-									<p class="my-4 text-black text-md text-left">
-										Learn from ACU's dynamic professors and thought leaders. 
-									</p>
-									<a class="py-3 px-4 w-[40%] text-black font-bold border-2 border-black rounded-full ">
-										Learn More
-									</a>
-								</div>
+				<div class="w-full my-3 grid  grid-cols-3 grid-rows-1 h-[400px] gap-4 ">
+					<div class="relative m-auto col-span-1 w-full flex items-center justify-center h-full rounded-lg overflow-hidden bg-black">
+						<video class="z-10 absolute -top-[30%] left-0 opacity-50 m-auto  rounded-lg overflow-hidden object-cover" width="auto" height="100%" data-autoplay autoplay muted loop playsinline>
+							<source data-src="https://acu-cdn-pull.b-cdn.net/modernhome.mp4" type="video/mp4">
+						</video>
+	
+						<div class="z-20 m-auto ">
+							<img class="w-1/2 max-w-[250px] m-auto" src="/vocatiologo.png" alt="" />
+							<div class="m-auto my-3 w-[90%] text-white text-center">
+								<p>Explore your vocatio through long-form, calming videos. From the desk of Dr. Christopher Cobbler,
+									experience a new paradigm regarding how to pursue your calling.
+								</p>
 							</div>
 						</div>
 					</div>
 
+					
 
 					<div class="relative   h-full w-full col-span-2 "  >
-						<div class="accordion-content pb-3 overflow-x-auto overflow-y-hidden w-full h-full absolute top-0 left-0 hidden opacity-0 items-start whitespace-nowrap" aria-controls="accordion-collapse-body-1">
-							<div class="relative overflow-hidden min-w-[300px] max-w-[300px] h-full inline-block me-4 rounded-lg bg-black shadow-md">
-								<img class="absolute z-10 top-0  w-full h-auto object-cover opacity-50" src="/vocatio_fall.png" alt="" />
-								<div class="whitespace-normal z-30 absolute left-0 bottom-0 p-4 flex flex-col items-start justify-center">
-									<p class="text-white opacity-80 text-md" >Dr. Christopher Cobbler</p>
-									<h2 class="my-2 w-[100%] text-white text-left raleway-thin text-3xl">Color of Fall</h2>
-									<!-- <p class="text-white text-sm opacity-50 text-md text-left" >Discover the intimacy of fall and how God is moving in the new season.</p> -->
-									<button class="hover:bg-stone-700 hover:text-white  my-3  rounded-full w-[60%] h-[50px] bg-white text-black text-sm p-3">
-										Watch Now
-									</button>
+						<div class="accordion-content pb-3 overflow-x-auto overflow-y-hidden w-full h-full absolute top-0 left-0  items-start whitespace-nowrap" aria-controls="accordion-collapse-body-1">
+							{podcastVideos.map((vid) => (
+								<div onclick="openNewWindow(this)" data-type="podcasts" data-id={vid.id} class="cursor-pointer inline-grid grid-cols-1 grid-rows-2 relative overflow-hidden min-w-[300px] max-w-[300px] h-full me-4 rounded-lg bg-white shadow-md">
+									<img class="row-span-1 relative z-10 top-0  w-full  object-cover opacity-100" src={vid.thumbnail} alt="" />
+									<div class="relative row-span-1 h-full whitespace-normal z-30  left-0 bottom-0 p-5 grid grid-cols-1 grid-rows-2">
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute z-50 bottom-3 right-3 text-black size-4">
+											<path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+										</svg>
+
+										<div class="row-span-1  flex flex-col text-black items-center justify-start">
+											<h2 class="my-2 w-[100%] text-left opacity-50  text-normal">{vid.title.split(":")[0]}</h2>
+											{(vid.title.split(":")[1].length <= 19) ? <h2 class="my-2 w-[100%] text-left  text-4xl">{vid.title.split(":")[1]}</h2> : <h2 class="my-2 w-[100%] text-left  text-2xl">{vid.title.split(":")[1]}</h2>}
+											{/* <h2 class="my-2 w-[100%] text-left  text-2xl">{vid.title.split(":")[1]}</h2> */}
+											{/* <p class="opacity-80 text-sm" >{vid.creator}</p> */}
+											{/* <button class="hover:bg-stone-700 hover:text-white  my-3 font-bold rounded-full w-[150px] h-[50px] bg-white text-black text-sm p-3">
+												Watch Now
+											</button> */}
+										</div>
+										
+										<div class="row-span-1 px-5 absolute bottom-2 left-0 right-0 m-auto opacity-50 flex items-start justify-start text-black">
+											<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+												<path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+												<path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+											</svg>
+											<p class="mx-2 text-sm">
+												{vid.views} Views
+											</p>
+										</div>
+									</div>
 								</div>
-							</div>
-							<div class="relative overflow-hidden min-w-[300px] max-w-[300px] h-full inline-block me-4 rounded-lg bg-black  shadow-md">
-								<img class="absolute z-10 top-0  w-full h-auto object-cover opacity-50" src="/vocatio_rest.png" alt="" />
-								<div class="whitespace-normal z-30 absolute left-0 bottom-0 p-4 flex flex-col items-start justify-center">
-									<p class="text-white opacity-80 text-md" >Dr. Christopher Cobbler</p>
-									<h2 class="my-2 w-[100%] text-white text-left raleway-thin text-3xl">Rest</h2>
-									<!-- <p class="text-white text-sm opacity-50 text-md text-left" >Discover the intimacy of fall and how God is moving in the new season.</p> -->
-									<button class="hover:bg-stone-700 hover:text-white  my-3  rounded-full w-[60%] h-[50px] bg-white text-black text-sm p-3">
-										Watch Now
-									</button>
-								</div>
-							</div>
-							<div class="relative overflow-hidden min-w-[300px] max-w-[300px] h-full inline-block me-4 rounded-lg bg-black shadow-md">
-								<img class="absolute z-10 top-0  w-full h-auto object-cover opacity-50" src="/vocatio_teddy.png" alt="" />
-								<div class="whitespace-normal z-30 absolute left-0 bottom-0 p-4 flex flex-col items-start justify-center">
-									<p class="text-white opacity-80 text-md" >Dr. Jerry Taylor</p>
-									<h2 class="my-2 w-[100%] text-white text-left raleway-thin text-3xl">Child of the Creator</h2>
-									<!-- <p class="text-white text-sm opacity-50 text-md text-left" >Explore life at it's simplest moments.</p> -->
-									<button class="hover:bg-stone-700 hover:text-white  my-3  rounded-full w-[60%] h-[50px] bg-white text-black text-sm p-3">
-										Watch Now
-									</button>
-								</div>
-							</div>
-						
-						</div>
-						<div class="accordion-content pb-3 overflow-x-auto overflow-y-hidden w-full h-full absolute top-0 left-0 hidden opacity-0 items-start whitespace-nowrap" aria-controls="accordion-collapse-body-2">
-							<div class="relative bg-white min-w-[300px]  h-full inline-grid  grid-cols-1 auto-rows-max gap-4  me-4 rounded-lg overflow-hidden shadow-md">
-								<div class="relative row-span-1 h-auto">
-									<img class="w-full h-auto object-fit" src="/vocatiothumb.png" alt="" />
-								</div>	
-								<div class="row-span-1 p-2 flex flex-col items-center justify-center ">
-									<h2 class="raleway-thin text-black text-xl">A Call to Slowness</h2>
-									<p class="my-1 text-black text-sm opacity-50 text-md" >5 mins</p>
-									
-									<button onclick="window.open('/podcasts/1', '_target')" class="hover:bg-stone-700 hover:text-white   rounded-full w-[60%] h-[50px] bg-white text-black text-sm p-3">
-										Watch Now
-									</button>
-								</div>
-							</div>
-							<div class="relative bg-white min-w-[300px]  h-full inline-grid  grid-cols-1 auto-rows-max gap-4  me-4 rounded-lg overflow-hidden shadow-md">
-								<div class="relative row-span-1 h-auto">
-									<img class="w-full h-auto object-fit" src="/vocatiothumb.png" alt="" />
-								</div>	
-								<div class="row-span-1 p-2 flex flex-col items-center justify-center ">
-									<h2 class="raleway-thin text-black text-xl">A Call to Slowness</h2>
-									<p class="my-1 text-black text-sm opacity-50 text-md" >5 mins</p>
-									
-									<button onclick="window.open('/podcasts/2', '_target')" class="hover:bg-stone-700 hover:text-white   rounded-full w-[60%] h-[50px] bg-white text-black text-sm p-3">
-										Watch Now
-									</button>
-								</div>
-							</div>
-							<div class="relative bg-white min-w-[300px]  h-full inline-grid  grid-cols-1 auto-rows-max gap-4  me-4 rounded-lg overflow-hidden shadow-md">
-								<div class="relative row-span-1 h-auto">
-									<img class="w-full h-auto object-fit" src="/vocatiothumb.png" alt="" />
-								</div>	
-								<div class="row-span-1 p-2 flex flex-col items-center justify-center ">
-									<h2 class="raleway-thin text-black text-xl">A Call to Slowness</h2>
-									<p class="my-1 text-black text-sm opacity-50 text-md" >5 mins</p>
-									
-									<button onclick="window.open('/podcasts/3', '_target')" class="hover:bg-stone-700 hover:text-white   rounded-full w-[60%] h-[50px] bg-white text-black text-sm p-3">
-										Watch Now
-									</button>
-								</div>
-							</div>
-							<div class="relative bg-white min-w-[300px]  h-full inline-grid  grid-cols-1 auto-rows-max gap-4  me-4 rounded-lg overflow-hidden shadow-md">
-								<div class="relative row-span-1 h-auto">
-									<img class="w-full h-auto object-fit" src="/vocatiothumb.png" alt="" />
-								</div>	
-								<div class="row-span-1 p-2 flex flex-col items-center justify-center ">
-									<h2 class="raleway-thin text-black text-xl">A Call to Slowness</h2>
-									<p class="my-1 text-black text-sm opacity-50 text-md" >5 mins</p>
-									
-									<button onclick="window.open('/podcasts/4', '_target')" class="hover:bg-stone-700 hover:text-white   rounded-full w-[60%] h-[50px] bg-white text-black text-sm p-3">
-										Watch Now
-									</button>
-								</div>
-							</div>
-						</div>
-						<div class="accordion-content  pb-3 overflow-x-auto overflow-y-hidden w-full h-full absolute top-0 left-0 hidden opacity-0 items-start whitespace-nowrap" aria-controls="accordion-collapse-body-3">
-							<div class="relative overflow-hidden min-w-[300px] max-w-[300px] h-full inline-block me-4 rounded-lg bg-blue-500 shadow-md">
-								<img class="absolute z-20  opacity-80 mix-blend-multiply w-full h-auto left-0 bottom-0 " src="https://www.pngall.com/wp-content/uploads/15/Black-Shadow-PNG-HD-Image.png" alt="" />
-								<img class="absolute z-10 top-0 h-full w-auto object-cover" src="/profess1.jpg" alt="" />
-								<div class="whitespace-normal z-30 absolute left-0 bottom-0 p-4 flex flex-col items-start justify-center">
-									<p class="text-white opacity-80 text-md" >Dr. Thomas Accrue</p>
-									<h2 class="my-2 w-[100%] text-white text-left raleway-thin text-3xl">Building Wealth Using Tech</h2>
-									<p class="text-white text-sm opacity-50 text-md" >Technology | 4 Episodes</p>
-									
-									<button class="hover:bg-stone-700 hover:text-white  my-3  rounded-full w-[60%] h-[50px] bg-white text-black text-sm p-3">
-										Enroll Now
-									</button>
-								</div>
-							</div>
-							 <div class="relative overflow-hidden min-w-[300px] max-w-[300px] h-full inline-block me-4 rounded-lg bg-blue-500 shadow-md">
-								<img class="absolute z-20  opacity-80 mix-blend-multiply w-full h-auto left-0 bottom-0 " src="https://www.pngall.com/wp-content/uploads/15/Black-Shadow-PNG-HD-Image.png" alt="" />
-								<img class="h-full w-auto object-cover" src="/profess2.jpg" alt="" />
-								<div class="whitespace-normal z-30 absolute left-0 bottom-0 p-4 flex flex-col items-start justify-center">
-									<p class="text-white text-md opacity-80 " >Christy Mink</p>
-									<h2 class="my-2 w-[100%] text-white text-left raleway-thin text-3xl">Formational Ministry</h2>
-									<p class="text-white text-sm opacity-50 text-md" >Ministry | 4 Episodes</p>
-									<button class="hover:bg-stone-700 hover:text-white my-3  rounded-full w-[60%] h-[50px] bg-white text-black text-sm p-3">
-										Enroll Now
-									</button>
-								</div>
-							</div>
-							 <div class="relative overflow-hidden min-w-[300px] max-w-[300px] h-full inline-block me-4 rounded-lg bg-blue-500 shadow-md">
-								<img class="absolute z-20  opacity-80 mix-blend-multiply w-full h-auto left-0 bottom-0 " src="https://www.pngall.com/wp-content/uploads/15/Black-Shadow-PNG-HD-Image.png" alt="" />
-								<img class="h-full w-auto object-cover" src="/profess3.jpg" alt="" />
-								<div class="whitespace-normal z-30 absolute left-0 bottom-0 p-4 flex flex-col items-start justify-center">
-									<p class="text-white text-md opacity-80 " >Mike Flow</p>
-									<h2 class="my-2 w-[100%] text-white text-left raleway-thin text-3xl">Curious Evangelism</h2>
-									<p class="text-white text-sm opacity-50 text-md" >Ministry | 2 Episodes</p>
-									<button class="hover:bg-stone-700  hover:text-white  my-3  rounded-full w-[60%] h-[50px] bg-white text-black text-sm p-3">
-										Enroll Now
-									</button>
-								</div>
- 							
-							</div>
+							))}
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</div>
 
 		<div id="onlineChurhSection" class="section relative onlineChuch overflow-hidden  bg-slate-900" data-anchor="onlineChurch">
 			<img src="04.png" class="w-[40%] h-auto z-10 absolute top-0 left-0 h-fit opacity-10" alt="" />
-			<img src="onlinechurch-mock.png" class="w-[25%] h-auto z-20 absolute top-0 left-0 bottom-0 right-0 m-auto h-fit " alt="" />
-			<img src="blob-1.png" class="w-[80%] h-auto z-30 absolute top-0 left-[0%] bottom-0  m-auto h-fit " alt="" />
+			<img src="community-mock.png" class="zoom-faster rounded-lg w-[40%] h-auto z-20 absolute top-0 left-0 bottom-0 right-0 m-auto h-fit " alt="" />
+			<!-- <img src="blob-1.png" class="w-[80%] h-auto z-10 absolute top-0 -left-[20%] bottom-0  m-auto h-fit " alt="" /> -->
 			<img src="blob-2.png" class="w-[60%] h-auto z-10 absolute top-[20%] left-[30%] bottom-0  m-auto h-fit " alt="" />
 			<img src="boundNolongerText.png" class="boundText w-[100%] h-auto z-40 absolute top-[20%] left-0 right-0 m-auto h-fit " alt="" />
 
-			<div class="absolute bottom-10 left-0 right-0 m-auto grid grid-cols-1 grid-rows-2 gap-4">
+			<div class="z-40 absolute bottom-3 left-0 right-0 m-auto grid grid-cols-1 grid-rows-2 gap-4">
 				<div class="col-span-1 grid grid-cols-3 grid-rows-1 gap-4">
 					<div class="col-span-1 flex items-center justify-center">
-						<p class="text-lg text-left m-auto w-[60%] ">
-							We're now offering students Chapen credits when
-							attending online service.
+						<p class="text-md text-left m-auto w-[80%] ">
+							The new version of ACU's Center of Vocational Formation is social. <b>Circle</b> is enabling
+							us to curate intimate spaces where courses, live videos, and diverse
+							posting can occur. Let's embark on formation together.
 						</p>
 					</div>
 					<div class="col-span-1">
@@ -500,16 +252,16 @@ import "./app.css"
 					<div class="col-span-1">
 						<p>Connect with others virtually</p>
 						<p>Rich theology</p>
-						<p>Verifiable through Suitable</p>
+						<p>Verifiable courses</p>
 	
 					</div>
 				</div>
 
 				<div class="z-50 w-[40%] m-auto flex flex-row items-center justify-center">
-					<a class="py-3 px-4 w-[40%] me-5 text-black font-bold border-2 bg-white border-white rounded-full ">
-						Go to online church
+					<a href="https://community.vocationalformation.com/join?invitation_token=0397643d810f3c927a4ad1dd375a4c65af2f5608-f213ec46-5703-4e64-96ea-ae4a32a0283e" class="py-3 px-4 w-[40%] me-5 text-black font-bold border-2 bg-white border-white rounded-full ">
+						Join our community
 					</a>
-					<a class="py-3 px-4 w-[40%] text-white font-bold border-2 border-white rounded-full ">
+					<a href="#" class="py-3 px-4 w-[40%] text-white font-bold border-2 border-white rounded-full ">
 						Learn More
 					</a>
 				</div>
@@ -517,6 +269,12 @@ import "./app.css"
 			</div>
 		</div> 
 	</div>
+
+	<script type="text/javascript">
+		function openNewWindow(el) {
+			window.open("/" + $(el).data("type") + "/" + $(el).data("id"), "_blank");
+		}
+	</script>
 
 	<script>
 		(function() {
@@ -591,7 +349,6 @@ import "./app.css"
 		
 	</script>
 
-<script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 
 </body>
 

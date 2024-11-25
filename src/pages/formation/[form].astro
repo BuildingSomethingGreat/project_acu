@@ -4,43 +4,42 @@ import Loader from "../../components/loader.astro";
 import "./../app.css"
 export function getStaticPaths() {
   return [
-    {params: {pod: '1'}},
-    {params: {pod: '2'}},
-    {params: {pod: '3'}},
-    {params: {pod: '4'}}
+    {params: {form: '1'}},
+    {params: {form: '2'}},
+    {params: {form: '3'}},
+    {params: {form: '4'}}
   ];
 }
 
 var videos =  [
-     {id:"1", views:"1", title: "Episode 1 : Creating Space in a Distracted World", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%201%20Creating%20Space%20in%20a%20Distractred%20World.m4v", link: Astro.url.origin + "/podcasts/1"},
-     {id:"2", views: "1", title: "Episode 2 : Radical Hospitality", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%202%20Radical%20Hospitality.m4v"},
-     {id:"3", views: "1", title: "Episode 3 : The spiritual Art of Slowing Down", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%203%20The%20Spiritual%20Art%20of%20Slowing%20Down.m4v"},
-     {id:"4", views: "1", title: "Episode 4 : When Your Calling and Career Don't Align", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%204%20When%20Your%20Calling%20and%20Career%20Do%20Not%20Align.m4v"},
+     {id:"1", views:"1", title: "Colors of Fall", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatio_fall.png", url: "https://acu-cdn-pull.b-cdn.net/Colors%20of%20Fall.mp4", link: Astro.url.origin + "/podcasts/1"},
+     {id:"2", views:"1", title: "Child of the Creator", creator: "Dr. Jerry Taylor", thumbnail: "/vocatio_teddy.png", url: "https://acu-cdn-pull.b-cdn.net/childOfTheCreator_formation.mp4"},
+     {id:"3", views:"1", title: "Rest", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatio_rest.png", url: "https://acu-cdn-pull.b-cdn.net/Rest.m4v"},
+     {id:"4", views:"1",  title: "The Slow Way", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatio_slowway.png", url: "https://acu-cdn-pull.b-cdn.net/The%20Slow%20Way%20.m4v"}
 ]
 
-const { pod } = Astro.params;
+const { form } = Astro.params;
 const host = Astro.url.host;
 
 var res = {}
 for (var vid of videos) {
-    if (pod == vid.id) {
+    if (form == vid.id) {
         res = vid;
     }
 }
-
 --- 
 
 
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+	<link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
 
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 </head>
 
 <body class="h-screen">
-
 	<Loader />
+
 
         <div class="h-screen" id="">
 		    <div style="background: #313638" class="  overflow-hidden  bg-[#313638]  flex flex-col items-center justify-center ">
@@ -48,6 +47,8 @@ for (var vid of videos) {
 
                 <div class="grid grid-cols-4 auto-rows-auto  gap-4  overflow-hidden h-screen  p-3">
                     <div class="col-span-4 row-span-1 max-h-[100px] w-full relative p-3">
+                        <!-- <img class=" z-10 bg-blend-multiply opacity-50 w-full h-auto left-0 bottom-0 blur " src="/overlay.png" alt="" /> -->
+            
                         <div class=" z-20  top-10 right-0 left-0 m-auto w-[100%] flex items-center justify-between ">
                             <Header />
                         </div>
@@ -65,7 +66,7 @@ for (var vid of videos) {
                                 <path fill-rule="evenodd" d="M6.75 5.25a.75.75 0 0 1 .75-.75H9a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H7.5a.75.75 0 0 1-.75-.75V5.25Zm7.5 0A.75.75 0 0 1 15 4.5h1.5a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H15a.75.75 0 0 1-.75-.75V5.25Z" clip-rule="evenodd" />
                                 </svg>
                                 
-                            <video id="vid" class=" opacity-75 m-auto  rounded-lg overflow-hidden object-fill max-w-[1000px]" width="100%" height="100%"  playsinline>
+                            <video id="vid" class=" opacity-75 m-auto  rounded-lg overflow-hidden object-fill max-w-[1000px]" width="100%" height="100%" playsinline>
                                 <!-- <source src="/modernhome.mp4" type="video/mp4"> -->
                                 <source src={res.url} type="video/mp4">
                             </video>
@@ -93,20 +94,35 @@ for (var vid of videos) {
             
                         
                     </div>
+                    <script type="text/javascript">
+                        function openNewWindow(el) {
+                            window.open("./" + $(el).data("id"), "_blank");
+                        }
+                    </script>
 
-                    <div class="col-span-1 h-full overflow-y-scroll p-3 ">
+                    <div class="col-span-1 h-full overflow-y-scroll  rounded-lg p-2">
                         <h3 class="font-bold mb-3 text-xl text-gray-400">
-                            More on <span class="text-orange-500">Vocation</span>
+                            More on <span class="text-blue-500">Formation</span>
                         </h3>
                         {videos.map((vid) => (
                             <div onclick="openNewWindow(this)" data-id={vid.id} class="cursor-pointer mb-4 border border-gray-500 grid grid-rows-3 max-h-[300px]  transition-all ease-in-out text-white bg-transparent auto-rows-auto  overflow-hidden rounded-lg p-3">
-                                 <div class="row-span-2  rounded-lg overflow-hidden">
+                                <div class="row-span-2  rounded-lg overflow-hidden">
                                     <img class="   m-auto  object-fit rounded-lg" src={vid.thumbnail} alt="" />
                                 </div>
-                                <div class="mt-5">
-                                    <h3 class="  my-1 text-md text-left opacity-50">{vid.title.split(":")[0]}</h3>
-                                    <h3 class="my-1 text-md text-left">{vid.title.split(":")[1]}</h3>
+                                <div class="row-span-1 mt-5">
+                                    <div class="row-span-1">
+                                        <h3 class="my-1 text-md text-left">{vid.title}</h3>
+                                    </div>
                                     {/* <p class="font-bold  p-3 text-sm ">{vid.creator}</p> */}
+                                    <div class="row-span-1  bottom-2 left-0 right-0 m-auto opacity-50 flex items-start justify-start text-white">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                        </svg>
+                                        <p class="mx-2 text-sm">
+                                            {vid.views} Views
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         ))}
@@ -117,39 +133,6 @@ for (var vid of videos) {
                  <!-- <img class="relative block h-auto w-full object-cover" src="/vocatio_fall.png" alt=""/> -->
             </div>
 		</div>
-		<div class="section hidden bg-stone-200" >
-            <div class=" catalogue grid gap-10 grid-cols-2 h-screen  p-3">
-                <div class="relative m-auto col-span-1 w-full flex items-center justify-center h-full rounded-lg overflow-hidden bg-black">
-                    <video class="z-10 absolute top-0 left-0 opacity-50 m-auto  rounded-lg overflow-hidden object-cover" width="auto" height="100%" data-autoplay autoplay muted loop playsinline>
-                        <source data-src="https://acu-cdn-pull.b-cdn.net/modernhome.mp4" type="video/mp4">
-                    </video>
-
-                    <div class="z-20 m-auto ">
-                        <img class="w-1/2 m-auto" src="/vocatiologo.png" alt="" />
-                        <div class="m-auto my-3 w-[60%] text-white text-center">
-                            <p>Explore your vocatio through short-form, calming videos. From the desk of Dr. Christopher Cobbler
-                                you are able to experience a new paradigm regarding how to pursue your call.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="m-auto grid grid-cols-3  gap-4 col-span-1">
-                    <div class="col-span-3 row-span-1">
-                        <h1>Watch more episodes.</h1>
-                    </div>
-
-                    <script type="text/javascript">
-                        function openNewWindow(el) {
-                            window.open("./" + $(el).data("id"), "_blank");
-                        }
-                    </script>
-
-                 
-
-
-                </div>
-            </div>
-        </div>
     </div>
 
    
@@ -176,12 +159,11 @@ for (var vid of videos) {
         }
 
         togglePlayPause(); 
-
-
+        
         $("#play, #pause").on("click", function() {
             togglePlayPause(); 
         });
-
+       
     })();
 
 </script>
