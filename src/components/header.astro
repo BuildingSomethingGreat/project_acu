@@ -1,18 +1,26 @@
-<a class="w-[10%]" href="/">
-    <img class=" h-auto" src="/acu_logo.png" alt="logo"/>
-</a>
+---
+import SearchBar from "./searchBar"
+---
+<div class="flex flex-row items-center justify-start">
+    <a class="!w-[150px] me-4" href="/">
+        <img class=" h-auto" src="/acu_logo.png" alt="logo"/>
+    </a>
+
+    <SearchBar client:load />
+</div>
+
 
 <div class="links w-auto flex items-center justify-end ">
-    <a href="/" class="text-md text-white">About </a>
+    <a href="/" class="text-md text-white font-bold">About </a>
 
-    <a href="/formation/1" data-popover-target="popover-formation" data-popover-placement="bottom"  class="text-md text-white mx-5 hover:text-blue-500">Formation Videos </a>
+    <a href="/formation/1" data-popover-target="popover-formation" data-popover-placement="bottom"  class="text-md text-white mx-5 hover:text-blue-500 font-bold">Formation Videos </a>
     <div data-popover id="popover-formation" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-200 transition-opacity duration-300 bg-gray-800 border border-gray-700 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
         <div class="px-3 py-2">
             <p class="text-center">Immersive short-form videos designed to spark conversations around formation.</p>
         </div>
     </div>
 
-    <a href="/podcasts/1"  data-popover-target="popover-vocatio" data-popover-placement="bottom"  class="text-md text-white me-5 hover:text-orange-500">Vocatio Reimagined</a>
+    <a href="/podcasts/1"  data-popover-target="popover-vocatio" data-popover-placement="bottom"  class="text-md text-white me-5 hover:text-orange-500 font-bold">Vocatio Reimagined</a>
     <div data-popover id="popover-vocatio" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-200 transition-opacity duration-300 bg-gray-800 border border-gray-700 rounded-lg shadow-sm opacity-0">
         <div class="px-3 py-2">
             <p class="text-center">Experience podcasts centered around reimaging our vocation.</p>

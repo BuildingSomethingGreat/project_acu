@@ -3,6 +3,7 @@ import "./app.css"
 import Header  from "../components/header.astro";
 import Loader from "../components/loader.astro";
 import {SEO} from "astro-seo";
+import SearchBar from "../components/searchBar";
 
 var formationVideos =  [
      {id:"1",views: "1.2K", title: "Colors of Fall", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatio_fall.png", url: "https://acu-cdn-pull.b-cdn.net/Colors%20of%20Fall.mp4", link: Astro.url.origin + "/podcasts/1"},
@@ -63,6 +64,7 @@ var podcastVideos =  [
 <body class="m-auto">
 
 	<Loader />
+	<!-- <SearchBar client:load/> -->
 
 	<!-- fullPage.js HTML -->
 	<div class="h-full w-[100%] m-auto" id="fullpage">
@@ -143,7 +145,7 @@ var podcastVideos =  [
 		
 			<div class="content absolute top-0 left-0 right-0  bottom-0 overflow-hidden  z-20 w-[90%] h-full m-auto   flex flex-col items-center justify-center" >
 				<h2 class=" text-black my-5 text-5xl w-[60%]">
-					Discover your purpose <br> 
+					Discover your <span class="text-blue-500">purpose</span><br> 
 					without limits.
 				</h2>
 
@@ -209,7 +211,7 @@ var podcastVideos =  [
 			
 			<div class="content absolute top-0 left-0 right-0  bottom-0 overflow-hidden max-h-[95%] z-20 w-[90%] h-auto m-auto   flex flex-col items-center justify-center" >
 				<h2 class=" text-white my-5 text-5xl w-[60%]">
-					Visual podcasts that  <br> 
+					Visual  <span class="text-orange-500">podcasts</span> that  <br> 
 					lift your spirit.
 				</h2>
 
