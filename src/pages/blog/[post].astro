@@ -1,0 +1,219 @@
+---
+import Header from "../../components/header.astro"
+import Loader from "../../components/loader.astro";
+import VideoSocialShare from "../../components/videosocialshare.astro"
+import {SEO} from "astro-seo";
+
+
+import "./../app.css"
+import Divider from "../../components/divider.astro";
+export function getStaticPaths() {
+  return [
+    {params: {post: '1'}},
+    {params: {post: '2'}},
+    {params: {post: '3'}},
+    {params: {post: '4'}}
+  ];
+}
+
+var videos =  [
+     {id:"1", views:"1", title: "Loving Dynamically", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%201%20Creating%20Space%20in%20a%20Distractred%20World.m4v", link: Astro.url.origin + "/podcasts/1"},
+     {id:"2", views: "1", title: "Freedom", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%202%20Radical%20Hospitality.m4v"},
+     {id:"3", views: "1", title: "Unscripted" , creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%203%20The%20Spiritual%20Art%20of%20Slowing%20Down.m4v"},
+     {id:"4", views: "1", title: "Disclosure Formative", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%204%20When%20Your%20Calling%20and%20Career%20Do%20Not%20Align.m4v"},
+]
+
+const { post } = Astro.params;
+const host = Astro.url.host;
+
+var res = {}
+for (var vid of videos) {
+    if (post == vid.id) {
+        res = vid;
+    }
+}
+
+--- 
+
+<head>
+    <SEO
+      title="Center for Vocational Formation : Blog"
+      description="Diverse writings from theologians and CFVF's staff. "
+      openGraph={{
+        basic: {
+          title: "Center for Vocational Formation : Blog",
+          type: "Diverse writings from theologians and CFVF's staff.",
+          image: "https://acu-cdn-pull.b-cdn.net/vocatiothumb.png",
+        }
+      }}
+      twitter={{
+        creator: "@jonasmerlins1"
+      }}
+      extend={{
+        // extending the default link tags
+        link: [{ rel: "icon", href: "/favicon.ico" }],
+        // extending the default meta tags
+        meta: [
+          {
+            name: "twitter:image",
+            content: "https://acu-cdn-pull.b-cdn.net/vocatiothumb.png",
+          },
+          { name: "twitter:title", content: "Center for Vocational Formation : Vocatio Reimagined" },
+          { name: "twitter:description", content: "Vocatio Reimagined is a podcasts that seeks to explore our vocational formation." },
+        ],
+      }}
+    />
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+</head>
+
+<body class="h-screen bg-[#313638] ">
+
+	<Loader />
+
+    <div class="h-screen w-[95%] m-auto" id="">
+        <div style="background: #313638" class="  overflow-hidden  bg-[#313638]  flex flex-col items-center justify-center ">
+        
+
+            <div class="grid grid-cols-4 auto-rows-auto  gap-4  overflow-hidden h-screen  p-3">
+                <div class="mb-4 col-span-4 row-span-1 max-h-[100px] w-full relative p-3">
+                    <div class=" z-20  top-10 right-0 left-0 m-auto w-[100%] flex items-center justify-between ">
+                        <Header />
+                    </div>
+                </div>
+
+                
+			<div style=" grid-template-rows: 1fr min-content;" class=" animate-fade animation-delay-1000 opacity-0 no-scrollbar pb-10  grid grid-cols-1 lg:grid-cols-2  gap-7  col-span-6 row-span-10 overflow-x-hidden overflow-y-auto">
+				<!-- <div class="animate-fade animation-delay-1200  col-span-1 row-span-1  ">
+                    <img class="w-[90%] h-auto mb-4 rounded-lg " src="/vocatiothumb.png" alt=""/>
+				</div> -->
+
+				<div class="animate-fade animation-delay-1200 p-3 text-white opacity-0 flex flex-col items-center my-3 bg-transparent  col-span-2  rounded-lg ">
+                    <img class="w-[90%] h-auto mb-4 rounded-lg " src="/vocatiothumb.png" alt=""/>
+					
+                    <div class="grid grid-cols-2 grid-rows-2 w-[90%]">
+                        <div class="cols-span-1 flex flex-col items-start justify-center">
+                            <h1 class="mb-2 text-left text-white font-bold  text-xl">
+                                {res.title}
+                            </h1>
+                            <p class="font-bold opacity-50">{res.creator}</p>
+                        </div>
+
+                        <div class="col-span-1">
+                            <VideoSocialShare />
+                        </div>
+                        
+                    </div>
+
+                    <Divider />
+
+					<div class="w-[90%] mt-3 p-3">
+						<p>In a world where the pursuit of higher education is often overshadowed by financial constraints, academic pressures, and lack of guidance, the dream of attending college can seem out of reach for many. At DCAN, our mission is to bridge the gap between aspiration and achievement by providing vital college resources and preparation services to students who need them most. Today, we're excited to share how our commitment is transforming dreams into tangible realities.</p>
+						<br>
+						<h2 class="font-bold text-lg">The Vision: Empowering Future Leaders</h2>
+						<br>
+						
+						<p>When we first launched DCAN, our vision was clear: empower students from underrepresented and low-income backgrounds to achieve their college dreams. We understand that education is a powerful tool that can change lives, and we are dedicated to removing the barriers that stand between students and their goals.</p>
+						<br>
+						
+						<h2 class="font-bold text-lg">Breaking Down Barriers: The Power of Resources</h2>
+						<br>
+						
+						<p>One of the core pillars of our organization is providing essential resources to students. This includes:</p>
+						<br>
+						
+						<ul class="">
+							<li><strong>College Counseling and Mentorship</strong>: Navigating the college application process can be daunting. Our experienced counselors and mentors guide students through every step—from selecting the right schools to crafting compelling essays and preparing for interviews. This personalized support ensures that students can present their best selves to admissions committees.</li>
+							<li><strong>Scholarship and Financial Aid Assistance</strong>: Understanding financial aid options and securing scholarships can be overwhelming. Our team helps students identify and apply for scholarships, fill out financial aid forms, and explore other funding opportunities. We believe that financial constraints should never be a barrier to higher education.</li>
+							<li><strong>Test Preparation</strong>: Standardized tests are a significant component of college admissions. Our test prep programs provide students with the tools and strategies needed to excel on tests like the SAT and ACT. We offer workshops, practice exams, and one-on-one tutoring to build confidence and improve scores.</li>
+							<li><strong>Academic Enrichment</strong>: To prepare students for the rigors of college coursework, we offer academic enrichment programs. These include subject-specific tutoring, study skills workshops, and summer programs that enhance academic readiness and foster a love of learning.</li>
+						</ul>
+						<br>
+						
+						<h2 class="font-bold text-lg">Success Stories: Dreams Realized</h2>
+						<br>
+						
+						<p>The true measure of our success lies in the stories of the students we've supported. Here are just a few examples of how our efforts are making a difference:</p>
+						<br>
+						
+						<ul>
+							<li><strong>Maria's Journey</strong>: Maria, a high school senior from a low-income family, was uncertain about her college prospects. With our guidance, she received personalized support for her college applications and essay writing. Maria was accepted into her dream school with a full scholarship, a testament to her hard work and our team's dedication.</li>
+							<li><strong>Jamal's Triumph</strong>: Jamal, a first-generation college student, struggled with standardized tests. Our test prep workshops and one-on-one tutoring helped him improve his scores significantly. Jamal is now thriving in a prestigious university, pursuing a degree in engineering.</li>
+							<li><strong>Sophia's Success</strong>: Sophia faced challenges in understanding financial aid options. Our financial aid assistance helped her navigate the complexities of scholarships and grants. Today, Sophia is attending college without the burden of student debt, thanks to the support she received.</li>
+						</ul>
+						<br>
+						
+						<h2 class="font-bold text-lg">Looking Ahead: Expanding Our Reach</h2>
+						<br>
+						
+						<p>While we celebrate these successes, our work is far from over. We are continuously striving to expand our reach and enhance our services. This includes:</p>
+						<br>
+						
+						<ul>
+							<li><strong>Partnerships with Schools and Community Organizations</strong>: By collaborating with local schools and community groups, we aim to identify more students in need and provide targeted support.</li>
+							<li><strong>Increasing Resources and Funding</strong>: To offer even more comprehensive services, we are actively seeking additional funding and resources. This will allow us to enhance our programs and reach a larger number of students.</li>
+							<li><strong>Innovative Programs</strong>: We are exploring new initiatives, such as virtual workshops and online resources, to make our services more accessible to students across various locations.</li>
+						</ul>
+						<br>
+						
+						<h2 class="font-bold text-lg">Join Us in Making a Difference</h2>
+						<br>
+						
+						<p>The journey from aspiration to achievement is one we are committed to supporting every step of the way. We invite you to join us in our mission to turn dreams into reality. Whether through volunteering, donating, or spreading the word about our organization, your support can make a significant impact.</p>
+						<br>
+						
+						<p>Together, we can ensure that every student has the opportunity to pursue their college dreams and build a brighter future.
+						<br>
+						
+						<p>Thank you for believing in the power of education and for helping us turn dreams into reality.</p>
+				  
+					</div>
+				</div>
+			</div>
+            </div>
+        
+            
+                <!-- <img class="relative block h-auto w-full object-cover" src="/vocatio_fall.png" alt=""/> -->
+        </div>
+    </div>
+   
+</body>
+
+<script type="text/javascript">
+    function openNewWindow(el) {
+        window.open("./" + $(el).data("id"), "_blank");
+    }
+</script>
+
+
+<script>
+    (function() {
+
+        var vid =document.getElementById("vid");
+
+        function togglePlayPause() {
+            if  (vid.paused) {
+                vid.play();
+                $("#play").addClass("hidden");
+                $("#pause").removeClass("hidden");
+
+            } else {
+                vid.pause()
+                $("#pause").addClass("hidden");
+                $("#play").removeClass("hidden");
+            };
+
+        }
+
+        togglePlayPause(); 
+
+
+        $("#play, #pause").on("click", function() {
+            togglePlayPause(); 
+        });
+
+    })();
+
+</script>
