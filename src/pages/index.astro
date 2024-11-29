@@ -19,6 +19,12 @@ var podcastVideos =  [
      {id:"4", views: "2K", title: "Episode 4 : When Your Calling and Career Don't Align", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%204%20When%20Your%20Calling%20and%20Career%20Do%20Not%20Align.m4v"},
 ]
 
+var blogPosts =  [
+     {id:"1", views: "1.2K", title: "Episode 1 : Creating Space in a Distracted World", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%201%20Creating%20Space%20in%20a%20Distractred%20World.m4v", link: Astro.url.origin + "/podcasts/1"},
+     {id:"2", views: "10K", title: "Episode 2 : Radical Hospitality", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%202%20Radical%20Hospitality.m4v"},
+     {id:"3", views: "4.5K", title: "Episode 3 : The spiritual Art of Slowing Down", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%203%20The%20Spiritual%20Art%20of%20Slowing%20Down.m4v"},
+     {id:"4", views: "2K", title: "Episode 4 : When Your Calling and Career Don't Align", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%204%20When%20Your%20Calling%20and%20Career%20Do%20Not%20Align.m4v"},
+]
 ---
 
 <head>
@@ -99,7 +105,7 @@ var podcastVideos =  [
 				</div>
 			</div>
 		</div>
-		<div id="" class="section relative overflow-hidden   bg-gray-900 flex flex-col items-center justify-center">
+		<div id="" class="section relative overflow-hidden   bg-black flex flex-col items-center justify-center">
 			<img src="01.png" class="w-[40%] h-auto z-10 absolute top-0 left-0 h-fit opacity-10" alt="" />
 
 			<div class="content absolute top-0 left-0 right-0  bottom-0 overflow-hidden max-h-[95%] z-20 w-[90%] h-auto m-auto   flex flex-col items-center justify-center" >
@@ -206,7 +212,7 @@ var podcastVideos =  [
 			</div>
 		</div>
 
-		<div id="podcasts" class="section bg-black" >
+		<div id="podcasts" class="section bg-gray-700" >
 			<img src="03.png" class="w-[40%] h-auto z-10 absolute top-0 left-0 h-fit opacity-10" alt="" />
 			
 			<div class="content absolute top-0 left-0 right-0  bottom-0 overflow-hidden max-h-[95%] z-20 w-[90%] h-auto m-auto   flex flex-col items-center justify-center" >
@@ -262,6 +268,70 @@ var podcastVideos =  [
 											</svg>
 											<p class="mx-2 text-sm">
 												{vid.views} Views
+											</p>
+										</div>
+									</div>
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="blogs" class="section bg-gray-900" >
+			<img src="03.png" class="w-[40%] h-auto z-10 absolute top-0 left-0 h-fit opacity-10" alt="" />
+			
+			<div class="content absolute top-0 left-0 right-0  bottom-0 overflow-hidden max-h-[95%] z-20 w-[90%] h-auto m-auto   flex flex-col items-center justify-center" >
+				<h2 class=" text-white my-5 text-5xl w-[60%]">
+					Read insightful  <span class="text-green-500">blogs</span>   <br> 
+					from theologians.
+				</h2>
+
+				<div class="w-full my-3 grid  grid-cols-3 grid-rows-1 h-[400px] gap-4 ">
+					<div class="text-white accordion-nav col-span-1 flex items-center justify-center">
+						<div id="accordion-collapse" class="px-4 m-auto" data-accordion="collapse" data-active-classes="bg-transparent" >
+							<h2 id="accordion-collapse-heading-1">
+								<h1 class="text-left font-bold text-4xl ">Blogs</h1>
+							</h2>
+							<div class="py-2 flex flex-col items-start ">
+								<p class="my-4  text-md text-left">
+									Read through topics on formaton, devotion, and biblical themes. 
+								</p>
+								<a href="/podcasts/1" class="py-3 px-4 w-[150px]  font-bold border-2 border-white rounded-full ">
+									Learn More
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="relative   h-full w-full col-span-2 "  >
+						<div class="accordion-content pb-3 overflow-x-auto overflow-y-hidden w-full h-full absolute top-0 left-0  items-start whitespace-nowrap" aria-controls="accordion-collapse-body-1">
+							{blogPosts.map((vid) => (
+								<div onclick="openNewWindow(this)" data-type="podcasts" data-id={vid.id} class="cursor-pointer inline-grid grid-cols-1 grid-rows-2 relative overflow-hidden min-w-[300px] max-w-[300px] h-full me-4 rounded-lg bg-white shadow-md">
+									<img class="row-span-1 relative z-10 top-0  w-full  object-cover opacity-100" src={vid.thumbnail} alt="" />
+									<div class="relative row-span-1 h-full whitespace-normal z-30  left-0 bottom-0 p-5 grid grid-cols-1 grid-rows-2">
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute z-50 bottom-3 right-3 text-black size-4">
+											<path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+										</svg>
+
+										<div class="row-span-1  flex flex-col text-black items-center justify-start">
+											<h2 class="my-2 w-[100%] text-left opacity-50  text-normal">{vid.title.split(":")[0]}</h2>
+											{(vid.title.split(":")[1].length <= 19) ? <h2 class="my-2 w-[100%] text-left  text-4xl">{vid.title.split(":")[1]}</h2> : <h2 class="my-2 w-[100%] text-left  text-2xl">{vid.title.split(":")[1]}</h2>}
+											{/* <h2 class="my-2 w-[100%] text-left  text-2xl">{vid.title.split(":")[1]}</h2> */}
+											{/* <p class="opacity-80 text-sm" >{vid.creator}</p> */}
+											{/* <button class="hover:bg-stone-700 hover:text-white  my-3 font-bold rounded-full w-[150px] h-[50px] bg-white text-black text-sm p-3">
+												Watch Now
+											</button> */}
+										</div>
+										
+										<div class="row-span-1 px-5 absolute bottom-2 left-0 right-0 m-auto opacity-50 flex items-start justify-start text-black">
+											<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+												<path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+												<path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+											</svg>
+											<p class="mx-2 text-sm">
+												{vid.views} Read
 											</p>
 										</div>
 									</div>
