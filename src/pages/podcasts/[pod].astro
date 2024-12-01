@@ -6,6 +6,7 @@ import {SEO} from "astro-seo";
 
 
 import "./../app.css"
+import Footer from "../../components/footer.astro";
 export function getStaticPaths() {
   return [
     {params: {pod: '1'}},
@@ -134,6 +135,8 @@ for (var vid of videos) {
                 <!-- <img class="relative block h-auto w-full object-cover" src="/vocatio_fall.png" alt=""/> -->
         </div>
     </div>
+
+    <Footer />
    
 </body>
 

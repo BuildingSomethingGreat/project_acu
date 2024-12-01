@@ -20,10 +20,10 @@ var podcastVideos =  [
 ]
 
 var blogPosts =  [
-     {id:"1", views: "1.2K", title: "Episode 1 : Creating Space in a Distracted World", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%201%20Creating%20Space%20in%20a%20Distractred%20World.m4v", link: Astro.url.origin + "/podcasts/1"},
-     {id:"2", views: "10K", title: "Episode 2 : Radical Hospitality", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%202%20Radical%20Hospitality.m4v"},
-     {id:"3", views: "4.5K", title: "Episode 3 : The spiritual Art of Slowing Down", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%203%20The%20Spiritual%20Art%20of%20Slowing%20Down.m4v"},
-     {id:"4", views: "2K", title: "Episode 4 : When Your Calling and Career Don't Align", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%204%20When%20Your%20Calling%20and%20Career%20Do%20Not%20Align.m4v"},
+     {id:"1", views: "1.2K", title: "Episode 1 : Creating Space in a Distracted World", description: "Exploring the attributes of God as revealed in Scripture, we discover profound insights that shape our understanding of faith, worship, and daily life.", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%201%20Creating%20Space%20in%20a%20Distractred%20World.m4v", link: Astro.url.origin + "/podcasts/1"},
+     {id:"2", views: "10K", title: "Episode 2 : Radical Hospitality", creator: "Dr. Christopher Cobbler", description: "By examining biblical truths and their relevance to modern issues, we uncover how theology influences societal values and guides our responses to cultural challenges.", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%202%20Radical%20Hospitality.m4v"},
+     {id:"3", views: "4.5K", title: "Episode 3 : The spiritual Art of Slowing Down", description: "The Bible offers timeless teachings that inform our beliefs and actions, providing a solid foundation for spiritual growth and faithful living.", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%203%20The%20Spiritual%20Art%20of%20Slowing%20Down.m4v"},
+     {id:"4", views: "2K", title: "Episode 4 : When Your Calling and Career Don't Align", description: "Bridging the gap between doctrine and everyday experience, theology equips us to navigate life's complexities with wisdom, purpose, and unwavering faith.", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%204%20When%20Your%20Calling%20and%20Career%20Do%20Not%20Align.m4v"},
 ]
 ---
 
@@ -280,7 +280,7 @@ var blogPosts =  [
 		</div>
 
 		<div id="blogs" class="section bg-gray-900" >
-			<img src="03.png" class="w-[40%] h-auto z-10 absolute top-0 left-0 h-fit opacity-10" alt="" />
+			<img src="04.png" class="w-[40%] h-auto z-10 absolute top-0 left-0 h-fit opacity-10" alt="" />
 			
 			<div class="content absolute top-0 left-0 right-0  bottom-0 overflow-hidden max-h-[95%] z-20 w-[90%] h-auto m-auto   flex flex-col items-center justify-center" >
 				<h2 class=" text-white my-5 text-5xl w-[60%]">
@@ -308,9 +308,10 @@ var blogPosts =  [
 					<div class="relative   h-full w-full col-span-2 "  >
 						<div class="accordion-content pb-3 overflow-x-auto overflow-y-hidden w-full h-full absolute top-0 left-0  items-start whitespace-nowrap" aria-controls="accordion-collapse-body-1">
 							{blogPosts.map((vid) => (
-								<div onclick="openNewWindow(this)" data-type="podcasts" data-id={vid.id} class="cursor-pointer inline-grid grid-cols-1 grid-rows-2 relative overflow-hidden min-w-[300px] max-w-[300px] h-full me-4 rounded-lg bg-white shadow-md">
-									<img class="row-span-1 relative z-10 top-0  w-full  object-cover opacity-100" src={vid.thumbnail} alt="" />
-									<div class="relative row-span-1 h-full whitespace-normal z-30  left-0 bottom-0 p-5 grid grid-cols-1 grid-rows-2">
+								<div onclick="openNewWindow(this)" data-type="blog" data-id={vid.id} class="cursor-pointer inline-grid grid-cols-1 grid-rows-2 relative overflow-hidden min-w-[300px] max-w-[300px] h-full me-4 rounded-lg bg-white shadow-md">
+									{/* <img class="row-span-1 relative z-10 top-0  w-full  object-cover opacity-100" src={vid.thumbnail} alt="" /> */}
+
+									<div class="relative row-span-2 h-full whitespace-normal z-30  left-0 bottom-0 p-5 grid grid-cols-1 grid-rows-2">
 										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute z-50 bottom-3 right-3 text-black size-4">
 											<path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
 										</svg>
@@ -319,10 +320,14 @@ var blogPosts =  [
 											<h2 class="my-2 w-[100%] text-left opacity-50  text-normal">{vid.title.split(":")[0]}</h2>
 											{(vid.title.split(":")[1].length <= 19) ? <h2 class="my-2 w-[100%] text-left  text-4xl">{vid.title.split(":")[1]}</h2> : <h2 class="my-2 w-[100%] text-left  text-2xl">{vid.title.split(":")[1]}</h2>}
 											{/* <h2 class="my-2 w-[100%] text-left  text-2xl">{vid.title.split(":")[1]}</h2> */}
-											{/* <p class="opacity-80 text-sm" >{vid.creator}</p> */}
+											{/* <p class="opacity-80 text-md text-left" >{vid.description}</p> */}
 											{/* <button class="hover:bg-stone-700 hover:text-white  my-3 font-bold rounded-full w-[150px] h-[50px] bg-white text-black text-sm p-3">
 												Watch Now
 											</button> */}
+										</div>
+
+										<div class="row-span-1  flex flex-col text-black items-center justify-start">
+											<p class="opacity-80 text-sm opacity-50 text-left" >{vid.description}</p>
 										</div>
 										
 										<div class="row-span-1 px-5 absolute bottom-2 left-0 right-0 m-auto opacity-50 flex items-start justify-start text-black">
@@ -344,7 +349,7 @@ var blogPosts =  [
 		</div>
 
 		<div id="onlineChurhSection" class="section relative onlineChuch overflow-hidden  bg-gray-400" data-anchor="onlineChurch">
-			<img src="04.png" class="w-[40%] h-auto z-10 absolute top-0 left-0 h-fit opacity-10" alt="" />
+			<img src="05.png" class="w-[40%] h-auto z-10 absolute top-0 left-0 h-fit opacity-10" alt="" />
 			<img src="community-mock.png" class="zoom-faster rounded-lg w-[40%] h-auto z-20 absolute top-0 left-0 bottom-0 right-0 m-auto h-fit " alt="" />
 			<!-- <img src="blob-1.png" class="w-[80%] h-auto z-10 absolute top-0 -left-[20%] bottom-0  m-auto h-fit " alt="" /> -->
 			<img src="blob-2.png" class="w-[60%] h-auto z-10 absolute top-[20%] left-[30%] bottom-0  m-auto h-fit " alt="" />

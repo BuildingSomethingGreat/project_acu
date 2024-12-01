@@ -7,6 +7,7 @@ import {SEO} from "astro-seo";
 
 import "./../app.css"
 import Divider from "../../components/divider.astro";
+import Footer from "../../components/footer.astro";
 export function getStaticPaths() {
   return [
     {params: {post: '1'}},
@@ -17,7 +18,7 @@ export function getStaticPaths() {
 }
 
 var videos =  [
-     {id:"1", views:"1", title: "Loving Dynamically", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%201%20Creating%20Space%20in%20a%20Distractred%20World.m4v", link: Astro.url.origin + "/podcasts/1"},
+     {id:"1", views:"1", title: "Loving Dynamically", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/people.mp4", link: Astro.url.origin + "/podcasts/1"},
      {id:"2", views: "1", title: "Freedom", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%202%20Radical%20Hospitality.m4v"},
      {id:"3", views: "1", title: "Unscripted" , creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%203%20The%20Spiritual%20Art%20of%20Slowing%20Down.m4v"},
      {id:"4", views: "1", title: "Disclosure Formative", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%204%20When%20Your%20Calling%20and%20Career%20Do%20Not%20Align.m4v"},
@@ -75,7 +76,6 @@ for (var vid of videos) {
 
     <div class="h-screen w-[95%] m-auto" id="">
         <div style="background: #313638" class="  overflow-hidden  bg-[#313638]  flex flex-col items-center justify-center ">
-        
 
             <div class="grid grid-cols-4 auto-rows-auto  gap-4  overflow-hidden h-screen  p-3">
                 <div class="mb-4 col-span-4 row-span-1 max-h-[100px] w-full relative p-3">
@@ -85,100 +85,116 @@ for (var vid of videos) {
                 </div>
 
                 
-			<div style=" grid-template-rows: 1fr min-content;" class=" animate-fade animation-delay-1000 opacity-0 no-scrollbar pb-10  grid grid-cols-1 lg:grid-cols-2  gap-7  col-span-6 row-span-10 overflow-x-hidden overflow-y-auto">
-				<!-- <div class="animate-fade animation-delay-1200  col-span-1 row-span-1  ">
-                    <img class="w-[90%] h-auto mb-4 rounded-lg " src="/vocatiothumb.png" alt=""/>
-				</div> -->
-
-				<div class="animate-fade animation-delay-1200 p-3 text-white opacity-0 flex flex-col items-center my-3 bg-transparent  col-span-2  rounded-lg ">
-                    <img class="w-[90%] h-auto mb-4 rounded-lg " src="/vocatiothumb.png" alt=""/>
-					
-                    <div class="grid grid-cols-2 grid-rows-2 w-[90%]">
-                        <div class="cols-span-1 flex flex-col items-start justify-center">
-                            <h1 class="mb-2 text-left text-white font-bold  text-xl">
-                                {res.title}
-                            </h1>
-                            <p class="font-bold opacity-50">{res.creator}</p>
-                        </div>
-
-                        <div class="col-span-1">
-                            <VideoSocialShare />
-                        </div>
+                <div style=" grid-template-rows: 1fr min-content;" class="  no-scrollbar pb-10  grid grid-cols-1 lg:grid-cols-2  gap-7  col-span-6 row-span-10 overflow-x-hidden overflow-y-auto">
+                   
+                    <!-- animate-fade animation-delay-1200  -->
+                    <div class=" p-3 text-white  flex flex-col items-center my-3 bg-transparent  col-span-2  rounded-lg ">
+                        <!-- <img class="w-[80%] h-auto mb-4 rounded-lg " src="/vocatiothumb.png" alt=""/> -->
+                        <video id="" class=" opacity-75 m-auto  rounded-lg overflow-hidden object-fill max-w-[1000px]" width="100%" height="100%"  muted autoplay loop playsinline>
+                            <source src={res.url} type="video/mp4">
+                        </video>
                         
+                        <div class="mt-4 grid grid-cols-2 w-[80%]">
+                            <div class="col-span-1 flex flex-col items-start justify-center">
+                                <h1 class="mb-2 text-left text-white font-bold  text-xl">
+                                    {res.title}
+                                </h1>
+                                <p class="font-bold opacity-50">{res.creator}</p>
+                            </div>
+
+                            <div class="col-span-1">
+                                <VideoSocialShare />
+                            </div>
+                        </div>
+
+                        <Divider />
+
+                        <div class="w-[80%] mt-3 p-3">
+                            <p>The study of theology helps us deepen our relationship with God, answer life's big questions, and better understand the foundation of Christian beliefs. Theology connects faith and reason, providing clarity in spiritual matters.</p>
+                            <br/>
+                            <h3>Key Benefits of Studying Theology:</h3>
+                            <ul class="list-disc list-inside">
+                                <li>Developing a deeper understanding of God's character and purpose.</li>
+                                <li>Strengthening personal faith and convictions.</li>
+                                <li>Equipping believers to share their faith effectively.</li>
+                                <li>Providing answers to theological and moral questions.</li>
+                            </ul>
+                            <br/>
+                            
+                            <h2>Core Areas of Theology</h2>
+                            <p>Theology is a broad field, but it often focuses on several core areas:</p>
+                            <br/>
+
+                            <ol class="list-disc list-inside">
+                                <li><strong>Systematic Theology:</strong> Understanding Christian doctrines, such as the Trinity, salvation, and the nature of Christ.</li>
+                                <li><strong>Biblical Theology:</strong> Exploring how themes develop throughout Scripture.</li>
+                                <li><strong>Practical Theology:</strong> Applying biblical truths to everyday life and ministry.</li>
+                                <li><strong>Historical Theology:</strong> Studying the development of Christian beliefs over time.</li>
+                            </ol>
+                            <br/>
+                            
+                            <h2>How to Start Studying Theology</h2>
+                            <p>Here are some practical steps to begin your theological journey:</p>
+                            <ul class="list-disc list-inside">
+                                <li>Read the Bible consistently and prayerfully.</li>
+                                <li>Engage with trustworthy theological resources and books.</li>
+                                <li>Participate in a Bible study group or theological course.</li>
+                                <li>Pray for wisdom and understanding as you explore God's truths.</li>
+                            </ul>
+                            <br/>
+                            
+                            <h2>Conclusion</h2>
+                            <p>Theology provides a foundation for understanding and living out the Christian faith. By studying God's Word and His truths, we grow closer to Him and equip ourselves to impact the world for His glory.</p>
+                        </div>
+
+                        <Divider />
+
+                        <div class="mt-4 w-[80%] bg-white rounded-lg grid grid-cols-2 p-5">
+                            <div class="text-black col-span-1 flex flex-col items-center justify-center">
+                                <h3 class="text-4xl w-[80%] text-left m-auto font-bold">Here's another <span class="text-green-500">post</span> you may like.</h3>
+                            </div>
+                            <div class="text-black col-span-1 flex flex-col items-center justify-center">
+                                <div onclick="window.location.href='/blog/2'" data-type="blog" data-id={vid.id} class="cursor-pointer inline-grid grid-cols-1 grid-rows-2 relative overflow-hidden min-w-[300px] max-w-[300px] h-full me-4 rounded-lg bg-white shadow-md">
+									{/* <img class="row-span-1 relative z-10 top-0  w-full  object-cover opacity-100" src={vid.thumbnail} alt="" /> */}
+
+									<div class="h-[300px] relative row-span-2 auto whitespace-normal z-30  left-0 bottom-0 p-5 grid grid-cols-1 grid-rows-2">
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute z-50 bottom-3 right-3 text-black size-4">
+											<path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+										</svg>
+
+										<div class="row-span-1  flex flex-col text-black items-center justify-start">
+											<h2 class="my-2 w-[100%] text-left font-bold  text-xl">Timeless Destiny Reoccuring</h2>
+										</div>
+
+										<div class="row-span-1  flex flex-col text-black items-start justify-start">
+											<p class="opacity-80 text-sm text-left" >The study of theology helps us deepen our relationship with God, answer life's big questions, and better understand the foundation of Christian beliefs.</p>
+										</div>
+										
+										<div class="row-span-1 px-5 absolute bottom-2 left-0 right-0 m-auto opacity-50 flex items-start justify-start text-black">
+											<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+												<path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+												<path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+											</svg>
+											<p class="mx-2 text-sm">
+												{vid.views} Read
+											</p>
+										</div>
+									</div>
+								</div>
+                            </div>
+                        </div>
+
+
                     </div>
-
-                    <Divider />
-
-					<div class="w-[90%] mt-3 p-3">
-						<p>In a world where the pursuit of higher education is often overshadowed by financial constraints, academic pressures, and lack of guidance, the dream of attending college can seem out of reach for many. At DCAN, our mission is to bridge the gap between aspiration and achievement by providing vital college resources and preparation services to students who need them most. Today, we're excited to share how our commitment is transforming dreams into tangible realities.</p>
-						<br>
-						<h2 class="font-bold text-lg">The Vision: Empowering Future Leaders</h2>
-						<br>
-						
-						<p>When we first launched DCAN, our vision was clear: empower students from underrepresented and low-income backgrounds to achieve their college dreams. We understand that education is a powerful tool that can change lives, and we are dedicated to removing the barriers that stand between students and their goals.</p>
-						<br>
-						
-						<h2 class="font-bold text-lg">Breaking Down Barriers: The Power of Resources</h2>
-						<br>
-						
-						<p>One of the core pillars of our organization is providing essential resources to students. This includes:</p>
-						<br>
-						
-						<ul class="">
-							<li><strong>College Counseling and Mentorship</strong>: Navigating the college application process can be daunting. Our experienced counselors and mentors guide students through every step—from selecting the right schools to crafting compelling essays and preparing for interviews. This personalized support ensures that students can present their best selves to admissions committees.</li>
-							<li><strong>Scholarship and Financial Aid Assistance</strong>: Understanding financial aid options and securing scholarships can be overwhelming. Our team helps students identify and apply for scholarships, fill out financial aid forms, and explore other funding opportunities. We believe that financial constraints should never be a barrier to higher education.</li>
-							<li><strong>Test Preparation</strong>: Standardized tests are a significant component of college admissions. Our test prep programs provide students with the tools and strategies needed to excel on tests like the SAT and ACT. We offer workshops, practice exams, and one-on-one tutoring to build confidence and improve scores.</li>
-							<li><strong>Academic Enrichment</strong>: To prepare students for the rigors of college coursework, we offer academic enrichment programs. These include subject-specific tutoring, study skills workshops, and summer programs that enhance academic readiness and foster a love of learning.</li>
-						</ul>
-						<br>
-						
-						<h2 class="font-bold text-lg">Success Stories: Dreams Realized</h2>
-						<br>
-						
-						<p>The true measure of our success lies in the stories of the students we've supported. Here are just a few examples of how our efforts are making a difference:</p>
-						<br>
-						
-						<ul>
-							<li><strong>Maria's Journey</strong>: Maria, a high school senior from a low-income family, was uncertain about her college prospects. With our guidance, she received personalized support for her college applications and essay writing. Maria was accepted into her dream school with a full scholarship, a testament to her hard work and our team's dedication.</li>
-							<li><strong>Jamal's Triumph</strong>: Jamal, a first-generation college student, struggled with standardized tests. Our test prep workshops and one-on-one tutoring helped him improve his scores significantly. Jamal is now thriving in a prestigious university, pursuing a degree in engineering.</li>
-							<li><strong>Sophia's Success</strong>: Sophia faced challenges in understanding financial aid options. Our financial aid assistance helped her navigate the complexities of scholarships and grants. Today, Sophia is attending college without the burden of student debt, thanks to the support she received.</li>
-						</ul>
-						<br>
-						
-						<h2 class="font-bold text-lg">Looking Ahead: Expanding Our Reach</h2>
-						<br>
-						
-						<p>While we celebrate these successes, our work is far from over. We are continuously striving to expand our reach and enhance our services. This includes:</p>
-						<br>
-						
-						<ul>
-							<li><strong>Partnerships with Schools and Community Organizations</strong>: By collaborating with local schools and community groups, we aim to identify more students in need and provide targeted support.</li>
-							<li><strong>Increasing Resources and Funding</strong>: To offer even more comprehensive services, we are actively seeking additional funding and resources. This will allow us to enhance our programs and reach a larger number of students.</li>
-							<li><strong>Innovative Programs</strong>: We are exploring new initiatives, such as virtual workshops and online resources, to make our services more accessible to students across various locations.</li>
-						</ul>
-						<br>
-						
-						<h2 class="font-bold text-lg">Join Us in Making a Difference</h2>
-						<br>
-						
-						<p>The journey from aspiration to achievement is one we are committed to supporting every step of the way. We invite you to join us in our mission to turn dreams into reality. Whether through volunteering, donating, or spreading the word about our organization, your support can make a significant impact.</p>
-						<br>
-						
-						<p>Together, we can ensure that every student has the opportunity to pursue their college dreams and build a brighter future.
-						<br>
-						
-						<p>Thank you for believing in the power of education and for helping us turn dreams into reality.</p>
-				  
-					</div>
-				</div>
-			</div>
+                </div>
             </div>
         
-            
-                <!-- <img class="relative block h-auto w-full object-cover" src="/vocatio_fall.png" alt=""/> -->
+
         </div>
+
     </div>
-   
+
+    <Footer />
 </body>
 
 <script type="text/javascript">
