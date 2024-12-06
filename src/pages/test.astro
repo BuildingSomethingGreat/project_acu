@@ -115,7 +115,15 @@ var blogPosts =  [
 
 				<div class="relative w-[60%] my-4 m-auto  rounded-lg overflow-hidden ">
 					<!-- <img class="absolute z-10 bg-blend-multiply opacity-50 w-full h-auto left-0 bottom-0 " src="overlay.png" alt="" /> -->
-					<video width="100%" height="100%"  data-autoplay autoplay muted playsinline loop>
+					<svg id="play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class=" absolute z-30 bottom-3 right-3  size-8">
+						<path fill-rule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z" clip-rule="evenodd" />
+					</svg>
+					<svg id="pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="hidden z-30 absolute bottom-3 right-3 size-8">
+						<path fill-rule="evenodd" d="M6.75 5.25a.75.75 0 0 1 .75-.75H9a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H7.5a.75.75 0 0 1-.75-.75V5.25Zm7.5 0A.75.75 0 0 1 15 4.5h1.5a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H15a.75.75 0 0 1-.75-.75V5.25Z" clip-rule="evenodd" />
+						</svg>
+						
+
+					<video id="vid" width="100%" height="100%"  data-autoplay autoplay  playsinline loop>
 						<source data-src="https://acu-cdn-pull.b-cdn.net/WebsiteWelcome.mp4" type="video/mp4">
 					</video>
 				</div>
@@ -184,7 +192,7 @@ var blogPosts =  [
 		<div id="formationVideos" class="overflow-hidden section bg-stone-200" >
 			<!-- <img src="/02.png" class="w-[40%] h-auto z-10 absolute top-0 left-0 h-fit opacity-10" alt="" /> -->
 		
-			<video class="absolute z-10 opacity-75 top-0  overflow-hidden object-fill" width="100%" height="auto" autoplay data-autoplay muted playsinline loop>
+			<video class="absolute z-10 opacity-75 top-0  overflow-hidden object-fill" width="100%" height="auto" autoplay data-autoplay muted playsinline>
 				<source data-src="https://acu-cdn-pull.b-cdn.net/formationVideo.mp4" type="video/mp4">
 			</video>
 
@@ -441,11 +449,31 @@ var blogPosts =  [
 
 	<script>
 		(function() {
+			function togglePlayPause() {
+				var vid =document.getElementById("vid");
+
+				if  (vid.paused) {
+						vid.play();
+						$("#play").addClass("hidden");
+						$("#pause").removeClass("hidden");
+
+					} else {
+						vid.pause()
+						$("#pause").addClass("hidden");
+						$("#play").removeClass("hidden");
+					};
+
+			}
+					
 			var myFullpage = new fullpage("#fullpage", {
 				// Get your license at https://alvarotrigo.com/fullPage/pricing
 				licenseKey: "M9D46-QB92H-PJH47-SR3PK-YYTON",
 				onLeave: function( origin, destination, direction, trigger){
 						var loadedSlide = this;
+						if((origin.index == 0 && direction =='down')
+						|| (origin.index == 2 && direction =='up')){
+							togglePlayPause(); 
+						}
 						if(origin.index == 2 && direction =='down'){
 							$("#onlineChurhSection").find(".boundText").addClass("zoom");
 						}
@@ -456,6 +484,12 @@ var blogPosts =  [
 				});
 
 			$(document).ready(function() {
+
+
+				$("#play, #pause").on("click", function() {
+					togglePlayPause(); 
+				});
+
 				$(".resourceButton").each(function(index) {
 					if ($(this).attr("aria-expanded") == "false") {
 						$(this).addClass("opacity-50");
