@@ -11,15 +11,17 @@ export function getStaticPaths() {
     {params: {form: '1'}},
     {params: {form: '2'}},
     {params: {form: '3'}},
-    {params: {form: '4'}}
+    {params: {form: '4'}},
+    {params: {form: '5'}}
   ];
 }
 
 var videos =  [
-     {id:"1", views:"1", title: "Colors of Fall", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatio_fall.png", url: "https://acu-cdn-pull.b-cdn.net/Colors%20of%20Fall.mp4", link: Astro.url.origin + "/podcasts/1"},
-     {id:"2", views:"1", title: "Child of the Creator", creator: "Dr. Jerry Taylor", thumbnail: "/vocatio_teddy.png", url: "https://acu-cdn-pull.b-cdn.net/childOfTheCreator_formation.mp4"},
-     {id:"3", views:"1", title: "Rest", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatio_rest.png", url: "https://acu-cdn-pull.b-cdn.net/Rest.m4v"},
-     {id:"4", views:"1",  title: "The Slow Way", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatio_slowway.png", url: "https://acu-cdn-pull.b-cdn.net/The%20Slow%20Way%20.m4v"}
+    {id:"1",views: "1.2K", category: "devotional", title: "Colors of Fall", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatio_fall.png", url: "https://acu-cdn-pull.b-cdn.net/Colors%20of%20Fall.mp4", link: Astro.url.origin + "/podcasts/1"},
+     {id:"2",views: "1.2K",  category: "devotional",title: "Child of the Creator", creator: "Dr. Jerry Taylor", thumbnail: "/vocatio_teddy.png", url: "https://acu-cdn-pull.b-cdn.net/childOfTheCreator_formation.mp4"},
+     {id:"3", views: "1.2K", category: "devotional",title: "Rest", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatio_rest.png", url: "https://acu-cdn-pull.b-cdn.net/Rest.m4v"},
+     {id:"4", views: "1.2K", category: "devotional",title: "The Slow Way", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatio_slowway.png", url: "https://acu-cdn-pull.b-cdn.net/The%20Slow%20Way%20.m4v"},
+     {id:"5", views: "1.2K", category: "momentsOfStillness", title: "Unfolding", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatio_unfolding.png", url: "https://acu-cdn-pull.b-cdn.net/Unfolding%20_%20Moments%20of%20Stillness.mp4"}
 ]
 
 const { form } = Astro.params;

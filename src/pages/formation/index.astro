@@ -11,12 +11,12 @@ import Footer from "../../components/footer.astro";
 import BlogText from "../../components/blogText";
 
 
-
 var formationVideos =  [
-     {id:"1",views: "1.2K", title: "Colors of Fall", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatio_fall.png", url: "https://acu-cdn-pull.b-cdn.net/Colors%20of%20Fall.mp4", link: Astro.url.origin + "/podcasts/1"},
-     {id:"2",views: "1.2K", title: "Child of the Creator", creator: "Dr. Jerry Taylor", thumbnail: "/vocatio_teddy.png", url: "https://acu-cdn-pull.b-cdn.net/childOfTheCreator_formation.mp4"},
-     {id:"3", views: "1.2K",title: "Rest", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatio_rest.png", url: "https://acu-cdn-pull.b-cdn.net/Rest.m4v"},
-     {id:"4", views: "1.2K",title: "The Slow Way", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatio_slowway.png", url: "https://acu-cdn-pull.b-cdn.net/The%20Slow%20Way%20.m4v"}
+     {id:"1",views: "1.2K", category: "devotional", title: "Colors of Fall", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatio_fall.png", url: "https://acu-cdn-pull.b-cdn.net/Colors%20of%20Fall.mp4", link: Astro.url.origin + "/podcasts/1"},
+     {id:"2",views: "1.2K",  category: "devotional",title: "Child of the Creator", creator: "Dr. Jerry Taylor", thumbnail: "/vocatio_teddy.png", url: "https://acu-cdn-pull.b-cdn.net/childOfTheCreator_formation.mp4"},
+     {id:"3", views: "1.2K", category: "devotional",title: "Rest", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatio_rest.png", url: "https://acu-cdn-pull.b-cdn.net/Rest.m4v"},
+     {id:"4", views: "1.2K", category: "devotional",title: "The Slow Way", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatio_slowway.png", url: "https://acu-cdn-pull.b-cdn.net/The%20Slow%20Way%20.m4v"},
+     {id:"5", views: "1.2K", category: "momentsOfStillness", title: "Unfolding", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatio_unfolding.png", url: "https://acu-cdn-pull.b-cdn.net/Unfolding%20_%20Moments%20of%20Stillness.mp4"}
 ]
 --- 
 
@@ -112,8 +112,10 @@ var formationVideos =  [
                         
                         <div class="row-span-1 grid grid-rows-2 grid-cols-1 gap-4 relative h-[200px]">
                             <div class="row-span-1 text-white whitespace-normal z-30 relative p-2 flex flex-col items-start justify-center">
-                                <p class="opacity-80 text-sm" >{vid.creator}</p>
+                                <p class="opacity-100 text-xs text-blue-500" >#{vid.category}</p>
                                 <h2 class="my-2 w-[100%] text-left text-2xl">{vid.title}</h2>
+                                <p class="opacity-80 text-sm" >{vid.creator}</p>
+
                             </div>
                             <div class="row-span-1  p-2 opacity-50 flex flex-row items-center justify-start text-white">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
