@@ -96,7 +96,7 @@ import formationVideos from './formation.json';
 
             <div class="col-span-2 mb-4  bg-black m-auto w-[90%] rounded-lg p-7 grid grid-cols-3 gap-10">
                 {formationVideos.map((vid) => (
-                    <div onclick="openNewWindow(this)" data-type="formation" data-id={vid.id} class="col-span-1 cursor-pointer relative overflow-hidden max-h-[400px] grid grid-rows-2 grid-cols-1 gap-4  rounded-lg  shadow-md">
+                     <a href={`/formation/` + vid.id}  data-type="formation" data-id={vid.id} class="col-span-1 cursor-pointer relative overflow-hidden max-h-[400px] grid grid-rows-2 grid-cols-1 gap-4  rounded-lg  shadow-md">
                         <div class="row-span-1 rounded-lg relative overflow-hidden h-[200px]">
                             {/* <img class="absolute z-20 bg-blend-multiply opacity-50 w-full h-auto left-0 bottom-0 " src="overlay.png" alt="" /> */}
                             <img class="absolute left-0 right-0 -top-[20%] z-10  m-0 overflow-hidden rounded-lg  w-[100%]   opacity-100" src={vid.thumbnail} alt="" />
@@ -119,7 +119,7 @@ import formationVideos from './formation.json';
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 ))}
             </div>
         </div>

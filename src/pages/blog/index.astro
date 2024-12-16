@@ -80,7 +80,7 @@ import blogs from "./blogs.json";
 
             <div class="col-span-2 mb-4  bg-black m-auto w-[90%] rounded-lg p-7 grid grid-cols-3 gap-10">
                 {blogs.posts.map((vid) => (
-                    <div onclick="openNewWindow(this)" data-type="blog" data-id={vid.id} class="col-span-1 cursor-pointer inline-grid grid-cols-1 grid-rows-3  relative overflow-hidden max-h-[400px] h-full  rounded-lg bg-white shadow-md">
+                      <a href={`/blog/` + vid.id}  data-type="blog" data-id={vid.id} class="col-span-1 cursor-pointer inline-grid grid-cols-1 grid-rows-3  relative overflow-hidden max-h-[400px] h-full  rounded-lg bg-white shadow-md">
                             {/* <img class="row-span-1 relative z-10 top-0  w-full  object-cover opacity-100" src={vid.thumbnail} alt="" /> */}
 
                         <div class="relative row-span-2 h-full whitespace-normal z-30  left-0 bottom-0 p-5 grid grid-cols-1 grid-rows-2 gap-5">
@@ -108,7 +108,7 @@ import blogs from "./blogs.json";
                                 {vid.views} Read
                             </p>
                         </div>
-                    </div>
+                    </a>
                 ))}
             </div>
         </div>

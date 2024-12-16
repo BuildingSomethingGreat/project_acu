@@ -101,7 +101,7 @@ import podcasts from "./podcasts.json";
 
             <div class="col-span-2 mb-4  bg-black m-auto w-[90%] rounded-lg p-7 grid grid-cols-3 gap-10">
                 {podcasts.map((vid) => (
-                    <div onclick="openNewWindow(this)" data-type="podcasts" data-id={vid.id} class="col-span-1 cursor-pointer relative overflow-hidden   rounded-lg  shadow-md">
+                    <a href={`/podcasts/` + vid.id} data-type="podcasts" data-id={vid.id} class="col-span-1 cursor-pointer relative overflow-hidden   rounded-lg  shadow-md">
                        <div class="row-span-1  overflow-hidden">
                             <img class="relative z-10 top-0 rounded-lg  h-auto w-full m-auto  object-cover opacity-100" src={vid.thumbnail} alt="" />
                        </div>
@@ -124,7 +124,7 @@ import podcasts from "./podcasts.json";
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 ))}
             </div>
         </div>
