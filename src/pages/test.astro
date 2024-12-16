@@ -69,8 +69,7 @@ var blogPosts =  [
 
 <body class="m-auto">
 
-	<!-- <Loader /> -->
-	<!-- <SearchBar client:load/> -->
+	<Loader />
 	<Header position="fixed" />
 
 	<!-- fullPage.js HTML -->
@@ -108,7 +107,7 @@ var blogPosts =  [
 		</div>
 		<div id="" class="section  relative overflow-hidden   bg-black ">
 			<div class="absolute w-[95%] top-0 right-0 left-0 bottom-0 m-auto  !grid !grid-cols-2 !grid-rows-1  overflow-hidden">
-				<div class=" col-span-1  flex items-center justify-center">
+				<div class=" col-span-1  flex items-center justify-end">
 					<div class="relative z-20 w-[100%] my-4 m-auto  rounded-lg overflow-hidden ">
 						<!-- <img class="absolute z-10 bg-blend-multiply opacity-50 w-full h-auto left-0 bottom-0 " src="overlay.png" alt="" /> -->
 						<svg id="play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class=" absolute z-30 bottom-3 right-3  size-8">
@@ -196,14 +195,14 @@ var blogPosts =  [
 			<!-- <img src="blob-1.png" class="w-[80%] h-auto z-10 absolute top-0 -left-[20%] bottom-0  m-auto h-fit " alt="" /> -->
 			<!-- <img src="/online-text.png" class="boundText w-[50%] h-auto z-40 absolute top-[0%] bottom-0 left-0 right-0 m-auto h-fit " alt="" /> -->
 			
-			<div class="w-[95%] h-screen overflow-hidden bg-black grid grid-cols-2 grid-rows-1">
+			<div class="m-auto w-[95%] h-screen overflow-hidden bg-black grid grid-cols-2 grid-rows-1">
 				<div class="col-span-1 flex flex-col items-center justify-center">
-					<div class="bg-black text-white z-40  top-0 bottom-0 left-0 right-0 m-auto flex flex-col items-center justify-center">
+					<div class="bg-black text-white z-40  top-0 bottom-0 left-0 right-0 m-auto flex flex-col items-center justify-start">
 						<div class="my-3">
-							<h1 class=" text-3xl">Online formation starts here.</h1>
+							<h1 class="text-left text-3xl">Online formation starts here.</h1>
 						</div>
 						<div class="mt-5 mb-10 flex items-center justify-center">
-							<p class="text-md text-center m-auto w-[60%] ">
+							<p class="text-md text-left w-[60%] ">
 								An online community designed with your spiritual and vocational 
 								formation in mind. Intimate spaces to engage meaningful content, 
 								share stories and grow together.
@@ -212,17 +211,17 @@ var blogPosts =  [
 		
 						<div class=" z-50 w-[80%] flex flex-row items-center justify-center">
 							<a href="https://community.vocationalformation.com/join?invitation_token=0397643d810f3c927a4ad1dd375a4c65af2f5608-f213ec46-5703-4e64-96ea-ae4a32a0283e" class="py-3 px-4 w-[40%] me-5 text-black border-2 bg-white border-white rounded-full ">
-								Join our community
+								Join our community 
 							</a>
-							<a href="#" class="py-3 px-4 w-[40%] text-white  border-2 border-white rounded-full ">
+							<!-- <a href="#" class="py-3 px-4 w-[40%] text-white  border-2 border-white rounded-full ">
 								Learn More
-							</a>
+							</a> -->
 						</div>
 					</div>
 				</div>
 	
 				<div class="col-span-1 flex items-center justify-center relative">
-					<video class="rounded-lg overflow-hidden relative z-10 opacity-100 top-0  overflow-hidden object-fill" width="100%" height="auto" autoplay data-autoplay muted playsinline loop>
+					<video class="rounded-lg overflow-hidden relative z-10 opacity-100 top-0  object-fill" width="100%" height="100%" autoplay data-autoplay muted playsinline loop>
 						<source data-src="https://acu-cdn-pull.b-cdn.net/Formation%20Community%20Strip.mp4" type="video/mp4">
 					</video>
 				</div>
@@ -230,93 +229,110 @@ var blogPosts =  [
 			
 		</div> 
 
-		<div id="formationVideos" class="overflow-hidden section bg-stone-200" >
+		<div id="formationVideos" class="overflow-hidden section bg-black" >
 			<!-- <img src="/02.png" class="w-[40%] h-auto z-10 absolute top-0 left-0 h-fit opacity-10" alt="" /> -->
-		
-			<video class="absolute z-10 opacity-75 top-0  overflow-hidden object-fill" width="120%" height="auto" autoplay data-autoplay muted playsinline loop>
-				<source data-src="https://acu-cdn-pull.b-cdn.net/formationVideo.mp4" type="video/mp4">
-			</video>
-
-			<div class="content absolute top-0 left-0 right-0  bottom-0 overflow-hidden  z-20 w-[90%] h-full m-auto   flex flex-col items-center justify-center" >
-				<!-- <h2 class=" text-black my-5 text-5xl w-[60%]">
-                    Creating space to <span class="text-blue-500">discover</span> God's invitation
-				</h2>
-
-				<div class="my-3 text-blue-500  flex items-center justify-center">
-					<a href="" class="rounded-full p-3 px-5 text-sm bg-white font-bold">#Devotional</a>
-					<a href="" class="rounded-full p-3 px-5 text-sm bg-white font-bold mx-3">#MomentsOfStillness</a>
-					<a href="" class="rounded-full p-3 px-5  text-sm bg-white font-bold ">#GuidedPractices</a>
-				</div> -->
-
-				<div class="absolute grid grid-cols-3  bottom-10 left-5 m-auto w-auto h-[400px] ">
-					
-					<div id="accordion-collapse" class="col-span-1 flex flex-col items-start justify-end text-white px-4 " data-accordion="collapse" data-active-classes="bg-transparent" >
-						<h2 id="accordion-collapse-heading-1">
-							<h1 class="text-left uppercase text-3xl ">Formation Videos</h1>
-						</h2>
-						<p class="mt-3  text-md text-left">
+			<div class="slide relative">
+				<div class="absolute top-0 right-0 left-0 bottom-0 m-auto bg-black w-[80%] h-[90%] rounded-lg overflow-hidden ">
+					<video class="absolute z-10 opacity-50 top-0  overflow-hidden object-fill" width="120%" height="auto" autoplay data-autoplay muted playsinline loop>
+						<source data-src="https://acu-cdn-pull.b-cdn.net/formationVideo.mp4" type="video/mp4">
+					</video>
+	
+					<div class="z-50 absolute top-0 right-0 left-0 bottom-0 m-auto grid grid-cols-2 w-full">
+						<div class="col-span-2 flex flex-col items-center justify-center text-white px-4 " data-accordion="collapse" data-active-classes="bg-transparent" >
+							<h1 class="text-center text-5xl ">
+								Creating space to <br>
+								God's invitation. 
+							</h1>
+							<p class=" my-5 text-md text-center opacity-70">
 								Thoughtful, curated content to disrupt an unhealthy rhythm of life.
-						</p>
-						<div class="my-3 mb-7 text-blue-500  flex items-center justify-center">
-							<a href="" class="rounded-full p-3 px-5 text-sm bg-white font-bold ">#Devotional</a>
-							<a href="" class="rounded-full p-3 px-5 text-sm bg-white font-bold mx-3">#MomentsOfStillness</a>
-							<a href="" class="rounded-full p-3 px-5  text-sm bg-white font-bold ">#GuidedPractices</a>
-						</div>
-						<div class=" *:py-2 flex flex-row items-start ">
-							<!-- <a href="/formation/1" class="py-3 px-4 w-[250px]  font-bold border-2 bg-white text-black border-white rounded-full ">
-								View collection
-							</a> -->
-							<a href="/formation/1" class="py-3 px-4 w-[150px]  font-bold border-2 border-white rounded-full ">
-								Learn More
-							</a>
-						</div>
-					</div>
-
-					<div class="col-span-1">
-
-					</div>
-
-					<div class="relative  hidden   h-full w-full col-span-1 "  >
-						<div class="accordion-content pb-3 overflow-x-auto overflow-y-hidden w-full h-full absolute top-0 left-0  items-start whitespace-nowrap" aria-controls="accordion-collapse-body-1">
-							{formationVideos.map((vid) => (
-								<div onclick="openNewWindow(this)" data-type="formation" data-id={vid.id} class="cursor-pointer relative overflow-hidden min-w-[300px] max-w-[300px] h-full inline-grid grid-rows-3 grid-cols-1 gap-4  me-4 rounded-lg bg-black shadow-md">
-									<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute z-50 bottom-3 right-3 text-white size-4">
-										<path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
-									</svg>
-
-									<div class="row-span-2 relative overflow-hidden">
-										{/* <img class="absolute z-20 bg-blend-multiply opacity-50 w-full h-auto left-0 bottom-0 " src="overlay.png" alt="" /> */}
-										<img class="relative z-10 top-0 bottom-0 right-0 left-0 m-auto overflow-hidden rounded-lg  w-[100%]   opacity-80" src={vid.thumbnail} alt="" />
-									</div>
-									
-									<div class="row-span-1 grid grid-rows-2 relative">
-										<div class="whitespace-normal z-30 relative left-0 bottom-0 p-4 flex flex-col items-start justify-center">
-											<p class="text-white opacity-80 text-md" >{vid.creator}</p>
-											<h2 class="my-2 w-[100%] text-white text-left text-3xl">{vid.title}</h2>
-										</div>
-										<div class="row-span-1 px-5 absolute bottom-2 left-0 right-0 opacity-50 flex items-start justify-start text-white">
-											<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-												<path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
-												<path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-											</svg>
-											<p class="mx-2 text-sm">
-												{vid.views} Views
-											</p>
-										</div>
-									</div>
-									
-									
-								</div>
-							))}
+							</p>
+							<div class="my-3 mb-7 text-blue-500  flex items-center justify-center">
+								<a href="" class="rounded-full p-3 px-5 text-sm bg-white font-bold ">#Devotional</a>
+								<a href="" class="rounded-full p-3 px-5 text-sm bg-white font-bold mx-3">#MomentsOfStillness</a>
+								<a href="" class="rounded-full p-3 px-5  text-sm bg-white font-bold ">#GuidedPractices</a>
+							</div>
+							<div class="py-2 flex flex-row items-center justify-start ">
+								<a href="/formation/1" class="py-3 px-4   font-bold border-2 border-white rounded-full ">
+									View collection
+								</a>
+								<a href="/blog/1" class="ms-4 py-3 px-4   border-2 border-white rounded-full ">
+									Learn More
+								</a>
+							</div>
 						</div>
 					</div>
-
 				</div>
 			</div>
+			<div class="slide relative">
+				<div class="absolute top-0 right-0 left-0 bottom-0 m-auto bg-black w-[80%] h-[90%] rounded-lg overflow-hidden ">
+					<video class="absolute z-10 opacity-50 top-0  overflow-hidden object-fill" width="120%" height="auto" autoplay data-autoplay muted playsinline loop>
+						<source data-src="https://acu-cdn-pull.b-cdn.net/formationVideo.mp4" type="video/mp4">
+					</video>
+	
+					<div class="z-50 absolute top-0 right-0 left-0 bottom-0 m-auto grid grid-cols-2 w-full">
+						<div class="col-span-2 flex flex-col items-center justify-center text-white px-4 " data-accordion="collapse" data-active-classes="bg-transparent" >
+							<h1 class="text-left text-5xl ">
+								Creating space to <br>
+								God's invitation. 
+							</h1>
+							<p class=" my-5 text-md text-left opacity-70">
+								Thoughtful, curated content to disrupt an unhealthy rhythm of life.
+							</p>
+							<div class="my-3 mb-7 text-blue-500  flex items-center justify-center">
+								<a href="" class="rounded-full p-3 px-5 text-sm bg-white font-bold ">#Devotional</a>
+								<a href="" class="rounded-full p-3 px-5 text-sm bg-white font-bold mx-3">#MomentsOfStillness</a>
+								<a href="" class="rounded-full p-3 px-5  text-sm bg-white font-bold ">#GuidedPractices</a>
+							</div>
+							<div class="py-2 flex flex-row items-center justify-start ">
+								<a href="/formation/1" class="py-3 px-4   font-bold border-2 border-white rounded-full ">
+									View collection
+								</a>
+								<a href="/blog/1" class="ms-4 py-3 px-4   border-2 border-white rounded-full ">
+									Learn More
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="slide relative">
+				<div class="absolute top-0 right-0 left-0 bottom-0 m-auto bg-black w-[80%] h-[90%] rounded-lg overflow-hidden ">
+					<video class="absolute z-10 opacity-50 top-0  overflow-hidden object-fill" width="120%" height="auto" autoplay data-autoplay muted playsinline loop>
+						<source data-src="https://acu-cdn-pull.b-cdn.net/formationVideo.mp4" type="video/mp4">
+					</video>
+	
+					<div class="z-50 absolute top-0 right-0 left-0 bottom-0 m-auto grid grid-cols-2 w-full">
+						<div class="col-span-2 flex flex-col items-center justify-center text-white px-4 " data-accordion="collapse" data-active-classes="bg-transparent" >
+							<h1 class="text-center text-5xl ">
+								Visual <span class="text-orange-500">podcasts</span>, <br>
+								intentional conversations.
+							</h1>
+							<p class=" my-5 text-md text-center opacity-70">
+								Reimagining our sense of calling in the world.
+							</p>
+							<div class="my-3 mb-7 text-blue-500  flex items-center justify-center">
+								<a href="" class="rounded-full p-3 px-5 text-sm bg-white font-bold ">#Devotional</a>
+								<a href="" class="rounded-full p-3 px-5 text-sm bg-white font-bold mx-3">#MomentsOfStillness</a>
+								<a href="" class="rounded-full p-3 px-5  text-sm bg-white font-bold ">#GuidedPractices</a>
+							</div>
+							<div class="py-2 flex flex-row items-center justify-start ">
+								<a href="/formation/1" class="py-3 px-4   font-bold border-2 border-white rounded-full ">
+									View collection
+								</a>
+								<a href="/blog/1" class="ms-4 py-3 px-4   border-2 border-white rounded-full ">
+									Learn More
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
 		</div>
 
 		<div id="podcasts" class="overflow-hidden section bg-gray-700" >
-			<video class="absolute z-10 opacity-75 top-0  overflow-hidden object-fill" width="100%" height="auto" autoplay data-autoplay muted playsinline loop>
+			<video class="absolute z-10 opacity-100 top-0  overflow-hidden object-fill" width="100%" height="auto" autoplay data-autoplay muted playsinline loop>
 				<source data-src="https://acu-cdn-pull.b-cdn.net/Episode%202%20Radical%20Hospitality.m4v" type="video/mp4">
 			</video>
 			
@@ -507,7 +523,11 @@ var blogPosts =  [
 			}
 					
 			var myFullpage = new fullpage("#fullpage", {
-				// Get your license at https://alvarotrigo.com/fullPage/pricing
+				lazyLoading: true,
+				controlArrowsHTML: [
+					'<div class="my-arrow"><i class="fas fa-arrow-alt-circle-left"></div>',
+					'<div class="my-arrow"><i class="fas fa-arrow-alt-circle-right"></div>'
+				],
 				licenseKey: "M9D46-QB92H-PJH47-SR3PK-YYTON",
 				onLeave: function( origin, destination, direction, trigger){
 						var loadedSlide = this;
