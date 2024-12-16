@@ -6,6 +6,7 @@ import {SEO} from "astro-seo";
 
 import "./../app.css"
 import Footer from "../../components/footer.astro";
+
 export function getStaticPaths() {
   return [
     {params: {form: '1'}},
@@ -16,19 +17,13 @@ export function getStaticPaths() {
   ];
 }
 
-var videos =  [
-    {id:"1",views: "1.2K", category: "devotional", title: "Colors of Fall", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatio_fall.png", url: "https://acu-cdn-pull.b-cdn.net/Colors%20of%20Fall.mp4", link: Astro.url.origin + "/podcasts/1"},
-     {id:"2",views: "1.2K",  category: "devotional",title: "Child of the Creator", creator: "Dr. Jerry Taylor", thumbnail: "/vocatio_teddy.png", url: "https://acu-cdn-pull.b-cdn.net/childOfTheCreator_formation.mp4"},
-     {id:"3", views: "1.2K", category: "devotional",title: "Rest", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatio_rest.png", url: "https://acu-cdn-pull.b-cdn.net/Rest.m4v"},
-     {id:"4", views: "1.2K", category: "devotional",title: "The Slow Way", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatio_slowway.png", url: "https://acu-cdn-pull.b-cdn.net/The%20Slow%20Way%20.m4v"},
-     {id:"5", views: "1.2K", category: "momentsOfStillness", title: "Unfolding", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatio_unfolding.png", url: "https://acu-cdn-pull.b-cdn.net/Unfolding%20_%20Moments%20of%20Stillness.mp4"}
-]
+import formationVideos from './formation.json';
 
 const { form } = Astro.params;
 const host = Astro.url.host;
 
 var res = {}
-for (var vid of videos) {
+for (var vid of formationVideos) {
     if (form == vid.id) {
         res = vid;
     }
@@ -142,7 +137,7 @@ for (var vid of videos) {
                         <h3 class="font-bold mb-3 text-xl text-gray-400">
                             More on <span class="text-blue-500">Formation</span>
                         </h3>
-                        {videos.map((vid) => (
+                        {formationVideos.map((vid) => (
                             <div onclick="openNewWindow(this)" data-id={vid.id} class="cursor-pointer mb-4 border border-gray-500 grid grid-rows-3 max-h-[300px]  transition-all ease-in-out text-white bg-transparent auto-rows-auto  overflow-hidden rounded-lg p-3">
                                 <div class="row-span-2  rounded-lg overflow-hidden">
                                     <img class="   m-auto  object-fit rounded-lg" src={vid.thumbnail} alt="" />
