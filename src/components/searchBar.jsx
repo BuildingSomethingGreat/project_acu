@@ -27,7 +27,7 @@ function SearchBar() {
     } else {
       setSuggestions([]);
     }
-  }, [searchTerm, data]);
+  }, [searchTerm]);
 
   const handleInputChange = (event) => {
     setSearchTerm(event.target.value);
@@ -44,7 +44,7 @@ function SearchBar() {
   return (
     <div class=" w-[300px] z-50 top-0 bottom-0 left-0 right-0 m-auto flex flex-col items-center">
         <input
-            class="relative block text-gray-800 m-auto mb-1 z-50 border-0  w-[300px] h-[40px] bg-gray-200 focus:border-blue-600  rounded-full"
+            class="p-4 relative block text-gray-800 m-auto mb-1 z-50 border-0  w-[300px] h-[30px] bg-gray-200 focus:border-blue-600  rounded-full"
             type="text"
             value={searchTerm}
             onChange={handleInputChange}

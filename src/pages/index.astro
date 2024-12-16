@@ -1,9 +1,10 @@
 ---
 import "./app.css"
 import Header  from "../components/header.astro";
-import Loader from "../components/loader.astro";
+import NotReadyYet from "../components/notReadyYet.astro";
 import {SEO} from "astro-seo";
 import SearchBar from "../components/searchBar";
+import NotReadyYet from "../components/notReadyYet.astro";
 
 var formationVideos =  [
      {id:"1",views: "1.2K", title: "Colors of Fall", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatio_fall.png", url: "https://acu-cdn-pull.b-cdn.net/Colors%20of%20Fall.mp4", link: Astro.url.origin + "/podcasts/1"},
@@ -69,7 +70,7 @@ var blogPosts =  [
 
 <body class="m-auto">
 
-	<Loader />
+	<NotReadyYet />
 	<!-- <SearchBar client:load/> -->
 
 	<!-- fullPage.js HTML -->

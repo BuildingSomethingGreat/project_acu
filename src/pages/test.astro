@@ -71,15 +71,16 @@ var blogPosts =  [
 
 	<!-- <Loader /> -->
 	<!-- <SearchBar client:load/> -->
+	<Header position="fixed" />
 
 	<!-- fullPage.js HTML -->
 	<div class="h-full w-[100%] m-auto" id="fullpage">
+		
+
+
 		<div class="section overflow-hidden  bg-black h-full flex items-center justify-center ">
 		
-			<div class="absolute z-20  top-7 right-0 left-0 m-auto w-[91%] flex items-center justify-between ">
-				<Header />
-			</div>
-
+			
 			<video class="absolute opacity-75 top-0  overflow-hidden object-fill" width="120%" height="auto" autoplay data-autoplay muted playsinline loop>
 				<source data-src="https://acu-cdn-pull.b-cdn.net/Website%20Cover%20Video%201.0.mp4" type="video/mp4">
 			</video>
@@ -105,30 +106,62 @@ var blogPosts =  [
 				</div>
 			</div>
 		</div>
-		<div id="" class="section relative overflow-hidden   bg-black flex flex-col items-center justify-center">
-			<!-- <img src="/01.png" class="w-[40%] h-auto z-10 absolute top-0 left-0 h-fit opacity-10" alt="" /> -->
-			<img class="w-full opacity-50 z-10 zoom-slow h-auto absolute top-0 right-0 left-0 bottom-0 m-auto" src="/Welcome Photo-2.jpg" alt="" />
-
-			<div class="content z-20 absolute top-0 left-0 right-0  bottom-0 overflow-hidden max-h-[95%] z-20 w-[90%] h-auto m-auto   flex flex-col items-center justify-center" >
-				<h2 class="z-20 text-white uppercase my-5 text-3xl w-[60%]">
-					Learn how ACU is reimagining digital spaces.
-				</h2>
-
-
-				<div class="relative z-20 w-[60%] my-4 m-auto  rounded-lg overflow-hidden ">
-					<!-- <img class="absolute z-10 bg-blend-multiply opacity-50 w-full h-auto left-0 bottom-0 " src="overlay.png" alt="" /> -->
-					<svg id="play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class=" absolute z-30 bottom-3 right-3  size-8">
-						<path fill-rule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z" clip-rule="evenodd" />
-					</svg>
-					<svg id="pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="hidden z-30 absolute bottom-3 right-3 size-8">
-						<path fill-rule="evenodd" d="M6.75 5.25a.75.75 0 0 1 .75-.75H9a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H7.5a.75.75 0 0 1-.75-.75V5.25Zm7.5 0A.75.75 0 0 1 15 4.5h1.5a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H15a.75.75 0 0 1-.75-.75V5.25Z" clip-rule="evenodd" />
+		<div id="" class="section  relative overflow-hidden   bg-black ">
+			<div class="absolute w-[95%] top-0 right-0 left-0 bottom-0 m-auto  !grid !grid-cols-2 !grid-rows-1  overflow-hidden">
+				<div class=" col-span-1  flex items-center justify-center">
+					<div class="relative z-20 w-[100%] my-4 m-auto  rounded-lg overflow-hidden ">
+						<!-- <img class="absolute z-10 bg-blend-multiply opacity-50 w-full h-auto left-0 bottom-0 " src="overlay.png" alt="" /> -->
+						<svg id="play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class=" absolute z-30 bottom-3 right-3  size-8">
+							<path fill-rule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z" clip-rule="evenodd" />
 						</svg>
-						
-
-					<video id="vid" width="100%" height="100%"  data-autoplay autoplay  playsinline loop>
-						<source data-src="https://acu-cdn-pull.b-cdn.net/WebsiteWelcome.mp4" type="video/mp4">
-					</video>
+						<svg id="pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="hidden z-30 absolute bottom-3 right-3 size-8">
+							<path fill-rule="evenodd" d="M6.75 5.25a.75.75 0 0 1 .75-.75H9a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H7.5a.75.75 0 0 1-.75-.75V5.25Zm7.5 0A.75.75 0 0 1 15 4.5h1.5a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H15a.75.75 0 0 1-.75-.75V5.25Z" clip-rule="evenodd" />
+							</svg>
+							
+	
+						<video id="vid" width="100%" height="100%"  data-autoplay autoplay  playsinline loop>
+							<source data-src="https://acu-cdn-pull.b-cdn.net/WebsiteWelcome.mp4" type="video/mp4">
+						</video>
+					</div>
 				</div>
+
+				<div class="promo-text col-span-1  opacity-0 flex flex-col items-center justify-center">
+					<h2 class="z-20 text-left text-white my-5 text-3xl w-[60%]">
+						Learn how ACU is reimagining digital spaces.
+					</h2>
+					<div class="flex flex-row items-center w-[80%] justify-evenly whitespace-nowrap">
+						<div class="border-r-2 border-0 border-gray-300 p-5 whitespace-normal inline-flex flex-col items-center justify-center">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 0 1 4.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0 1 12 15a9.065 9.065 0 0 0-6.23-.693L5 14.5m14.8.8 1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0 1 12 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
+							  </svg>
+							  <p class="my-3 text-sm">
+								Formational Videos
+							  </p>
+						</div>
+						<div class="border-r-2 border-0 border-gray-300 p-5 whitespace-normal inline-flex flex-col items-center justify-center">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z" />
+							  </svg>
+							  <p class="my-3 text-sm">
+								Immersive Podcasts
+							  </p>
+						</div>
+						<div class=" p-5 whitespace-normal inline-flex flex-col items-center justify-center">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width={1.5} stroke="currentColor" class="size-6">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+							  </svg>
+							  <p class="my-3 text-sm">
+								Digital Community
+							  </p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- <img src="/01.png" class="w-[40%] h-auto z-10 absolute top-0 left-0 h-fit opacity-10" alt="" /> -->
+			<!-- <img class="w-full opacity-50 z-10 zoom-slow h-auto absolute top-0 right-0 left-0 bottom-0 m-auto" src="/Welcome Photo-2.jpg" alt="" /> -->
+
+			<!-- <div class="content z-20 absolute top-0 left-0 right-0  bottom-0 overflow-hidden max-h-[95%] z-20 w-[90%] h-auto m-auto   flex flex-col items-center justify-center" > -->
+				
 
 				<div class="hidden w-[50%] my-3 grid  grid-cols-4 grid-rows-1 gap-10">
 					<div class="max-h-[85px] min-h-[85px] col-span-1 grid grid-cols-1 grid-rows-2 gap-4 " >
@@ -149,7 +182,7 @@ var blogPosts =  [
 					</div>
 				</div>
 
-			</div>
+			<!-- </div> -->
 
 			
 			<!-- <div class="slide"><h1>Section 2</h1></div>
@@ -157,38 +190,44 @@ var blogPosts =  [
 			<div class="slide"><h1>Slide 2.3</h1></div> -->
 		</div>
 
-		<div id="onlineChurhSection" class="section relative onlineChuch overflow-hidden  bg-gray-400 flex flex-col items-center justify-center" data-anchor="onlineChurch">
+		<div id="onlineChurhSection" class="section h-full relative onlineChuch overflow-hidden  bg-black flex flex-col items-center justify-center" data-anchor="onlineChurch">
 			<!-- <img src="/05.png" class="w-[40%] h-auto z-20 absolute top-0 left-0 h-fit opacity-10" alt="" /> -->
 			<!-- <img src="community-mock.png" class="zoom-faster rounded-lg w-[40%] h-auto z-20 absolute top-0 left-0 bottom-0 right-0 m-auto h-fit " alt="" /> -->
 			<!-- <img src="blob-1.png" class="w-[80%] h-auto z-10 absolute top-0 -left-[20%] bottom-0  m-auto h-fit " alt="" /> -->
 			<!-- <img src="/online-text.png" class="boundText w-[50%] h-auto z-40 absolute top-[0%] bottom-0 left-0 right-0 m-auto h-fit " alt="" /> -->
 			
-			<video class="absolute z-10 opacity-100 top-0  overflow-hidden object-fill" width="120%" height="auto" autoplay data-autoplay muted playsinline loop>
-				<source data-src="https://acu-cdn-pull.b-cdn.net/Formation%20Community%20Strip.mp4" type="video/mp4">
-			</video>
-
-			<div class="text-white z-40 absolute top-0 bottom-0 left-0 right-0 m-auto flex flex-col items-center justify-center">
-				<div class="my-3">
-					<h1 class="uppercase text-3xl">Online formation starts here.</h1>
+			<div class="w-[95%] h-screen overflow-hidden bg-black grid grid-cols-2 grid-rows-1">
+				<div class="col-span-1 flex flex-col items-center justify-center">
+					<div class="bg-black text-white z-40  top-0 bottom-0 left-0 right-0 m-auto flex flex-col items-center justify-center">
+						<div class="my-3">
+							<h1 class=" text-3xl">Online formation starts here.</h1>
+						</div>
+						<div class="mt-5 mb-10 flex items-center justify-center">
+							<p class="text-md text-center m-auto w-[60%] ">
+								An online community designed with your spiritual and vocational 
+								formation in mind. Intimate spaces to engage meaningful content, 
+								share stories and grow together.
+							</p>
+						</div>
+		
+						<div class=" z-50 w-[80%] flex flex-row items-center justify-center">
+							<a href="https://community.vocationalformation.com/join?invitation_token=0397643d810f3c927a4ad1dd375a4c65af2f5608-f213ec46-5703-4e64-96ea-ae4a32a0283e" class="py-3 px-4 w-[40%] me-5 text-black border-2 bg-white border-white rounded-full ">
+								Join our community
+							</a>
+							<a href="#" class="py-3 px-4 w-[40%] text-white  border-2 border-white rounded-full ">
+								Learn More
+							</a>
+						</div>
+					</div>
 				</div>
-				<div class="mt-5 mb-10 flex items-center justify-center">
-					<p class="text-md text-center m-auto w-[60%] ">
-						An online community designed with your spiritual and vocational 
-						formation in mind. Intimate spaces to engage meaningful content, 
-						share stories and grow together.
-					</p>
+	
+				<div class="col-span-1 flex items-center justify-center relative">
+					<video class="rounded-lg overflow-hidden relative z-10 opacity-100 top-0  overflow-hidden object-fill" width="100%" height="auto" autoplay data-autoplay muted playsinline loop>
+						<source data-src="https://acu-cdn-pull.b-cdn.net/Formation%20Community%20Strip.mp4" type="video/mp4">
+					</video>
 				</div>
-
-				<div class=" z-50 w-[40%] flex flex-row items-center justify-center">
-					<a href="https://community.vocationalformation.com/join?invitation_token=0397643d810f3c927a4ad1dd375a4c65af2f5608-f213ec46-5703-4e64-96ea-ae4a32a0283e" class="py-3 px-4 w-[40%] me-5 text-black border-2 bg-white border-white rounded-full ">
-						Join our community
-					</a>
-					<a href="#" class="py-3 px-4 w-[40%] text-white  border-2 border-white rounded-full ">
-						Learn More
-					</a>
-				</div>
-			
 			</div>
+			
 		</div> 
 
 		<div id="formationVideos" class="overflow-hidden section bg-stone-200" >
@@ -475,6 +514,7 @@ var blogPosts =  [
 						if((origin.index == 0 && direction =='down')
 						|| (origin.index == 2 && direction =='up')){
 							togglePlayPause(); 
+							$(".promo-text").addClass("animate-fade animation-delay-100");
 						}
 						if(origin.index == 2 && direction =='down'){
 							$("#onlineChurhSection").find(".boundText").addClass("zoom");
