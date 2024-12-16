@@ -69,9 +69,8 @@ var podcastVideos =  [
                         intentional conversations.
                     </h2>
                     <p class="mt-5 text-lg w-[80%] text-neutral-300">
-                        Formational videos are designed to invoke a sense of 
-                        fragence through exploring the invitation to partake 
-                        where God is already at work.
+                        The Vocatio Reimagined series is meant to explore why calling is less about a career path and more about responding to God's 
+                        invitation to participate in the healing of the world, no matter your stage of life or occupation.
                     </p> 
                     <div class="mt-5 mb-7 text-orange-500  flex items-center justify-center">
                         <a href="" class="me-3 font-bold rounded-full p-3 px-5 text-sm bg-white flex flex-row items-center justify-center">
@@ -90,8 +89,15 @@ var podcastVideos =  [
                 </div>
                 
                 <!-- <div class="mx-3"></div> -->
-                <div class="col-span-1 m-auto  flex items-center justify-center">
-                    <video class=" z-10 rounded-lg opacity-75 top-0  overflow-hidden object-fill" width="100%" height="auto" autoplay data-autoplay muted playsinline loop>
+                <div class="relative col-span-1 m-auto  flex items-center justify-center">
+                    <svg id="play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class=" absolute z-30 bottom-3 right-3  size-8">
+                        <path fill-rule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z" clip-rule="evenodd" />
+                    </svg>
+                    <svg id="pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="hidden z-30 absolute bottom-3 right-3 size-8">
+                        <path fill-rule="evenodd" d="M6.75 5.25a.75.75 0 0 1 .75-.75H9a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H7.5a.75.75 0 0 1-.75-.75V5.25Zm7.5 0A.75.75 0 0 1 15 4.5h1.5a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H15a.75.75 0 0 1-.75-.75V5.25Z" clip-rule="evenodd" />
+                    </svg>
+                        
+                    <video id="vid" class=" z-10 rounded-lg opacity-75 top-0  overflow-hidden object-fill" width="100%" height="auto"  playsinline loop>
                         <source src="https://acu-cdn-pull.b-cdn.net/Episode%201%20Creating%20Space%20in%20a%20Distractred%20World.m4v" type="video/mp4">
                     </video>
                 </div>
@@ -146,30 +152,29 @@ var podcastVideos =  [
 
 <script>
     (function() {
+        $(document).ready(function() {
+            var vid =document.getElementById("vid");
 
-        var vid =document.getElementById("vid");
+            function togglePlayPause() {
+                if  (vid.paused) {
+                    vid.play();
+                    $("#play").addClass("hidden");
+                    $("#pause").removeClass("hidden");
 
-        function togglePlayPause() {
-            if  (vid.paused) {
-                vid.play();
-                $("#play").addClass("hidden");
-                $("#pause").removeClass("hidden");
+                } else {
+                    vid.pause()
+                    $("#pause").addClass("hidden");
+                    $("#play").removeClass("hidden");
+                };
 
-            } else {
-                vid.pause()
-                $("#pause").addClass("hidden");
-                $("#play").removeClass("hidden");
-            };
+            }
 
-        }
-
-        togglePlayPause(); 
-
-
-        $("#play, #pause").on("click", function() {
             togglePlayPause(); 
-        });
 
+            $("#play, #pause").on("click", function() {
+                togglePlayPause(); 
+            });
+        });
     })();
 
 </script>

@@ -177,31 +177,6 @@ for (var vid of videos) {
 
 
 <script>
-    (function() {
 
-        var vid =document.getElementById("vid");
-
-        function togglePlayPause() {
-            if  (vid.paused) {
-                vid.play();
-                $("#play").addClass("hidden");
-                $("#pause").removeClass("hidden");
-
-            } else {
-                vid.pause()
-                $("#pause").addClass("hidden");
-                $("#play").removeClass("hidden");
-            };
-
-        }
-
-        togglePlayPause(); 
-
-
-        $("#play, #pause").on("click", function() {
-            togglePlayPause(); 
-        });
-
-    })();
 
 </script>

@@ -115,10 +115,9 @@ var blogPosts =  [
 						</svg>
 						<svg id="pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="hidden z-30 absolute bottom-3 right-3 size-8">
 							<path fill-rule="evenodd" d="M6.75 5.25a.75.75 0 0 1 .75-.75H9a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H7.5a.75.75 0 0 1-.75-.75V5.25Zm7.5 0A.75.75 0 0 1 15 4.5h1.5a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H15a.75.75 0 0 1-.75-.75V5.25Z" clip-rule="evenodd" />
-							</svg>
-							
+						</svg>
 	
-						<video id="vid" width="100%" height="100%"  data-autoplay autoplay  playsinline loop>
+						<video id="vid" width="100%" height="100%"  autoplay data-autoplay playsinline loop>
 							<source data-src="https://acu-cdn-pull.b-cdn.net/WebsiteWelcome.mp4" type="video/mp4">
 						</video>
 					</div>
@@ -237,22 +236,22 @@ var blogPosts =  [
 						<source data-src="https://acu-cdn-pull.b-cdn.net/formationVideo.mp4" type="video/mp4">
 					</video>
 	
-					<div class="z-50 absolute top-0 right-0 left-0 bottom-0 m-auto grid grid-cols-2 w-full">
-						<div class="col-span-2 flex flex-col items-center justify-center text-white px-4 " data-accordion="collapse" data-active-classes="bg-transparent" >
-							<h1 class="text-center text-5xl ">
-								Creating space to <br>
-								God's invitation. 
+					<div class="z-50 absolute left-5 bottom-5 grid grid-cols-2 w-full">
+						<div class="col-span-1 flex flex-col items-center justify-start text-white px-4 " data-accordion="collapse" data-active-classes="bg-transparent" >
+							<h1 class="text-left text-5xl w-full ">
+								Creating <span class="text-blue-500">space</span> to <br>
+								discern God's invitation. 
 							</h1>
-							<p class=" my-5 text-md text-center opacity-70">
+							<p class=" my-5 text-md text-left opacity-70 w-full">
 								Thoughtful, curated content to disrupt an unhealthy rhythm of life.
 							</p>
-							<div class="my-3 mb-7 text-blue-500  flex items-center justify-center">
+							<!-- <div class="my-3 mb-7 text-blue-500  flex items-center justify-center">
 								<a href="" class="rounded-full p-3 px-5 text-sm bg-white font-bold ">#Devotional</a>
 								<a href="" class="rounded-full p-3 px-5 text-sm bg-white font-bold mx-3">#MomentsOfStillness</a>
 								<a href="" class="rounded-full p-3 px-5  text-sm bg-white font-bold ">#GuidedPractices</a>
-							</div>
-							<div class="py-2 flex flex-row items-center justify-start ">
-								<a href="/formation/1" class="py-3 px-4   font-bold border-2 border-white rounded-full ">
+							</div> -->
+							<div class="py-2 flex flex-row items-center justify-start w-full ">
+								<a href="/formation" class="py-3 px-4   font-bold border-2 border-white rounded-full ">
 									View collection
 								</a>
 								<a href="/blog/1" class="ms-4 py-3 px-4   border-2 border-white rounded-full ">
@@ -269,22 +268,22 @@ var blogPosts =  [
 						<source data-src="https://acu-cdn-pull.b-cdn.net/formationVideo.mp4" type="video/mp4">
 					</video>
 	
-					<div class="z-50 absolute top-0 right-0 left-0 bottom-0 m-auto grid grid-cols-2 w-full">
-						<div class="col-span-2 flex flex-col items-center justify-center text-white px-4 " data-accordion="collapse" data-active-classes="bg-transparent" >
-							<h1 class="text-left text-5xl ">
-								Creating space to <br>
-								God's invitation. 
+					<div class="z-50 absolute left-5 bottom-5  grid grid-cols-2 w-full">
+						<div class="col-span-1 flex flex-col items-center justify-start text-white px-4 " data-accordion="collapse" data-active-classes="bg-transparent" >
+							<h1 class="text-left text-5xl w-full ">
+								Visual <span class="text-orange-500">podcasts</span>, <br>
+								intentional conversations.
 							</h1>
-							<p class=" my-5 text-md text-left opacity-70">
-								Thoughtful, curated content to disrupt an unhealthy rhythm of life.
+							<p class=" my-5 text-md text-left opacity-70 w-full">
+								Reimagining our sense of calling in the world.
 							</p>
-							<div class="my-3 mb-7 text-blue-500  flex items-center justify-center">
+							<!-- <div class="my-3 mb-7 text-blue-500  flex items-center justify-center">
 								<a href="" class="rounded-full p-3 px-5 text-sm bg-white font-bold ">#Devotional</a>
 								<a href="" class="rounded-full p-3 px-5 text-sm bg-white font-bold mx-3">#MomentsOfStillness</a>
 								<a href="" class="rounded-full p-3 px-5  text-sm bg-white font-bold ">#GuidedPractices</a>
-							</div>
-							<div class="py-2 flex flex-row items-center justify-start ">
-								<a href="/formation/1" class="py-3 px-4   font-bold border-2 border-white rounded-full ">
+							</div> -->
+							<div class="py-2 flex flex-row items-center justify-start w-full ">
+								<a href="/formation" class="py-3 px-4   font-bold border-2 border-white rounded-full ">
 									View collection
 								</a>
 								<a href="/blog/1" class="ms-4 py-3 px-4   border-2 border-white rounded-full ">
@@ -524,9 +523,12 @@ var blogPosts =  [
 					
 			var myFullpage = new fullpage("#fullpage", {
 				lazyLoading: true,
+				controlArrows: true,
+				slidesNavigation: true,
+				slidesNavPosition: 'bottom', // Default
 				controlArrowsHTML: [
-					'<div class="my-arrow"><i class="fas fa-arrow-alt-circle-left"></div>',
-					'<div class="my-arrow"><i class="fas fa-arrow-alt-circle-right"></div>'
+					'<div class="my-arrow fp-prev"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="ms-5 m-auto size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" /></svg></div>',
+					'<div class="my-arrow fp-next"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="me-5 m-auto size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg></div>'
 				],
 				licenseKey: "M9D46-QB92H-PJH47-SR3PK-YYTON",
 				onLeave: function( origin, destination, direction, trigger){
@@ -546,8 +548,6 @@ var blogPosts =  [
 				});
 
 			$(document).ready(function() {
-
-
 				$("#play, #pause").on("click", function() {
 					togglePlayPause(); 
 				});
@@ -602,7 +602,11 @@ var blogPosts =  [
 					$(this).attr("aria-expanded", false)
 
 					$("#" + controls).addClass("animate-fade");
+
 				})
+
+				// $(".fp-controlArrow").removeClass("fp-next fp-prev");
+
 			});
 		})();
 		
