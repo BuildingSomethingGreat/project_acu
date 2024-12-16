@@ -71,30 +71,42 @@ for (var vid of videos) {
 
 <body class="h-screen bg-[#191B1F] ">
 
-   
-	<!-- <Loader /> -->
+	<Loader />
+    <Header postion="relative"/>
 
     <div class="h-screen w-[95%] m-auto" id="">
-        <div style="background: #191B1F" class="  overflow-hidden  bg-[#313638]  flex flex-col items-center justify-center ">
+        <div class="  overflow-hidden bg-[#191B1F]  flex flex-col items-center justify-center ">
+            <div class="grid grid-cols-5 gap-4 m-auto h-screen">
+                <div class="flex flex-col items-start justify-center mt-4 col-span-1 h-fit overflow-y-scroll rounded-lg bg-neutral-800 p-3">
+                    <h3 class="p-2 font-bold mb-3 text-xl text-white">
+                        Read more
+                    </h3>
 
-            <div class="grid grid-cols-4 auto-rows-auto  gap-4  overflow-hidden h-screen  p-3">
-                <div class="mb-4 col-span-4 row-span-1 max-h-[100px] w-full relative p-3">
-                    <div class=" z-20  top-10 right-0 left-0 m-auto w-[100%] flex items-center justify-between ">
-                        <Header />
-                    </div>
+                    <ul class=" p-1 rounded-lg">
+                        <li class="mb-3 p-1 px-2 rounded-lg text-white flex items-center justify-start cursor-pointer hover:bg-neutral-500  ">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-green size-4">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+                              </svg>
+                              
+                            <p class="ms-2 text-sm">A Season of Hope</p>
+                        </li>
+                        <li class="mb-3 p-1 px-2 rounded-lg text-white flex items-center justify-start cursor-pointer hover:bg-neutral-500  ">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-green size-4">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+                              </svg>
+                              
+                            <p class="ms-2 text-sm">Breath Prayer Formation</p>
+                        </li>
+                    </ul>
                 </div>
 
-                
-                <div style=" grid-template-rows: 1fr min-content;" class="  no-scrollbar pb-10  grid grid-cols-1 lg:grid-cols-2  gap-7  col-span-6 row-span-10 overflow-x-hidden overflow-y-auto">
-                   
-                    <!-- animate-fade animation-delay-1200  -->
-                    <div class=" p-3 text-white  flex flex-col items-center my-3 bg-transparent  col-span-2  rounded-lg ">
+                <div class="col-span-4 h-full p-2 m-auto text-white  bg-transparent  rounded-lg overflow-y-scroll ">
                         <!-- <img class="w-[80%] h-auto mb-4 rounded-lg " src="/vocatiothumb.png" alt=""/> -->
                         <video id="" class=" opacity-75 m-auto  rounded-lg overflow-hidden object-fill max-w-[1000px]" width="100%" height="100%"  muted autoplay loop playsinline>
                             <source src={res.url} type="video/mp4">
                         </video>
                         
-                        <div class="mt-4 grid grid-cols-2 w-[80%]">
+                        <div class="mt-4 mx-auto grid grid-cols-2 ">
                             <div class="col-span-1 flex flex-col items-start justify-center">
                                 <h1 class="mb-2 text-left text-white font-bold  text-xl">
                                     {res.title}
@@ -115,49 +127,45 @@ for (var vid of videos) {
 
                         <Divider />
 
-                        <div class="mt-4 w-[80%] bg-white rounded-lg grid grid-cols-2 p-5">
+                        <div class="mt-4 mx-auto  bg-white rounded-lg grid grid-cols-2 p-5">
                             <div class="text-black col-span-1 flex flex-col items-center justify-center">
                                 <h3 class="text-4xl w-[80%] text-left m-auto font-bold">Here's another <span class="text-green-500">post</span> you may like.</h3>
                             </div>
                             <div class="text-black col-span-1 flex flex-col items-center justify-center">
                                 <div onclick="window.location.href='/blog/2'" data-type="blog" data-id={vid.id} class="cursor-pointer inline-grid grid-cols-1 grid-rows-2 relative overflow-hidden min-w-[300px] max-w-[300px] h-full me-4 rounded-lg bg-white shadow-md">
-									{/* <img class="row-span-1 relative z-10 top-0  w-full  object-cover opacity-100" src={vid.thumbnail} alt="" /> */}
+                                    {/* <img class="row-span-1 relative z-10 top-0  w-full  object-cover opacity-100" src={vid.thumbnail} alt="" /> */}
 
-									<div class="h-[300px] relative row-span-2 auto whitespace-normal z-30  left-0 bottom-0 p-5 grid grid-cols-1 grid-rows-2">
-										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute z-50 bottom-3 right-3 text-black size-4">
-											<path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
-										</svg>
+                                    <div class="h-[300px] relative row-span-2 auto whitespace-normal z-30  left-0 bottom-0 p-5 grid grid-cols-1 grid-rows-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute z-50 bottom-3 right-3 text-black size-4">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+                                        </svg>
 
-										<div class="row-span-1  flex flex-col text-black items-center justify-start">
-											<h2 class="my-2 w-[100%] text-left font-bold  text-xl">Timeless Destiny Reoccuring</h2>
-										</div>
+                                        <div class="row-span-1  flex flex-col text-black items-center justify-start">
+                                            <h2 class="my-2 w-[100%] text-left font-bold  text-xl">Timeless Destiny Reoccuring</h2>
+                                        </div>
 
-										<div class="row-span-1  flex flex-col text-black items-start justify-start">
-											<p class="opacity-80 text-sm text-left" >The study of theology helps us deepen our relationship with God, answer life's big questions, and better understand the foundation of Christian beliefs.</p>
-										</div>
-										
-										<div class="row-span-1 px-5 absolute bottom-2 left-0 right-0 m-auto opacity-50 flex items-start justify-start text-black">
-											<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-												<path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
-												<path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-											</svg>
-											<p class="mx-2 text-sm">
-												{vid.views} Read
-											</p>
-										</div>
-									</div>
-								</div>
-                            </div>
+                                        <div class="row-span-1  flex flex-col text-black items-start justify-start">
+                                            <p class="opacity-80 text-sm text-left" >The study of theology helps us deepen our relationship with God, answer life's big questions, and better understand the foundation of Christian beliefs.</p>
+                                        </div>
+                                        
+                                        <div class="row-span-1 px-5 absolute bottom-2 left-0 right-0 m-auto opacity-50 flex items-start justify-start text-black">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                            </svg>
+                                            <p class="mx-2 text-sm">
+                                                {vid.views} Read
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div> 
                         </div>
-
-
-                    </div>
                 </div>
             </div>
-        
-
+           
         </div>
-
     </div>
 
     <Footer />

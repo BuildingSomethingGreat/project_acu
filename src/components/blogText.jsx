@@ -6,7 +6,7 @@ function BlogText(props) {
         return <React.Fragment>{parse(props.rawHTML)}</React.Fragment>;
     }
     return (
-        <div class='m-auto w-[80%] mt-3 p-3'>
+        <div class='m-auto  mt-3 p-3'>
             {parse(props.rawHTML)}
         </div>
     )
