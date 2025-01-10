@@ -138,7 +138,7 @@ for (var vid of formationVideos) {
                             More on <span class="text-blue-500">Formation</span>
                         </h3>
                         {formationVideos.map((vid) => (
-                            <div onclick="openNewWindow(this)" data-id={vid.id} class="cursor-pointer mb-4 border border-gray-500 grid grid-rows-3 max-h-[300px]  transition-all ease-in-out text-white bg-transparent auto-rows-auto  overflow-hidden rounded-lg p-3">
+                            <a href={`/formation/` + vid.id} data-id={vid.id} class="cursor-pointer mb-4 border border-gray-500 grid grid-rows-3 max-h-[300px]  transition-all ease-in-out text-white bg-transparent auto-rows-auto  overflow-hidden rounded-lg p-3">
                                 <div class="row-span-2  rounded-lg overflow-hidden">
                                     <img class="   m-auto  object-fit rounded-lg" src={vid.thumbnail} alt="" />
                                 </div>
@@ -157,7 +157,7 @@ for (var vid of formationVideos) {
                                         </p>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         ))}
                     </div>
                 </div>

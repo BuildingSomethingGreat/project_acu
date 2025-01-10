@@ -132,7 +132,7 @@ for (var vid of videos) {
                         More on <span class="text-orange-500">Vocation</span>
                     </h3>
                     {videos.map((vid) => (
-                        <div onclick="openNewWindow(this)" data-id={vid.id} class="cursor-pointer mb-4 border border-gray-500 grid grid-rows-2 max-h-[300px]  transition-all ease-in-out text-white bg-transparent auto-rows-auto  overflow-hidden rounded-lg p-3">
+                         <a href={`/podcasts/` + vid.id} data-id={vid.id} class="cursor-pointer mb-4 border border-gray-500 grid grid-rows-2 max-h-[300px]  transition-all ease-in-out text-white bg-transparent auto-rows-auto  overflow-hidden rounded-lg p-3">
                                 <div class="row-span-1  rounded-lg overflow-hidden">
                                 <img class="   m-auto  object-fit rounded-lg" src={vid.thumbnail} alt="" />
                             </div>
@@ -141,7 +141,7 @@ for (var vid of videos) {
                                 <h3 class="my-1 text-md text-left">{vid.title.split(":")[1]}</h3>
                                 {/* <p class="font-bold  p-3 text-sm ">{vid.creator}</p> */}
                             </div>
-                        </div>
+                        </a>
                     ))}
                 </div>
             </div>
