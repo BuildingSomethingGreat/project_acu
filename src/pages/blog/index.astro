@@ -55,19 +55,19 @@ import blogs from "./blogs.json";
     <div class="h-screen  m-auto flex" id="">
         <div class="grid grid-cols-2 my-5 max-h-[300px] w-full">
             <div class="w-[90%] m-auto col-span-2 grid grid-cols-2">
-                <div class="col-span-1 w-[100%] m-auto flex flex-col items-start justify-end">
+                <div class="col-span-2 lg:col-span-1 w-[90%] lg:w-[100%] m-auto flex flex-col items-start justify-end">
                     <h2 class=" text-white  text-7xl ">
-                        Read insightful  <span class="text-green-500">blogs</span>   <br> 
+                        Read insightful  <span class="text-green-500">blogs</span> 
                         from thought leaders.
                     </h2>
-                    <p class="mt-5 text-lg w-[70%] text-neutral-300">
+                    <p class="mt-5 text-lg w-[90%] lg:w-[70%] text-neutral-300">
                         From spiritual practices to deeper theological 
                         concepts. This is an in depth consideration of formation.
                     </p>    
                 </div>
                 
                 <!-- <div class="mx-3"></div> -->
-                <div class="col-span-1 m-auto  flex items-center justify-center">
+                <div class="p-5  col-span-2 lg:col-span-1 m-auto  flex items-center justify-center">
                     {blogs.theologians.map((theologian) => (
                         <div class=" w-[120px] h-[120px] rounded-full overflow-hidden">
                             <img class="w-[130px] h-auto rounded-full " src={theologian.profile} alt="" />
@@ -78,9 +78,9 @@ import blogs from "./blogs.json";
 
             <Divider />
 
-            <div class="col-span-2 mb-4  bg-black m-auto w-[90%] rounded-lg p-7 grid grid-cols-3 gap-10">
+            <div class="col-span-2 mb-4  bg-black m-auto w-[90%] rounded-lg p-7 grid grid-cols-2 lg:grid-cols-3 gap-10">
                 {blogs.posts.map((vid) => (
-                      <a href={`/blog/` + vid.id}  data-type="blog" data-id={vid.id} class="col-span-1 cursor-pointer inline-grid grid-cols-1 grid-rows-3  relative overflow-hidden max-h-[400px] h-full  rounded-lg bg-white shadow-md">
+                      <a href={`/blog/` + vid.id}  data-type="blog" data-id={vid.id} class="col-span-2 cursor-pointer inline-grid grid-cols-1 grid-rows-3  relative overflow-hidden max-h-[400px] h-full  rounded-lg bg-white shadow-md">
                             {/* <img class="row-span-1 relative z-10 top-0  w-full  object-cover opacity-100" src={vid.thumbnail} alt="" /> */}
 
                         <div class="relative row-span-2 h-full whitespace-normal z-30  left-0 bottom-0 p-5 grid grid-cols-1 grid-rows-2 gap-5">

@@ -70,10 +70,10 @@ for (var vid of blogs.posts) {
 	<Loader />
     <Header postion="relative"/>
 
-    <div class="h-screen w-[95%] m-auto" id="">
+    <div class="overflow-hidden w-[95%] m-auto" id="">
         <div class="  overflow-hidden bg-[#191B1F]  flex flex-col items-center justify-center ">
-            <div class="grid grid-cols-5 gap-4 m-auto h-screen">
-                <div class="flex flex-col items-start justify-center mt-4 col-span-1 h-fit overflow-y-scroll rounded-lg bg-neutral-800 p-3">
+            <div class="grid col-span-2 lg:grid-cols-5 gap-4 m-auto h-full">
+                <div class="flex flex-col items-start justify-center my-4 lg:mt-0 col-span-2 lg:col-span-1 h-fit overflow-y-scroll rounded-lg bg-neutral-800 p-3">
                     <h3 class="p-2 font-bold mb-3 text-xl text-white">
                         Read more
                     </h3>
@@ -93,7 +93,7 @@ for (var vid of blogs.posts) {
                     </ul>
                 </div>
 
-                <div class="col-span-4 h-full p-2 m-auto text-white  bg-transparent  rounded-lg overflow-y-scroll ">
+                <div class="col-span-2 row-start-1 lg:row-start-auto lg:col-span-4 h-full px-2 lg:mb-4 m-auto text-white  bg-transparent  rounded-lg  ">
                         <!-- <img class="w-[80%] h-auto mb-4 rounded-lg " src="/vocatiothumb.png" alt=""/> -->
                         <video id="" class=" opacity-75 m-auto  rounded-lg overflow-hidden object-fill max-w-[1000px]" width="100%" height="100%"  muted autoplay loop playsinline>
                             <source src={res.url} type="video/mp4">
@@ -104,7 +104,7 @@ for (var vid of blogs.posts) {
                                 <h1 class="mb-2 text-left text-white font-bold  text-xl">
                                     {res.title}
                                 </h1>
-                                <p class="font-bold opacity-50">{res.creator}</p>
+                                <p class="font-bold text-sm opacity-50">{res.creator}</p>
                             </div>
 
                             <div class="col-span-1">
@@ -120,12 +120,12 @@ for (var vid of blogs.posts) {
 
                         <Divider />
 
-                        <div class="mt-4 mx-auto  bg-white rounded-lg grid grid-cols-2 p-5">
-                            <div class="text-black col-span-1 flex flex-col items-center justify-center">
+                        <div class="mt-4 mx-auto  bg-white rounded-lg grid gap-10 grid-cols-2 p-5">
+                            <div class="text-black col-span-2 lg:col-span-1 flex flex-col items-center justify-center">
                                 <h3 class="text-4xl w-[80%] text-left m-auto font-bold">Here's another <span class="text-green-500">post</span> you may like.</h3>
                             </div>
-                            <div class="text-black col-span-1 flex flex-col items-center justify-center">
-                                <div onclick="window.location.href='/blog/2'" data-type="blog" data-id={vid.id} class="cursor-pointer inline-grid grid-cols-1 grid-rows-2 relative overflow-hidden min-w-[300px] max-w-[300px] h-full me-4 rounded-lg bg-white shadow-md">
+                            <div class="text-black col-span-2 lg:col-span-1 flex flex-col items-center justify-center">
+                                <div onclick="window.location.href='/blog/2'" data-type="blog" data-id={vid.id} class="cursor-pointer border  border-gray-200 inline-grid grid-cols-1 grid-rows-2 relative overflow-hidden w-[90%] max-w-[400px] lg:min-w-[300px] lg:max-w-[300px] h-full me-4 rounded-lg bg-white shadow-md">
                                     {/* <img class="row-span-1 relative z-10 top-0  w-full  object-cover opacity-100" src={vid.thumbnail} alt="" /> */}
 
                                     <div class="h-[400px] relative row-span-2 whitespace-normal z-30  left-0 bottom-0 p-5 grid grid-cols-1 grid-rows-3">

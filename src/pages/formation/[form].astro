@@ -18,6 +18,11 @@ export function getStaticPaths() {
 }
 
 import formationVideos from './formation.json';
+const categories = [
+    {name : "Devotional", tags: ["devotional"]},
+    {name : "Moments of Stillness", tags: ["momentsOfStillness"]},
+    {name : "Guided Practices", tags: ["guidedPractices"]},
+]
 
 const { form } = Astro.params;
 const host = Astro.url.host;
@@ -73,46 +78,27 @@ for (var vid of formationVideos) {
         <div class=" h-screen w-[98%] m-auto" id="">
 		    <div class=" overflow-hidden  bg-[#191B1F]  flex flex-col items-center justify-center ">
 		    
-                <div class=" grid grid-cols-6 auto-rows-auto  gap-4  overflow-hidden h-screen  p-1 ">
-                    <div class="flex flex-col items-start justify-center mt-4 col-span-1 h-fit overflow-y-scroll rounded-lg bg-neutral-800 p-3">
-                        <h3 class="p-2 font-bold mb-3 text-xl text-white">
+                <div class=" grid grid-cols-2 lg:grid-cols-6 lg:auto-rows-auto  gap-4  overflow-hidden lg:h-screen  p-2">
+                    <div class="lg:mt-4 col-span-2 lg:col-span-1 h-fit overflow-x-auto rounded-lg lg:bg-neutral-800 p-1">
+                        <h3 class="lg:p-2 font-bold mb-3 text-lg text-gray-400 lg:text-white">
                             Categories
                         </h3>
     
-                        <ul class=" p-1 rounded-lg">
-                            <li class="mb-3 p-1 px-2 rounded-lg text-white flex items-center justify-start cursor-pointer hover:bg-neutral-500  ">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-blue-500 size-4">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="m6.115 5.19.319 1.913A6 6 0 0 0 8.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 0 0 2.288-4.042 1.087 1.087 0 0 0-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 0 1-.98-.314l-.295-.295a1.125 1.125 0 0 1 0-1.591l.13-.132a1.125 1.125 0 0 1 1.3-.21l.603.302a.809.809 0 0 0 1.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 0 0 1.528-1.732l.146-.292M6.115 5.19A9 9 0 1 0 17.18 4.64M6.115 5.19A8.965 8.965 0 0 1 12 3c1.929 0 3.716.607 5.18 1.64" />
-                                  </svg>
-                                <p class="ms-2 text-sm">Devotional</p>
-                            </li>
-                            <li class="mb-3 p-1 px-2 rounded-lg text-white flex items-center justify-start cursor-pointer hover:bg-neutral-500  ">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-blue-500 size-4">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="m6.115 5.19.319 1.913A6 6 0 0 0 8.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 0 0 2.288-4.042 1.087 1.087 0 0 0-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 0 1-.98-.314l-.295-.295a1.125 1.125 0 0 1 0-1.591l.13-.132a1.125 1.125 0 0 1 1.3-.21l.603.302a.809.809 0 0 0 1.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 0 0 1.528-1.732l.146-.292M6.115 5.19A9 9 0 1 0 17.18 4.64M6.115 5.19A8.965 8.965 0 0 1 12 3c1.929 0 3.716.607 5.18 1.64" />
-                                  </svg>
-                                <p class="ms-2 text-sm">Moments of Stillness</p>
-                            </li>
-                            <li class="mb-3 p-1 px-2 rounded-lg text-white flex items-center justify-start cursor-pointer hover:bg-neutral-500  ">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-blue-500 size-4">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="m6.115 5.19.319 1.913A6 6 0 0 0 8.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 0 0 2.288-4.042 1.087 1.087 0 0 0-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 0 1-.98-.314l-.295-.295a1.125 1.125 0 0 1 0-1.591l.13-.132a1.125 1.125 0 0 1 1.3-.21l.603.302a.809.809 0 0 0 1.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 0 0 1.528-1.732l.146-.292M6.115 5.19A9 9 0 1 0 17.18 4.64M6.115 5.19A8.965 8.965 0 0 1 12 3c1.929 0 3.716.607 5.18 1.64" />
-                                  </svg>
-                                <p class="ms-2 text-sm">Guided Practices</p>
-                            </li>
+                        <ul class=" p-1 rounded-lg inline-flex whitespace-nowrap lg:whitespace-normal lg:block ">
+
+                            {categories.map((category) => (
+                                <li class="mb-3 me-3 lg:me-0 p-1 px-2 rounded-lg text-white inline-flex lg:flex items-center justify-start cursor-pointer bg-neutral-700 lg:bg-transparent hover:bg-neutral-700  ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-blue-500 size-4">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="m6.115 5.19.319 1.913A6 6 0 0 0 8.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 0 0 2.288-4.042 1.087 1.087 0 0 0-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 0 1-.98-.314l-.295-.295a1.125 1.125 0 0 1 0-1.591l.13-.132a1.125 1.125 0 0 1 1.3-.21l.603.302a.809.809 0 0 0 1.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 0 0 1.528-1.732l.146-.292M6.115 5.19A9 9 0 1 0 17.18 4.64M6.115 5.19A8.965 8.965 0 0 1 12 3c1.929 0 3.716.607 5.18 1.64" />
+                                    </svg>
+                                    <p class="ms-2 text-sm">{category.name}</p>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
-                    <div class="col-span-4  h-full p-3 overflow-y-scroll">
-                        
-
-                            <!-- <img id="controlplay" class="absolute w-20 h-20 z-50 bottom-3 right-3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM3pOh5Jpss90QbjOiLKG1HB-Qx3DZQsjoFA&s" alt="" /> -->
+                    <div class="col-span-2 row-start-1 lg:row-start-auto  lg:col-span-4  h-full p-3 overflow-y-scroll">
                         <div class="w-fit h-fit relative rounded-lg overflow-hidden shadow-lg" >
-                            <!-- <svg id="play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class=" absolute z-30 bottom-3 right-3  size-8">
-                                <path fill-rule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z" clip-rule="evenodd" />
-                            </svg>
-                            <svg id="pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="hidden z-30 absolute bottom-3 right-3 size-8">
-                                <path fill-rule="evenodd" d="M6.75 5.25a.75.75 0 0 1 .75-.75H9a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H7.5a.75.75 0 0 1-.75-.75V5.25Zm7.5 0A.75.75 0 0 1 15 4.5h1.5a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H15a.75.75 0 0 1-.75-.75V5.25Z" clip-rule="evenodd" />
-                                </svg> -->
-                                
                             <video preload="auto" id="vid" class=" opacity-75 m-auto  rounded-lg overflow-hidden object-fill max-w-[1000px]" width="100%" height="100%" controls autoplay playsinline>
                                 <!-- <source src="/modernhome.mp4" type="video/mp4"> -->
                                 <source src={res.url} type="video/mp4">
@@ -133,12 +119,12 @@ for (var vid of formationVideos) {
                         
                     </div>
                     
-                    <div class="col-span-1 h-full overflow-y-scroll no-scrollbar rounded-lg p-1">
-                        <h3 class="font-bold mb-3 text-xl text-gray-400">
+                    <div class="h-full col-span-2 lg:col-span-1  lg:overflow-y-scroll no-scrollbar grid grid-cols-2 gap-3  lg:block py-3 ">
+                        <h3 class=" col-span-2 font-bold mb-3 text-lg text-gray-400">
                             More on <span class="text-blue-500">Formation</span>
                         </h3>
                         {formationVideos.map((vid) => (
-                            <a href={`/formation/` + vid.id} data-id={vid.id} class="cursor-pointer mb-4 border border-gray-500 grid grid-rows-3 max-h-[300px]  transition-all ease-in-out text-white bg-transparent auto-rows-auto  overflow-hidden rounded-lg p-3">
+                            <a href={`/formation/` + vid.id} data-id={vid.id} class="col-span-1 cursor-pointer mb-4 border border-gray-500 grid grid-rows-3 max-h-[300px]  transition-all ease-in-out text-white bg-transparent auto-rows-auto  overflow-hidden rounded-lg p-3">
                                 <div class="row-span-2  rounded-lg overflow-hidden">
                                     <img class="   m-auto  object-fit rounded-lg" src={vid.thumbnail} alt="" />
                                 </div>

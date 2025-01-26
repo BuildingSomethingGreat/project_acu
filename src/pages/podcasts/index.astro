@@ -55,7 +55,7 @@ import podcasts from "./podcasts.json";
     <div class="h-screen  m-auto" id="">
         <div class="grid grid-cols-2 my-5 max-h-[300px] w-full">
             <div class="w-[90%] m-auto col-span-2 grid grid-cols-2">
-                <div class="col-span-1 w-[100%] m-auto flex flex-col items-start justify-end">
+                <div class="col-span-2 lg:col-span-1 w-[100%] m-auto flex flex-col items-start justify-end">
                     <h2 class=" text-white  text-7xl ">
                         Visual <span class="text-orange-500">podcasts</span>, <br>
                         intentional conversations.
@@ -83,7 +83,7 @@ import podcasts from "./podcasts.json";
                 </div>
                 
                 <!-- <div class="mx-3"></div> -->
-                <div class="relative col-span-1 m-auto  flex items-center justify-center">
+                <div class="relative my-5  lg:my-0 col-span-2 lg:col-span-1 m-auto  flex items-center justify-center">
                     <video class=" z-10 rounded-lg opacity-75 top-0  overflow-hidden object-fill" width="100%" height="auto" controls  autoplay playsinline>
                         <source src="https://acu-cdn-pull.b-cdn.net/Episode%201%20Creating%20Space%20in%20a%20Distractred%20World.m4v" type="video/mp4">
                     </video>
@@ -92,18 +92,18 @@ import podcasts from "./podcasts.json";
 
             <Divider />
 
-            <div class="col-span-2 mb-4  bg-black m-auto w-[90%] rounded-lg p-7 grid grid-cols-3 gap-10">
+            <div class="col-span-2 mb-4  bg-black m-auto w-[100%] rounded-lg p-3 lg:p-7 grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-5">
                 {podcasts.map((vid) => (
-                    <a href={`/podcasts/` + vid.id} data-type="podcasts" data-id={vid.id} class="col-span-1 cursor-pointer relative overflow-hidden   rounded-lg  shadow-md">
-                       <div class="row-span-1  overflow-hidden">
+                    <a href={`/podcasts/` + vid.id} data-type="podcasts" data-id={vid.id} class="col-span-1 p-3 border border-gray-500 cursor-pointer relative overflow-hidden rounded-lg ">
+                       <div class="  overflow-hidden">
                             <img class="relative z-10 top-0 rounded-lg  h-auto w-full m-auto  object-cover opacity-100" src={vid.thumbnail} alt="" />
                        </div>
 
-                        <div class="relative h-[200px] whitespace-normal z-30  left-0 bottom-0 p-5 grid grid-cols-1 grid-rows-2">
+                        <div class="relative h-[170px] lg:h-[200px] whitespace-normal z-30  left-0 bottom-0 grid grid-cols-1 grid-rows-2 p-2">
                             <div class="row-span-1  flex flex-col text-white items-center justify-start">
                                 <p class="opacity-100 text-xs text-orange-500 text-left w-full" >#{vid.category}</p>
-                                <h2 class="my-2 w-[100%] text-left opacity-50  text-normal">{vid.title.split(":")[0]}</h2>
-                                {(vid.title.split(":")[1].length <= 19) ? <h2 class="my-2 w-[100%] text-left  text-4xl">{vid.title.split(":")[1]}</h2> : <h2 class="my-2 w-[100%] text-left  text-2xl">{vid.title.split(":")[1]}</h2>}
+                                <h2 class="my-2 w-[100%] text-left opacity-50  text-xs">{vid.title.split(":")[0]}</h2>
+                                {(vid.title.split(":")[1].length <= 19) ? <h2 class="my-1 w-[100%] text-left  text-md lg:text-4xl">{vid.title.split(":")[1]}</h2> : <h2 class="my-1 w-[100%] text-left  text-md lg:text-2xl">{vid.title.split(":")[1]}</h2>}
                                 
                             </div>
                             
