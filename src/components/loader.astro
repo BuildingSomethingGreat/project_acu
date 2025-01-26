@@ -11,6 +11,8 @@
     (function() {
         $(document).ready(function() {
             $(window).on("load", () => {
+                var videos = document.getElementsByTagName("video");
+
                 var elapsedTime = 0;
 
                 function progressbar(percent) {
@@ -28,13 +30,47 @@
                     elapsedTime++;
                 }
 
-                var interval = setInterval(function() {
-                    timer();
-                }, 10);
+                var interval;
+                if (!videos.length) {
+                    // No videos on the page, remove the loading screen immediately
+                    interval = setInterval(function() {
+                                    timer();
+                                }, 10);
+                        setTimeout(() => {
+                            $(".loader").fadeOut();
+                        }, 1500);
+                }
 
-                setTimeout(() => {
-                    $(".loader").fadeOut();
-                }, 1500);
+
+                let loadedVideos = 0;
+                for (var video of videos) {
+                    if (video.readyState >= 3) {
+                    // Video is already loaded
+                    interval = setInterval(function() {
+                                    timer();
+                                }, 10);
+                        setTimeout(() => {
+                            $(".loader").fadeOut();
+                        }, 1500);
+                    loadedVideos++;
+                    } else {
+                        // Add an event listener to track when the video is ready
+                        video.addEventListener("loadeddata", () => {
+                            loadedVideos++;
+                            if (loadedVideos === videos.length) {
+                            // All videos are loaded, hide the loading screen
+                            interval = setInterval(function() {
+                                    timer();
+                                }, 10);
+                                setTimeout(() => {
+                                    $(".loader").fadeOut();
+                                }, 1500);
+                            }
+                        });
+                    }
+                }
+
+                
         });  
         })
       

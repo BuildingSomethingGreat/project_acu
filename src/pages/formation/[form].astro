@@ -106,14 +106,14 @@ for (var vid of formationVideos) {
 
                             <!-- <img id="controlplay" class="absolute w-20 h-20 z-50 bottom-3 right-3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM3pOh5Jpss90QbjOiLKG1HB-Qx3DZQsjoFA&s" alt="" /> -->
                         <div class="w-fit h-fit relative rounded-lg overflow-hidden shadow-lg" >
-                            <svg id="play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class=" absolute z-30 bottom-3 right-3  size-8">
+                            <!-- <svg id="play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class=" absolute z-30 bottom-3 right-3  size-8">
                                 <path fill-rule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z" clip-rule="evenodd" />
                             </svg>
                             <svg id="pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="hidden z-30 absolute bottom-3 right-3 size-8">
                                 <path fill-rule="evenodd" d="M6.75 5.25a.75.75 0 0 1 .75-.75H9a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H7.5a.75.75 0 0 1-.75-.75V5.25Zm7.5 0A.75.75 0 0 1 15 4.5h1.5a.75.75 0 0 1 .75.75v13.5a.75.75 0 0 1-.75.75H15a.75.75 0 0 1-.75-.75V5.25Z" clip-rule="evenodd" />
-                                </svg>
+                                </svg> -->
                                 
-                            <video id="vid" class=" opacity-75 m-auto  rounded-lg overflow-hidden object-fill max-w-[1000px]" width="100%" height="100%" playsinline>
+                            <video preload="auto" id="vid" class=" opacity-75 m-auto  rounded-lg overflow-hidden object-fill max-w-[1000px]" width="100%" height="100%" controls autoplay playsinline>
                                 <!-- <source src="/modernhome.mp4" type="video/mp4"> -->
                                 <source src={res.url} type="video/mp4">
                             </video>
@@ -170,37 +170,12 @@ for (var vid of formationVideos) {
         <Footer />
 </body>
 
-<script type="text/javascript">
-    function openNewWindow(el) {
-        window.open("./" + $(el).data("id"), "_blank");
-    }
-</script>
 
 <script>
     (function() {
-
-        var vid =document.getElementById("vid");
-
-        function togglePlayPause() {
-            if  (vid.paused) {
-                vid.play();
-                $("#play").addClass("hidden");
-                $("#pause").removeClass("hidden");
-
-            } else {
-                vid.pause()
-                $("#pause").addClass("hidden");
-                $("#play").removeClass("hidden");
-            };
-
-        }
-
-        togglePlayPause(); 
-        
-        $("#play, #pause").on("click", function() {
-            togglePlayPause(); 
-        });
-       
+        $(document).ready(function() {
+            // This allows videos to autoplay with sound
+            $("body").click();
+        })
     })();
-
 </script>
