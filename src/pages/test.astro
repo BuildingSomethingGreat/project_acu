@@ -5,26 +5,6 @@ import Loader from "../components/loader.astro";
 import {SEO} from "astro-seo";
 import SearchBar from "../components/searchBar";
 
-var formationVideos =  [
-     {id:"1",views: "1.2K", title: "Colors of Fall", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatio_fall.png", url: "https://acu-cdn-pull.b-cdn.net/Colors%20of%20Fall.mp4", link: Astro.url.origin + "/podcasts/1"},
-    //  {id:"2",views: "1.2K", title: "Child of the Creator", creator: "Dr. Jerry Taylor", thumbnail: "/vocatio_teddy.png", url: "https://acu-cdn-pull.b-cdn.net/childOfTheCreator_formation.mp4"},
-    //  {id:"3", views: "1.2K",title: "Rest", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatio_rest.png", url: "https://acu-cdn-pull.b-cdn.net/Rest.m4v"},
-    //  {id:"4", views: "1.2K",title: "The Slow Way", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatio_slowway.png", url: "https://acu-cdn-pull.b-cdn.net/The%20Slow%20Way%20.m4v"}
-]
-
-var podcastVideos =  [
-     {id:"1", views: "1.2K", title: "Episode 1 : Creating Space in a Distracted World", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%201%20Creating%20Space%20in%20a%20Distractred%20World.m4v", link: Astro.url.origin + "/podcasts/1"},
-    //  {id:"2", views: "10K", title: "Episode 2 : Radical Hospitality", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%202%20Radical%20Hospitality.m4v"},
-    //  {id:"3", views: "4.5K", title: "Episode 3 : The spiritual Art of Slowing Down", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%203%20The%20Spiritual%20Art%20of%20Slowing%20Down.m4v"},
-    //  {id:"4", views: "2K", title: "Episode 4 : When Your Calling and Career Don't Align", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%204%20When%20Your%20Calling%20and%20Career%20Do%20Not%20Align.m4v"},
-]
-
-var blogPosts =  [
-     {id:"1", views: "1.2K", title: "Episode 1 : Creating Space in a Distracted World", description: "Exploring the attributes of God as revealed in Scripture, we discover profound insights that shape our understanding of faith, worship, and daily life.", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%201%20Creating%20Space%20in%20a%20Distractred%20World.m4v", link: Astro.url.origin + "/podcasts/1"},
-    //  {id:"2", views: "10K", title: "Episode 2 : Radical Hospitality", creator: "Dr. Christopher Cobbler", description: "By examining biblical truths and their relevance to modern issues, we uncover how theology influences societal values and guides our responses to cultural challenges.", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%202%20Radical%20Hospitality.m4v"},
-    //  {id:"3", views: "4.5K", title: "Episode 3 : The spiritual Art of Slowing Down", description: "The Bible offers timeless teachings that inform our beliefs and actions, providing a solid foundation for spiritual growth and faithful living.", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%203%20The%20Spiritual%20Art%20of%20Slowing%20Down.m4v"},
-    //  {id:"4", views: "2K", title: "Episode 4 : When Your Calling and Career Don't Align", description: "Bridging the gap between doctrine and everyday experience, theology equips us to navigate life's complexities with wisdom, purpose, and unwavering faith.", creator: "Dr. Christopher Cobbler", thumbnail: "/vocatiothumb.png", url: "https://acu-cdn-pull.b-cdn.net/Episode%204%20When%20Your%20Calling%20and%20Career%20Do%20Not%20Align.m4v"},
-]
 ---
 
 <head>
@@ -127,7 +107,7 @@ var blogPosts =  [
 				</div>
 
 				<div class="promo-text py-3 lg:py-0 text-white col-span-2 lg:col-span-1  opacity-0 flex flex-col items-center justify-start lg:justify-center">
-					<h2 class="z-20 text-center lg:text-left  my-5 text-2xl w-[80%]">
+					<h2 class="z-20 text-center  my-5 text-2xl w-[80%]">
 						Learn how ACU is <span class="text-teal-400">reimagining</span> digital spaces.
 					</h2>
 					<div class="flex flex-row items-center w-[90%] lg:w-[100%] justify-evenly whitespace-nowrap">
@@ -197,14 +177,14 @@ var blogPosts =  [
 			<!-- <img src="blob-1.png" class="w-[80%] h-auto z-10 absolute top-0 -left-[20%] bottom-0  m-auto h-fit " alt="" /> -->
 			<!-- <img src="/online-text.png" class="boundText w-[50%] h-auto z-40 absolute top-[0%] bottom-0 left-0 right-0 m-auto h-fit " alt="" /> -->
 			
-			<div class="m-auto w-[95%] h-screen overflow-hidden bg-neutral-900  grid gap-4 grid-cols-2 lg:grid-rows-1">
+			<div class="m-auto w-[95%] h-screen overflow-hidden bg-neutral-900  grid gap-4 grid-cols-2 lg:grid-cols-3 lg:grid-rows-1">
 				<div class="col-span-2 py-3 lg:py-0 lg:col-span-1 flex flex-col items-center justify-end lg:justify-center">
 					<div class="bg-neutral-900  text-white z-40  flex flex-col items-center justify-center">
 						<div class="mb-3">
-							<h1 class="text-left text-2xl">Online formation starts here.</h1>
+							<h1 class="text-center  text-2xl">Online <span class="text-yellow-300">formation</span> <br> starts here.</h1>
 						</div>
 						<div class="mt-5 mb-10 flex items-center justify-center">
-							<p class="text-sm w-[90%] text-center lg:w-[60%]">
+							<p class="text-base w-[90%] text-center">
 								An online community designed with your spiritual and vocational 
 								formation in mind. Intimate spaces to engage meaningful content, 
 								share stories and grow together.
@@ -219,7 +199,7 @@ var blogPosts =  [
 					</div>
 				</div>
 	
-				<div class="col-span-2 p-3 lg:col-span-1 flex flex-col items-center justify-start lg:justify-center relative">
+				<div class="col-span-2 p-3 lg:col-span-2 flex flex-col items-center justify-start lg:justify-center relative">
 					<video preload="none" class="rounded-lg overflow-hidden relative z-10 opacity-100 object-fill" width="100%" height="100%" autoplay data-autoplay muted playsinline loop>
 						<source data-src="https://acu-cdn-pull.b-cdn.net/communitypromo.mp4" type="video/mp4">
 					</video>
@@ -229,32 +209,26 @@ var blogPosts =  [
 		</div> 
 
 		<div id="formationVideos" class="overflow-hidden section bg-black" >
-			<!-- <img src="/02.png" class="w-[40%] h-auto z-10 absolute top-0 left-0 h-fit opacity-10" alt="" /> -->
 			<div class="slide relative">
-				<div class="absolute top-0 right-0 left-0 bottom-0 m-auto bg-black w-[80%] h-[90%] rounded-lg overflow-hidden ">
-					<video preload="auto" class="absolute z-10 opacity-50 top-0  overflow-hidden object-fill w-auto h-full -left-[50%] lg:w-[120%] lg:h-auto lg:left-0 " autoplay data-autoplay muted playsinline loop>
+				<div class="absolute top-0 right-0 left-0 bottom-0 m-auto bg-black w-auto h-full rounded-lg overflow-hidden ">
+					<video preload="auto" class="absolute z-10 opacity-50 top-0  overflow-hidden object-fill w-auto h-full -left-[50%] lg:left-0 " autoplay data-autoplay muted playsinline loop>
 						<source data-src="https://acu-cdn-pull.b-cdn.net/formationVideo.mp4" type="video/mp4">
 					</video>
 	
-					<div class="z-50 absolute left-5 bottom-5 grid grid-cols-2 w-full">
-						<div class="col-span-2 lg:col-span-1 flex flex-col items-center justify-start text-white px-4 " data-accordion="collapse" data-active-classes="bg-transparent" >
-							<h1 class="text-left text-5xl w-full ">
+					<div class="z-50 absolute left-5 bottom-14 lg:bottom-5 grid grid-cols-2 w-[90%] lg:w-full">
+						<div class="col-span-2 lg:col-span-1 flex flex-col items-center justify-start text-white px-4 "  >
+							<h1 class="text-left text-4xl lg:text-5xl w-full ">
 								Creating <span class="text-blue-500">space</span> to <br>
 								discern God's invitation. 
 							</h1>
-							<p class=" my-5 text-md text-left opacity-70 w-full">
+							<p class=" my-5 text-base text-left opacity-70 w-full">
 								Thoughtful, curated content to disrupt an unhealthy rhythm of life.
 							</p>
-							<!-- <div class="my-3 mb-7 text-blue-500  flex items-center justify-center">
-								<a href="" class="rounded-full p-3 px-5 text-sm bg-white font-bold ">#Devotional</a>
-								<a href="" class="rounded-full p-3 px-5 text-sm bg-white font-bold mx-3">#MomentsOfStillness</a>
-								<a href="" class="rounded-full p-3 px-5  text-sm bg-white font-bold ">#GuidedPractices</a>
-							</div> -->
 							<div class="py-2 flex flex-row items-center justify-start w-full ">
-								<a href="/formation" class="py-3 px-4   font-bold border-2 border-white rounded-full ">
+								<a href="/formation" class="py-3 px-4  text-base border-2 border-white rounded-full ">
 									View collection
 								</a>
-								<a href="/blog/1" class="ms-4 py-3 px-4   border-2 border-white rounded-full ">
+								<a href="/blog/1" class="ms-4 py-3 px-4   border-2 border-white text-base rounded-full ">
 									Learn More
 								</a>
 							</div>
@@ -263,30 +237,25 @@ var blogPosts =  [
 				</div>
 			</div>
 			<div class="slide relative">
-				<div class="absolute top-0 right-0 left-0 bottom-0 m-auto bg-black w-[80%] h-[90%] rounded-lg overflow-hidden ">
-					<video preload="none" class="absolute z-10 opacity-50 top-0  overflow-hidden object-fill w-auto h-full -left-[50%] lg:w-[120%] lg:h-auto lg:left-0 " autoplay data-autoplay muted playsinline loop>
+				<div class="absolute top-0 right-0 left-0 bottom-0 m-auto bg-black w-auto h-full rounded-lg overflow-hidden ">
+					<video preload="none" class="absolute z-10 opacity-50 top-0  overflow-hidden object-fill w-auto h-full -left-[50%] lg:left-0 " autoplay data-autoplay muted playsinline loop>
 						<source data-src="https://acu-cdn-pull.b-cdn.net/forest.mp4" type="video/mp4">
 					</video>
 	
-					<div class="z-50 absolute left-5 bottom-5  grid grid-cols-2 w-full">
+					<div class="z-50 absolute left-5 bottom-14 lg:bottom-5  grid grid-cols-2 w-[90%] lg:w-full">
 						<div class="col-span-2 lg:col-span-1 flex flex-col items-center justify-start text-white px-4 " data-accordion="collapse" data-active-classes="bg-transparent" >
 							<h1 class="text-left text-5xl w-full ">
 								Visual <span class="text-orange-500">podcasts</span>, <br>
 								intentional conversations.
 							</h1>
-							<p class=" my-5 text-md text-left opacity-70 w-full">
+							<p class=" my-5 text-base text-left opacity-70 w-full">
 								Reimagining our sense of calling in the world.
 							</p>
-							<!-- <div class="my-3 mb-7 text-blue-500  flex items-center justify-center">
-								<a href="" class="rounded-full p-3 px-5 text-sm bg-white font-bold ">#Devotional</a>
-								<a href="" class="rounded-full p-3 px-5 text-sm bg-white font-bold mx-3">#MomentsOfStillness</a>
-								<a href="" class="rounded-full p-3 px-5  text-sm bg-white font-bold ">#GuidedPractices</a>
-							</div> -->
 							<div class="py-2 flex flex-row items-center justify-start w-full ">
-								<a href="/formation" class="py-3 px-4   font-bold border-2 border-white rounded-full ">
+								<a href="/formation" class="py-3 px-4  text-base border-2 border-white rounded-full ">
 									View collection
 								</a>
-								<a href="/blog/1" class="ms-4 py-3 px-4   border-2 border-white rounded-full ">
+								<a href="/blog/1" class="ms-4 py-3 px-4  text-base border-2 border-white rounded-full ">
 									Learn More
 								</a>
 							</div>
@@ -295,27 +264,22 @@ var blogPosts =  [
 				</div>
 			</div>
 			<div class="slide relative">
-				<div class="absolute top-0 right-0 left-0 bottom-0 m-auto bg-black w-[80%] h-[90%] rounded-lg overflow-hidden ">
-					<video preload="auto" class="absolute z-10 opacity-50 top-0  overflow-hidden object-fill w-auto h-full -left-[50%] lg:w-[120%] lg:h-auto lg:left-0 " autoplay data-autoplay muted playsinline loop>
+				<div class="absolute top-0 right-0 left-0 bottom-0 m-auto bg-black w-auto h-full rounded-lg overflow-hidden ">
+					<video preload="auto" class="absolute z-10 opacity-50 top-0  overflow-hidden object-fill w-auto h-full -left-[50%] lg:left-0 " autoplay data-autoplay muted playsinline loop>
 						<source data-src="https://acu-cdn-pull.b-cdn.net/blog.mp4" type="video/mp4">
 					</video>
 	
-					<div class="z-50 p-3 absolute left-5 bottom-5  grid grid-cols-2 w-full">
+					<div class="z-50 p-3 absolute left-5 bottom-14 bot lg:bottom-5  grid grid-cols-2 w-[90%] lg:w-full">
 						<div class="col-span-2 lg:col-span-1 flex flex-col items-center justify-start text-white px-4 " data-accordion="collapse" data-active-classes="bg-transparent" >
-							<h1 class="text-left text-5xl w-full ">
+							<h1 class="text-left text-4xl  lg:text-5xl w-full ">
 								Read insightful  <span class="text-green-500">blogs</span>   
 								from thought leaders.
 							</h1>
-							<p class=" my-5 text-md text-left opacity-70 w-full">
+							<p class=" my-5 text-base text-left opacity-70 w-full">
 								Read through topics on formaton, devotion, and biblical themes. 
 							</p>
-							<!-- <div class="my-3 mb-7 text-blue-500  flex items-center justify-center">
-								<a href="" class="rounded-full p-3 px-5 text-sm bg-white font-bold ">#Devotional</a>
-								<a href="" class="rounded-full p-3 px-5 text-sm bg-white font-bold mx-3">#MomentsOfStillness</a>
-								<a href="" class="rounded-full p-3 px-5  text-sm bg-white font-bold ">#GuidedPractices</a>
-							</div> -->
 							<div class="py-2 flex flex-row items-center justify-start  w-full">
-								<a href="/blog" class="py-3 px-4   font-bold border-2 border-white rounded-full ">
+								<a href="/blog" class="py-3 px-4  text-base border-2 border-white rounded-full ">
 									Read now
 								</a>
 							</div>
