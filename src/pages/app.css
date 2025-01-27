@@ -11,6 +11,11 @@ body {
   body {
     font-size: 1.2em !important;
   }
+
+  ::-webkit-scrollbar-thumb {
+    display: none;
+    visibility: hidden;
+  }
 }
 
 a, button {
