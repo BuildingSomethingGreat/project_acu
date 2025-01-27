@@ -100,7 +100,7 @@ import SearchBar from "../components/searchBar";
 
 				<div class=" col-span-2 p-3 flex flex-col lg:flex-row items-center lg:items-end justify-end lg:justify-center">
 					<div class="relative z-20 w-[100%] lg:m-auto  rounded-lg overflow-hidden ">
-						<video class="shadow-lg" id="vid" width="100%" height="100%" controls autoplay data-autoplay muted playsinline loop>
+						<video class="shadow-lg" id="vid" width="100%" height="100%" controls autoplay data-autoplay playsinline loop>
 							<source data-src="https://acu-cdn-pull.b-cdn.net/WebsiteWelcome.mp4" type="video/mp4">
 						</video>
 					</div>
@@ -211,7 +211,7 @@ import SearchBar from "../components/searchBar";
 		<div id="formationVideos" class="overflow-hidden section bg-black" >
 			<div class="slide relative">
 				<div class="absolute top-0 right-0 left-0 bottom-0 m-auto bg-black w-auto h-full rounded-lg overflow-hidden ">
-					<video preload="auto" class="absolute z-10 opacity-50 top-0  overflow-hidden object-fill w-auto h-full -left-[50%] lg:left-0 " autoplay data-autoplay muted playsinline loop>
+					<video preload="none" class="absolute z-10 opacity-50 top-0 bottom-0  rounded-lg overflow-hidden object-fill w-auto h-full -left-[50%]  lg:w-[80%] lg:h-auto lg:left-0 lg:right-0  max-w-[1000px] m-auto" autoplay data-autoplay muted playsinline loop>
 						<source data-src="https://acu-cdn-pull.b-cdn.net/formationVideo.mp4" type="video/mp4">
 					</video>
 	
@@ -238,7 +238,7 @@ import SearchBar from "../components/searchBar";
 			</div>
 			<div class="slide relative">
 				<div class="absolute top-0 right-0 left-0 bottom-0 m-auto bg-black w-auto h-full rounded-lg overflow-hidden ">
-					<video preload="none" class="absolute z-10 opacity-50 top-0  overflow-hidden object-fill w-auto h-full -left-[50%] lg:left-0 " autoplay data-autoplay muted playsinline loop>
+					<video preload="none" class="absolute z-10 opacity-50 top-0 bottom-0  rounded-lg overflow-hidden object-fill w-auto h-full -left-[50%]  lg:w-[80%] lg:h-auto lg:left-0 lg:right-0  max-w-[1000px] m-auto" autoplay data-autoplay muted playsinline loop>
 						<source data-src="https://acu-cdn-pull.b-cdn.net/forest.mp4" type="video/mp4">
 					</video>
 	
@@ -265,7 +265,7 @@ import SearchBar from "../components/searchBar";
 			</div>
 			<div class="slide relative">
 				<div class="absolute top-0 right-0 left-0 bottom-0 m-auto bg-black w-auto h-full rounded-lg overflow-hidden ">
-					<video preload="auto" class="absolute z-10 opacity-50 top-0  overflow-hidden object-fill w-auto h-full -left-[50%] lg:left-0 " autoplay data-autoplay muted playsinline loop>
+					<video preload="none" class="absolute z-10 opacity-50 top-0 bottom-0  rounded-lg overflow-hidden object-fill w-auto h-full -left-[50%]  lg:w-[80%] lg:h-auto lg:left-0 lg:right-0  max-w-[1000px] m-auto" autoplay data-autoplay muted playsinline loop>
 						<source data-src="https://acu-cdn-pull.b-cdn.net/blog.mp4" type="video/mp4">
 					</video>
 	
@@ -346,7 +346,7 @@ import SearchBar from "../components/searchBar";
 				});
 
 			$(document).ready(function() {
-				
+				$("body").click();
 
 				$("#play, #pause").on("click", function() {
 					togglePlayPause(); 
