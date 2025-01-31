@@ -57,8 +57,11 @@ import SearchBar from "../components/searchBar";
 	<div class="h-full w-[100%] m-auto" id="fullpage">
 		
 		<div class="section overflow-hidden  bg-black h-full flex items-center justify-center ">
-			<video class="absolute opacity-75 top-0  overflow-hidden object-fill w-auto h-full -left-[40%] lg:w-[120%] lg:h-auto lg:left-0  " autoplay data-autoplay muted playsinline loop>
+			<video class="hidden lg:block absolute opacity-75 top-0  overflow-hidden object-fill w-[120%] h-auto left-0  " autoplay data-autoplay muted playsinline loop>
 				<source data-src="https://acu-cdn-pull.b-cdn.net/Website%20Cover%20Video%201.0.mp4" type="video/mp4">
+			</video>
+			<video class="block lg:hidden absolute opacity-75 top-0  overflow-hidden object-fill w-full h-auto  " autoplay data-autoplay muted playsinline loop>
+				<source data-src="https://acu-cdn-pull.b-cdn.net/verticalWebsiteCover.mp4" type="video/mp4">
 			</video>
 
 			<div class="opacity-0 fadeIn absolute right-0 bottom-10 left-0 flex flex-col items-center justify-center">

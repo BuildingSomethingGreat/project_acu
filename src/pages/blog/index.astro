@@ -82,26 +82,29 @@ import blogs from "./blogs.json";
 
             <div class="col-span-2 mb-4  bg-black m-auto w-[90%] rounded-lg p-7 grid grid-cols-2 lg:grid-cols-3 gap-10">
                 {blogs.posts.map((vid) => (
-                      <a href={`/blog/` + vid.id}  data-type="blog" data-id={vid.id} class="col-span-2 cursor-pointer inline-grid grid-cols-1 grid-rows-3  relative overflow-hidden max-h-[400px] h-full  rounded-lg bg-white shadow-md">
+                      <a href={`/blog/` + vid.id}  data-type="blog" data-id={vid.id} class="col-span-2 lg:col-span-1 cursor-pointer inline-grid grid-cols-1  relative overflow-hidden max-h-[500px] h-full  rounded-lg bg-white shadow-md">
                             {/* <img class="row-span-1 relative z-10 top-0  w-full  object-cover opacity-100" src={vid.thumbnail} alt="" /> */}
 
-                        <div class="relative row-span-2 h-full whitespace-normal z-30  left-0 bottom-0 p-5 grid grid-cols-1 grid-rows-2 gap-5">
+                        <div class="row-span-1 ">
+                            <img class="" src={vid.thumbnail} />
+                        </div>
 
+                        <div class="relative row-span-2 h-full whitespace-normal z-30  left-0 bottom-0 p-5 grid grid-cols-1 grid-rows-2 gap-5">
                             <div class="row-span-1  flex flex-col text-black items-center justify-start">
                                 <h2 class="my-2 w-[100%] text-left font-bold  text-2xl">{vid.title}</h2>
                                 {/* {(vid.title.split(":")[1].length <= 19) ? <h2 class="my-2 w-[100%] text-left  text-4xl">{vid.title.split(":")[1]}</h2> : <h2 class="my-2 w-[100%] text-left  text-2xl">{vid.title.split(":")[1]}</h2>} */}
                                 <div class="w-[100%] flex flex-row items-center justify-start">
                                     <img class="w-5 rounded-full" src={vid.profile} alt="" />
-                                    <p class="ms-2 font-bold opacity-50">{vid.creator}</p>
+                                    <p class="ms-2 text-xs font-bold opacity-50">{vid.creator}</p>
                                 </div>
                             </div>
 
                             <div class="row-span-1  flex flex-col text-black items-center justify-start">
-                                <p class="opacity-80 text-sm text-left" >{vid.description.length > 200 ? vid.description.substring(0, 200) + "..." : vid.description}</p>
+                                <p class="opacity-80 text-sm text-left" >{vid.description.length > 100 ? vid.description.substring(0, 100) + "..." : vid.description}</p>
                             </div>
                         </div>
 
-                        <div class="row-span-1 px-5  bottom-2 left-0 right-0 m-auto opacity-50 flex items-start justify-start text-black">
+                        <div class="row-span-1 py-5 left-0 right-0 m-auto opacity-50 flex items-start justify-start text-black">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
