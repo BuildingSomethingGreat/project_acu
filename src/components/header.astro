@@ -1,4 +1,5 @@
 ---
+import Divider from "./divider.astro";
 import SearchBar from "./searchBar"
 
 const {position} = Astro.props;
@@ -72,12 +73,19 @@ const {position} = Astro.props;
         </button>
     </div>
 
-    <div class=" m-auto flex flex-col items-center justify-center ">
-        <a href="/#about" class="text-base text-black mb-5">About </a>
-        <a href="/blog" class="text-xl text-black mb-5 hover:text-green-500 ">Blogs</a>
-        <a href="/formation"  class="text-xl  text-black  mb-5 hover:text-blue-500 ">Formation Videos </a>
-        <a href="/podcasts"  class="text-xl  text-black mb-5 hover:text-orange-500">Podcasts</a>
-        <a href="https://community.vocationalformation.com/join?invitation_token=0397643d810f3c927a4ad1dd375a4c65af2f5608-f213ec46-5703-4e64-96ea-ae4a32a0283e" class=" text-base text-white bg-black rounded-full p-3 px-5 flex items-center justify-center hover:bg-gray-800 text-sm hover:text-white"> Join our formation community.</a>
+    <div class=" m-auto flex flex-col items-start justify-center ">
+        <a href="/#about" class="text-4xl text-black mb-5">About </a>
+        <a href="/blog" class="text-4xl text-black mb-5 hover:text-green-500 ">Blogs</a>
+        <a href="/formation"  class="text-4xl  text-black  mb-5 hover:text-blue-500 ">Formation Videos </a>
+        <a href="/podcasts"  class="text-4xl  text-black mb-3 hover:text-orange-500">Podcasts</a>
+        <div class="my-3 w-full flex items-center justify-center">
+            <Divider />
+        </div>
+        <a href="https://community.vocationalformation.com/join?invitation_token=0397643d810f3c927a4ad1dd375a4c65af2f5608-f213ec46-5703-4e64-96ea-ae4a32a0283e" class=" text-xl text-white bg-black rounded-full p-3 px-5 flex items-center justify-center hover:bg-gray-800  hover:text-white"> Join our formation community.</a>
+        <div class="my-3 w-full flex items-center justify-center">
+            <p class="text-sm text-gray-800 me-1">Powered by</p>
+            <img class="w-[50px]" src="/circle-logo.png" />
+        </div>
     </div> 
 </div>
 

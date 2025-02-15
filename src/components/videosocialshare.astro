@@ -1,8 +1,12 @@
 ---
     const {title, link} = Astro.props;
 ---
-<div class="col-span-1 lg:col-span-1 flex flex-row items-start lg:items-end justify-end">
-    <a href={"https://www.facebook.com/sharer/sharer.php?u=" + link} target="_blank" id="exploreMore" class="col-span-1 mx-3  flex items-center justify-center my-3  rounded-full w-[100px] h-[50px] bg-blue-600 text-white font-bold text-sm p-3">
+<div class="lg:mt-7 col-span-1 flex flex-row items-start justify-center lg:items-end lg:justify-start">
+    <button id="play" class="col-span-1  hidden lg:flex items-center justify-center my-3  rounded-full w-[100px] h-[50px] bg-white text-black font-bold text-sm p-3">
+        Play Now
+    </button>
+    <div class= "hidden lg:block lg:col-span-1  text-white font-bold w-[2px] h-[50px] rounded-lg m-auto mx-5 bg-white"></div>
+    <a href={"https://www.facebook.com/sharer/sharer.php?u=" + link} target="_blank" id="exploreMore" class="col-span-1 me-3  flex items-center justify-center my-3  rounded-full w-[100px] h-[50px] bg-blue-600 text-white font-bold text-sm p-3">
         Facebook
     </a>
     <a href={"http://twitter.com/share?text=" + title + "&url=" + link + "/&hashtags=#vocationalformation,#acu,#newexperience"} id="exploreMore" class="col-span-1    my-3 flex items-center justify-center rounded-full w-[50px] h-[50px] bg-black text-white font-bold text-sm p-3">

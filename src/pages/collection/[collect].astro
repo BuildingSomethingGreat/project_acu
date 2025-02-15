@@ -1,0 +1,164 @@
+---
+import "./../app.css"
+
+import Header from "../../components/header.astro"
+import Loader from "../../components/loader.astro";
+import Category from "../../components/category-sidebar.astro";
+import Footer from "../../components/footer.astro";
+
+import VideoSocialShare from "../../components/videosocialshare.astro"
+// import podcasts from "./podcasts.json";
+import {SEO} from "astro-seo";
+
+import podcastsJson from "../podcasts/podcasts.json";
+import formationJson from "../formation/formation.json";
+import blogsJson from "../blog/blogs.json";
+
+
+export function getStaticPaths() {
+  return [
+    {params: {collect: 'vocatio-reimagined'}},
+    {params: {collect: 'devotional'} },
+    {params: {collect: 'moments-of-stillness'} },
+    {params: {collect: 'blog'} }
+  ];
+}
+
+
+const { collect } = Astro.params;
+var data = [];
+var color = '';
+
+if (["devotional",  "moments-of-stillness"].includes(collect) ) { 
+    data   = formationJson.filter(formatioon => formatioon.category === collect)
+    color = "text-blue-500";
+}
+
+if (collect == "vocatio-reimagined") { 
+    data   = podcastsJson;
+    color = "text-orange-500";
+
+}
+
+if (collect == "blog") { 
+    data  = blogsJson.posts;
+    color = "text-green-500";
+
+}
+
+--- 
+
+<head>
+    <SEO
+      title="Center for Vocational Formation : Collections"
+      description="Vocatio Reimagined is a podcasts that seeks exploring what it takes and the challenges around forming our vocation in a modern culture."
+      openGraph={{
+        basic: {
+          title: "Center for Vocational Formation : Vocatio Reimagined",
+          type: "Vocatio Reimagined is a podcasts that seeks to explore our vocational formation.",
+          image: "https://acu-cdn-pull.b-cdn.net/vocatiothumb.png",
+        }
+      }}
+      twitter={{
+        creator: "@jonasmerlins1"
+      }}
+      extend={{
+        // extending the default link tags
+        link: [{ rel: "icon", href: "/favicon.ico" }],
+        // extending the default meta tags
+        meta: [
+          {
+            name: "twitter:image",
+            content: "https://acu-cdn-pull.b-cdn.net/vocatiothumb.png",
+          },
+          { name: "twitter:title", content: "Center for Vocational Formation : Vocatio Reimagined" },
+          { name: "twitter:description", content: "Vocatio Reimagined is a podcasts that seeks to explore our vocational formation." },
+        ],
+      }}
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+</head>
+
+<body class="h-screen bg-[#191B1F] ">
+
+	  <Loader />
+    <Header position="relative" />
+
+    <div class=" h-screen w-[98%] m-auto" id="">
+        <div style="background: #191B1F" class="  overflow-hidden  bg-[#313638]  flex flex-col items-center justify-center ">
+
+            <div class=" grid grid-cols-2 lg:grid-cols-6 lg:auto-rows-auto  gap-4  overflow-hidden lg:h-full  p-2">
+              
+              <Category />
+                <!-- categories -->
+                <div class="w-full  col-span-2 lg:col-start-2 lg:col-span-5 lg:overflow-y-scroll no-scrollbar grid h-full  grid-cols-2 gap-3  lg:block  ">
+                    <h3 class="col-span-2 p-2 font-bold mb-3 text-xl text-gray-400">
+                        Collection  /  <span class={color}>{collect}</span>
+                    </h3>
+
+                    <div class="col-span-2 w-full grid grid-cols-2 lg:grid-cols-4 gap-3 "> 
+
+                      {data.map((vid) => (
+                            <a href={vid.link} data-id={vid.id} class="col-span-1 cursor-pointer mb-4 border border-gray-500 grid grid-rows-2 gap-3 lg:max-h-[300px]  transition-all ease-in-out text-white bg-transparent auto-rows-auto  overflow-hidden rounded-lg p-3">
+                                <div class="row-span-1  rounded-lg overflow-hidden">
+                                   <img class="   m-auto  object-fit rounded-lg" src={vid.thumbnail} alt="" />
+                               </div>
+                               <div class="row-span-1">
+                                    <p class="font-bold opacity-50 text-sm">{vid.creator}</p>
+                                   <h3 class="text-bold my-1 text-base text-left opacity-100">{vid.title}</h3>
+                               </div>
+                           </a>
+                       ))}
+                    </div>
+                   
+                </div>
+            </div>
+        
+            
+                <!-- <img class="relative block h-auto w-full object-cover" src="/vocatio_fall.png" alt=""/> -->
+        </div>
+    </div>
+
+    <!-- <Footer /> -->
+   
+</body>
+
+<script>
+    (function() {
+        $(document).ready(function() {
+            // This allows videos to autoplay with sound
+            $("body").click();
+
+            // set overlay hieght to video height
+            var videoHeight = $("#vid").height();
+
+            // while ($("#vid").height() != $("#overlay").height()) {
+            //     $("#overlay").height($("#vid").height());
+            //     $("#overlay").fadeIn()
+            // }
+            var currentTime = 0;
+            $("#play").on("click", function() {
+                $("#overlay").fadeOut();
+                var video = $("#vid");
+                video[0].currentTime = currentTime;
+                $("#vid").prop('controls', true);
+                $("#vid").prop('muted', false);
+                $("#vid").get(0).play();
+
+            })
+
+            
+
+            $("#vid").on("pause", function() {
+                currentTime = $(this).get(0).currentTime;
+                $("#overlay").fadeIn();
+
+            })
+           
+        })
+    })();
+</script>
