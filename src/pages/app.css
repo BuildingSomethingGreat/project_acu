@@ -72,8 +72,8 @@ video {
 }
 
 body, html {
-  max-width: 1500px !important;
-  margin: auto;
+  /* max-width: 1500px !important;
+  margin: auto; */
 }
 
 
