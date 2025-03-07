@@ -6,7 +6,7 @@ const {position} = Astro.props;
 ---
 
 <!-- desktop menu -->
-<div class={position + ` hidden lg:flex fadeIn-header opacity-0 mb-[5%] rounded-full w-[95%] top-2 left-0 right-0 m-auto z-50 flex-row items-center justify-between`}>
+<div class={position == "sticky" ? position + ` bg-[#191B1F] hidden lg:flex fadeIn-header opacity-0 mb-1  w-full p-2 top-0 left-0 right-0 m-auto z-50 flex-row items-center justify-between` : position + ` ` + `  hidden lg:flex fadeIn-header opacity-0 mb-[5%]  w-full p-2 top-0 left-0 right-0 m-auto z-50 flex-row items-center justify-between`}>
     <div class="bg-transparent  rounded-full p-5  flex flex-row items-center justify-start">
         <a class="!w-[120px] me-4" href="/">
             <img class=" h-auto" src="/acu_logo.png" alt="logo"/>
@@ -39,12 +39,13 @@ const {position} = Astro.props;
             </div>
         </div>
     
-        <a href="https://community.vocationalformation.com/join?invitation_token=0397643d810f3c927a4ad1dd375a4c65af2f5608-f213ec46-5703-4e64-96ea-ae4a32a0283e" class=" text-md text-black bg-white rounded-full p-3 px-5 flex items-center justify-center hover:bg-gray-800 text-sm hover:text-white"> Join our formation community.</a>
+        <!-- <a href="https://community.vocationalformation.com/join?invitation_token=0397643d810f3c927a4ad1dd375a4c65af2f5608-f213ec46-5703-4e64-96ea-ae4a32a0283e" class=" text-md text-black bg-white rounded-full p-3 px-5 flex items-center justify-center hover:bg-gray-800 text-sm hover:text-white"> Join our formation community.</a> -->
+        <a href="/community" class=" text-md text-black bg-white rounded-full p-3 px-5 flex items-center justify-center hover:bg-gray-800 text-sm hover:text-white"> Join our formation community.</a>
     </div> 
 </div>
 
 <!-- mobile menu -->
-<div class={position + ` flex lg:hidden fadeIn-header opacity-0 mb-[5%] rounded-full w-[95%] top-2 left-0 right-0 m-auto z-50 flex-row items-center justify-between`}>
+<div class={position == "sticky" ? position + ` bg-[#191B1F] flex lg:hidden fadeIn-header opacity-0 mb-[5%]  w-[100] p-2 top-0 left-0 right-0 m-auto z-50 flex-row items-center justify-between`  : position + ` flex lg:hidden fadeIn-header opacity-0 mb-[5%] rounded-full w-[95%] top-2 left-0 right-0 m-auto z-50 flex-row items-center justify-between`}>
     <div class="bg-transparent  rounded-full p-5  flex flex-row items-center justify-start">
         <a class="!w-[40%] me-4" href="/">
             <img class=" h-auto" src="/acu_logo.png" alt="logo"/>
@@ -81,7 +82,8 @@ const {position} = Astro.props;
         <div class="my-3 w-full flex items-center justify-center">
             <Divider />
         </div>
-        <a href="https://community.vocationalformation.com/join?invitation_token=0397643d810f3c927a4ad1dd375a4c65af2f5608-f213ec46-5703-4e64-96ea-ae4a32a0283e" class=" text-xl text-white bg-black rounded-full p-3 px-5 flex items-center justify-center hover:bg-gray-800  hover:text-white"> Join our formation community.</a>
+        <!-- <a href="https://community.vocationalformation.com/join?invitation_token=0397643d810f3c927a4ad1dd375a4c65af2f5608-f213ec46-5703-4e64-96ea-ae4a32a0283e" class=" text-xl text-white bg-black rounded-full p-3 px-5 flex items-center justify-center hover:bg-gray-800  hover:text-white"> Join our formation community.</a> -->
+        <a href="/community" class=" text-xl text-white bg-black rounded-full p-3 px-5 flex items-center justify-center hover:bg-gray-800  hover:text-white"> Join our formation community.</a>
         <div class="my-3 w-full flex items-center justify-center">
             <p class="text-sm text-gray-800 me-1
             ">Community provided by</p>
