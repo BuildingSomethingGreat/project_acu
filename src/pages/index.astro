@@ -56,7 +56,7 @@ import SearchBar from "../components/searchBar";
 	<!-- fullPage.js HTML -->
 	<div class="h-full w-[100%] m-auto" id="fullpage">
 		
-		<div class="section overflow-hidden  bg-black h-full flex items-center justify-center ">
+		<div data-anchor="home" class="section overflow-hidden  bg-black h-full flex items-center justify-center ">
 			<video class="hidden lg:block absolute opacity-75 top-0  overflow-hidden object-fill w-[120%] h-auto left-0  " autoplay data-autoplay muted playsinline loop>
 				<source data-src="https://acu-cdn-pull.b-cdn.net/Website%20Cover%20Video%201.0.mp4" type="video/mp4">
 			</video>
@@ -95,7 +95,7 @@ import SearchBar from "../components/searchBar";
 				</div>
 			</div>
 		</div>
-		<div id="about" class="section  relative overflow-hidden   bg-neutral-800 ">
+		<div data-anchor="about" class="section  relative overflow-hidden   bg-neutral-800 ">
 			<div class="absolute w-[95%] top-0 right-0 left-0 bottom-0 m-auto  grid  grid-cols-2 lg:grid-cols-3 lg:grid-rows-1  gap-4 overflow-hidden">
 				<!-- <div class="absolute z-10 w-auto h-full top-0 left-0 bottom-0 my-auto m-auto">
 					<img src="/transparent-2.png" alt="" />
@@ -174,7 +174,7 @@ import SearchBar from "../components/searchBar";
 			<div class="slide"><h1>Slide 2.3</h1></div> -->
 		</div>
 
-		<div id="onlineChurhSection" class="section h-full relative onlineChuch overflow-hidden  bg-neutral-900 flex flex-col items-center justify-center" data-anchor="onlineChurch">
+		<div data-anchor="church" class="section h-full relative onlineChuch overflow-hidden  bg-neutral-900 flex flex-col items-center justify-center">
 			<!-- <img src="/05.png" class="w-[40%] h-auto z-20 absolute top-0 left-0 h-fit opacity-10" alt="" /> -->
 			<!-- <img src="community-mock.png" class="zoom-faster rounded-lg w-[40%] h-auto z-20 absolute top-0 left-0 bottom-0 right-0 m-auto h-fit " alt="" /> -->
 			<!-- <img src="blob-1.png" class="w-[80%] h-auto z-10 absolute top-0 -left-[20%] bottom-0  m-auto h-fit " alt="" /> -->
@@ -211,8 +211,8 @@ import SearchBar from "../components/searchBar";
 			
 		</div> 
 
-		<div id="formationVideos" class="overflow-hidden section bg-black" >
-			<div class="slide relative">
+		<div  data-anchor="formation" class="overflow-hidden section bg-black" >
+			<div  class="slide relative">
 				<div class="absolute top-0 right-0 left-0 bottom-0 m-auto bg-black w-auto h-full rounded-lg overflow-hidden ">
 					<video preload="none" class="absolute z-10 opacity-50 top-0 bottom-0  rounded-lg overflow-hidden object-fill w-auto h-full -left-[50%]  lg:w-[80%] lg:h-auto lg:left-0 lg:right-0  max-w-[1000px] m-auto" autoplay data-autoplay muted playsinline loop>
 						<source data-src="https://acu-cdn-pull.b-cdn.net/formationVideo.mp4" type="video/mp4">
@@ -239,7 +239,7 @@ import SearchBar from "../components/searchBar";
 					</div>
 				</div>
 			</div>
-			<div class="slide relative">
+			<div  class="slide relative">
 				<div class="absolute top-0 right-0 left-0 bottom-0 m-auto bg-black w-auto h-full rounded-lg overflow-hidden ">
 					<video preload="none" class="absolute z-10 opacity-50 top-0 bottom-0  rounded-lg overflow-hidden object-fill w-auto h-full -left-[50%]  lg:w-[80%] lg:h-auto lg:left-0 lg:right-0  max-w-[1000px] m-auto" autoplay data-autoplay muted playsinline loop>
 						<source data-src="https://acu-cdn-pull.b-cdn.net/forest.mp4" type="video/mp4">
@@ -266,7 +266,7 @@ import SearchBar from "../components/searchBar";
 					</div>
 				</div>
 			</div>
-			<div class="slide relative">
+			<div  class="slide relative">
 				<div class="absolute top-0 right-0 left-0 bottom-0 m-auto bg-black w-auto h-full rounded-lg overflow-hidden ">
 					<video preload="none" class="absolute z-10 opacity-50 top-0 bottom-0  rounded-lg overflow-hidden object-fill w-auto h-full -left-[50%]  lg:w-[80%] lg:h-auto lg:left-0 lg:right-0  max-w-[1000px] m-auto" autoplay data-autoplay muted playsinline loop>
 						<source data-src="https://acu-cdn-pull.b-cdn.net/blog.mp4" type="video/mp4">
@@ -290,19 +290,8 @@ import SearchBar from "../components/searchBar";
 					</div>
 				</div>
 			</div>
-			
-			
 		</div>
-
-
-		
 	</div>
-
-	<script type="text/javascript">
-		function openNewWindow(el) {
-			window.open("/" + $(el).data("type") + "/" + $(el).data("id"), "_blank");
-		}
-	</script>
 
 	<script>
 		(function() {
@@ -322,33 +311,34 @@ import SearchBar from "../components/searchBar";
 
 			}
 					
-			var myFullpage = new fullpage("#fullpage", {
-				lazyLoading: true,
-				controlArrows: true,
-				slidesNavigation: true,
-				slidesNavPosition: 'bottom', // Default
-				controlArrowsHTML: [
-					'<div class="my-arrow fp-prev"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="ms-5 m-auto size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" /></svg></div>',
-					'<div class="my-arrow fp-next"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="me-5 m-auto size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg></div>'
-				],
-				licenseKey: "M9D46-QB92H-PJH47-SR3PK-YYTON",
-				onLeave: function( origin, destination, direction, trigger){
-						var loadedSlide = this;
-						if((origin.index == 0 && direction =='down')
-						|| (origin.index == 2 && direction =='up')){
-							togglePlayPause();
-							$(".promo-text").addClass("animate-fade animation-delay-100");
+			
+			$(document).ready(function() {
+				var fp = new fullpage("#fullpage", {
+					anchors: ["home", "about", "church", "formation"],
+					controlArrows: true,
+					slidesNavigation: true,
+					slidesNavPosition: 'bottom', // Default
+					controlArrowsHTML: [
+						'<div class="my-arrow fp-prev"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="ms-5 m-auto size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" /></svg></div>',
+						'<div class="my-arrow fp-next"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="me-5 m-auto size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg></div>'
+					],
+					licenseKey: "M9D46-QB92H-PJH47-SR3PK-YYTON",
+					onLeave: function( origin, destination, direction, trigger){
+							var loadedSlide = this;
+							if((origin.index == 0 && direction =='down')
+							|| (origin.index == 2 && direction =='up')){
+								togglePlayPause();
+								$(".promo-text").addClass("animate-fade animation-delay-100");
+							}
+							if(origin.index == 2 && direction =='down'){
+								$("#onlineChurhSection").find(".boundText").addClass("zoom");
+							}
+							if(origin.index == 3 && direction =='up'){
+								$("#onlineChurhSection").find(".boundText").removeClass("zoom");
+							}
 						}
-						if(origin.index == 2 && direction =='down'){
-							$("#onlineChurhSection").find(".boundText").addClass("zoom");
-						}
-						if(origin.index == 3 && direction =='up'){
-							$("#onlineChurhSection").find(".boundText").removeClass("zoom");
-						}
-					}
 				});
 
-			$(document).ready(function() {
 				$("body").click();
 
 				$("#play, #pause").on("click", function() {
