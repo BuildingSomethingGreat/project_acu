@@ -1,4 +1,4 @@
-<div style="z-index: 1000;" class="loader fixed top-0 right-0 left-0 bottom-0 m-auto bg-black flex flex-col items-center justify-center">
+<div style="z-index: 1000;" class="hidden loader fixed top-0 right-0 left-0 bottom-0 m-auto bg-black flex flex-col items-center justify-center">
     <div class="flex flex-col items-center justify-center m-auto">
       <img class="w-[40%] lg:w-[200px]" src="/acu_logo.png" alt="loader logo">
       <div class="mt-5 w-[200px] h-[10px] overflow-hidden rounded-full progress bg-neutral-800">
@@ -9,38 +9,36 @@
 
 <script>
     (function() {
-        $(document).ready(function() {
-            $(window).on("load", () => {
+        var elapsedTime = 0;
+        var interval;
+
+        function progressbar(percent) {
+            $("#prgsbarcolor").css({"width":  percent + '%'});
+        }
+
+        function timer() {
+            if (elapsedTime > 100) {
+                if (elapsedTime >= 107) {
+                    clearInterval(interval);
+                }
+            } else {
+                progressbar(elapsedTime);
+            }
+            elapsedTime++;
+        }
+
+        $(window).on("load", function() {
                 var videos = document.getElementsByTagName("video");
 
-                var elapsedTime = 0;
-
-                function progressbar(percent) {
-                    $("#prgsbarcolor").css({"width":  percent + '%'});
-                }
-
-                function timer() {
-                    if (elapsedTime > 100) {
-                        if (elapsedTime >= 107) {
-                            clearInterval(interval);
-                        }
-                    } else {
-                        progressbar(elapsedTime);
-                    }
-                    elapsedTime++;
-                }
-
-                var interval;
                 if (!videos.length) {
                     // No videos on the page, remove the loading screen immediately
                     interval = setInterval(function() {
                                     timer();
                                 }, 10);
-                        setTimeout(() => {
+                        setTimeout(function() {
                             $(".loader").fadeOut();
                         }, 1500);
                 }
-
 
                 let loadedVideos = 0;
                 for (var video of videos) {
@@ -49,29 +47,35 @@
                     interval = setInterval(function() {
                                     timer();
                                 }, 10);
-                        setTimeout(() => {
+                        setTimeout(function() {
                             $(".loader").fadeOut();
                         }, 1500);
                     loadedVideos++;
+
                     } else {
                         // Add an event listener to track when the video is ready
-                        video.addEventListener("loadeddata", () => {
+                        video.addEventListener("loadeddata", function() {
                             loadedVideos++;
                             if (loadedVideos === videos.length) {
-                            // All videos are loaded, hide the loading screen
-                            interval = setInterval(function() {
-                                    timer();
-                                }, 10);
-                                setTimeout(() => {
-                                    $(".loader").fadeOut();
-                                }, 1500);
+                                // All videos are loaded, hide the loading screen
+                                interval = setInterval(function() {
+                                        timer();
+                                    }, 10);
+                                    setTimeout(function() {
+                                        $(".loader").fadeOut();
+                                    }, 1500);
                             }
                         });
-                    }
+                }
+
+                    // alert(loadedVideos)
                 }
 
                 
         });  
+
+        $(document).ready(function() {
+           
         })
       
     })();
