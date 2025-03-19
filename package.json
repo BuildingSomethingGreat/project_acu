@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "@astrojs/react": "^3.6.3",
-    "@astrojs/tailwind": "^5.1.1",
+    "@astrojs/tailwind": "^6.0.0",
+    "@tailwindcss/vite": "^4.0.14",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "apexcharts": "^3.54.1",
@@ -21,10 +22,15 @@
     "fullpage.js": "^4.0.29",
     "html-react-parser": "^5.2.0",
     "lucide": "^0.475.0",
+    "lucide-react": "^0.482.0",
+    "preline": "^3.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.0.1",
-    "tailwindcss": "^3.4.13",
     "tailwindcss-animation-delay": "^2.0.1"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.32",
+    "tailwindcss": "^3.4.17"
   }
 }
