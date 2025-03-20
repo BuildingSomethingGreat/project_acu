@@ -1,6 +1,7 @@
 ---
 // import "../../styles/global.css";
 
+// Astro.cookies.set('modalPlayed', true, { maxAge  : 1});)
 
 var heroVideo = {
   title: "Introduction",
@@ -19,7 +20,7 @@ var moduleLegend =  [
    {index: 2 , title: "Episode 2"},
    {index: 3 , title: "Episode 3"},
    {index: 4 , title: "Episode 4"},
-   {index: 5 , title: "Completion"},
+   {index: 5 , title: "Discussion"},
 ]
 
 var moduleInformation =  [
@@ -28,7 +29,7 @@ var moduleInformation =  [
 {index: 2 , title: "Episode 2", description: "Join Dr. Stephen Johnson, Dr. Cheryl Russell and Pastor D.D. Coleman around the table having an intimate conversation exploring the tragedy of Bobby's story and what the Bible has to say about it.", weeks: [{id: "three", link: "https://community.vocationalformation.com/c/demo-course/sections/516921/lessons/1933200"}, {id: "four", link:"https://community.vocationalformation.com/c/demo-course/sections/516921/lessons/1975385"}], metadata: "Pain and Growth", graphicSrc: "/understanding-pain.png", cta: "Explore Now"},
 {index: 3 , title: "Episode 3", description: "", weeks: [{id: "five", link: "https://community.vocationalformation.com/c/demo-course/sections/527435/lessons/1975386"}, {id:"six", link:"https://community.vocationalformation.com/c/demo-course/sections/527435/lessons/1975387"}], metadata: "Pain and Growth", graphicSrc: "/understanding-pain.png", cta: "Explore Now"},
 {index: 4 , title: "Episode 4", description: "", weeks: [{id: "seven", link: "https://community.vocationalformation.com/c/demo-course/sections/527437/lessons/1975392"}], metadata: "Pain and Growth", graphicSrc: "/understanding-pain.png", cta: "Explore Now"},
-{index: 5 , title: "Completion", description: "Explore the journey of responding to a higher purpose, embracing faith, and stepping into the unknown with courage and conviction.", metadata: "Purpose and Calling", graphicSrc: "/answering-call.png", cta: "Join Now"},
+{index: 5 , title: "Discussion", description: "Explore the journey of responding to a higher purpose, embracing faith, and stepping into the unknown with courage and conviction.", weeks: [{id: "Discussion", link: "https://community.vocationalformation.com/c/community-discussion/"}], metadata: "Purpose and Calling", graphicSrc: "/answering-call.png", cta: "Join Now"},
 ]
 ---
 
@@ -79,7 +80,7 @@ var moduleInformation =  [
             <div class="col-span-3 my-4 p-5">
                 <ol class="flex items-center whitespace-nowrap">
                     <li class="inline-flex items-center">
-                      <a class="flex items-center text-sm text-gray-500 hover:text-blue-600 focus:outline-hidden focus:text-blue-600" href="#">
+                      <a class="flex items-center text-sm text-gray-200 hover:text-blue-600 focus:outline-hidden focus:text-blue-600" href="#">
                         Season 1 
                       </a>
                       <svg class="shrink-0 size-5 text-gray-400 mx-2" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -87,7 +88,7 @@ var moduleInformation =  [
                       </svg>
                     </li>
                     <li class="inline-flex items-center">
-                      <a class="flex items-center text-sm text-gray-500 hover:text-blue-600 focus:outline-hidden focus:text-blue-600" href="#">
+                      <a class="flex items-center text-sm text-gray-200 hover:text-blue-600 focus:outline-hidden focus:text-blue-600" href="#">
                         Meet Bobby
                       </a>
                     </li>
@@ -105,7 +106,7 @@ var moduleInformation =  [
                     <div class="border-e border-gray-200 h-[300px] max-h-[300px]  dark:border-neutral-700">
                       <nav class="flex flex-col space-y-2 " aria-label="Tabs" role="tablist" aria-orientation="horizontal">
                         {moduleLegend.map((btn, index) => (
-                            <button type="button" class={`hs-tab-active:border-blue-500 hs-tab-active:text-blue-600 dark:hs-tab-active:text-blue-600 py-1 pe-4 inline-flex items-center gap-x-2 border-e-2 border-transparent text-sm whitespace-nowrap text-gray-500 hover:text-blue-600 focus:outline-hidden focus:text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:text-blue-500 ` + (index == 0 ? `active` : ``)} id={`vertical-tab-with-border-item-` + index} aria-selected={index == 0} data-hs-tab={`#vertical-tab-with-border-` + index} aria-controls={`vertical-tab-with-border-` + index} role="tab">
+                            <button type="button" class={`hs-tab-active:border-blue-500 hs-tab-active:text-blue-600 dark:hs-tab-active:text-blue-600 py-1 pe-4 inline-flex items-center gap-x-2 border-e-2 border-transparent text-sm whitespace-nowrap text-gray-200 hover:text-blue-600 focus:outline-hidden focus:text-blue-600 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-400 dark:hover:text-blue-500 ` + (index == 0 ? `active` : ``)} id={`vertical-tab-with-border-item-` + index} aria-selected={index == 0} data-hs-tab={`#vertical-tab-with-border-` + index} aria-controls={`vertical-tab-with-border-` + index} role="tab">
                                 {btn.title}
                             </button>
                         ))}
@@ -121,9 +122,9 @@ var moduleInformation =  [
                                     <p class="text-base opacity-70">{module.description}</p>
                                 </div>
                                 
-                                {module.weeks?.map((week) => (
+                                {module.weeks?.map((week, index) => (
                                     <a href={week.link} class="week-button cursor-pointer my-5 bg-white text-black rounded-full w-[250px] h-[50px] flex items-center justify-center hover:bg-teal-500 hover:text-white">
-                                        <p class="font-bold ">Week {week.id}</p>
+                                        <p class="font-bold ">{week.id != "Discussion " ?  "week " + week.id : week.id}</p>
                                     </a>
                                   ))}
 
@@ -159,11 +160,12 @@ var moduleInformation =  [
 	</div>
 
 </div>
-<div id="modalFrame" class="fixed w-[800px] top-0 bottom-0 left-0 right-0 z-50 m-auto flex items-center  ">
-  <!-- <p class="relative z-50 font-bold text-white opacity-50 hover:opacity-100">close</p> -->
-  <video id="modalVideo"  class="absolute  z-10 top-0 right-0 bottom-0 left-0 m-auto w-full h-auto object-cover rounded-lg overflow-hidden shadow-xl" autoplay controls playsinline>
+<div id="modalFrame" class="fixed bg-black/50 w-full h-auto top-0 bottom-0 left-0 right-0 z-50 m-auto flex flex-col items-center jsutify-center">
+  <video id="modalVideo"  class="relative max-w-[800px]  z-10 top-0 right-0 bottom-0 left-0 m-auto mb-0 w-full h-auto object-cover rounded-lg overflow-hidden shadow-xl" autoplay controls playsinline>
     <source src={heroVideo.trailerSrc} type="video/mp4" />
-      </video>			
+      </video>		
+    <p class="cursor-pointer relative my-3 mb-auto z-10  font-bold text-white opacity-50 hover:opacity-100">Click outside video to close.</p>
+
 </div>
 		 
 
@@ -183,6 +185,11 @@ var moduleInformation =  [
         var frame = document.getElementById("modalFrame");
         var modal = document.getElementById("modalVideo");
 
+        frame.addEventListener("click", function(event) {
+            frame.style.display = "none";
+            frame.style.visibility = "none";
+            modal.remove()
+        });
         modal.addEventListener('ended', () => {
             frame.style.display = 'none';
         });
