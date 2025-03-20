@@ -5,14 +5,14 @@ import "../../pages/app.css";
 import { Lock } from 'lucide-react';
 
 var heroVideo = {
-  title: "Finding out the news.",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
+  title: "Epsiode 1",
+  description: "Dr. Bobby Durst, an ACU graduate, shares a her story of unexpected tragedy at an inopportune time. In this episode, Bobby wrestles with pain, grief and unanswered questions.",
   courseNumber: "1",
   moduleNumber: "1",
   backgroundImageSrc: "/meetboby-bg-photo.png",
   poster: "/meetbobby-title.png",
   videSrc: "https://acu-cdn-pull.b-cdn.net/Module%20ONE%201.2.mp4",
-  trailerSrc: "https://acu-cdn-pull.b-cdn.net/2.0%20Season%20One%20Introduction.mp4",
+  trailerSrc: "https://acu-cdn-pull.b-cdn.net/Landing%20Page%20For%20Demo.mp4",
 };
 
 var seasons = [
@@ -22,9 +22,9 @@ var seasons = [
 ]
 
 var modules = [
-	{title: "Module 1", link: "/reframingproject/course", thumbnail: "/hero-1.jpg", metadata: "3 credits | video interview", isLocked: false},
-	{title: "Module 2", link: "#", thumbnail: "/On couch.jpg", metadata: "3 credits | written paper", isLocked: true},
-	{title: "Module 3", link: "#", thumbnail: "/Bobby in Car.jpg", metadata: "3 credits | discussion board", isLocked: true}
+	{title: "Episode 1", link: "/reframingproject/course", thumbnail: "/hero-1.jpg", metadata: "1 credit | 3 weeks | video interview", isLocked: false},
+	{title: "Episode 2", link: "#", thumbnail: "/On couch.jpg", metadata: "1 credit | 2 weeks | written paper", isLocked: true},
+	{title: "Episode 3", link: "#", thumbnail: "/Bobby in Car.jpg", metadata: "1 credit | 2 weeks | discussion board", isLocked: true}
 ]
 ---
 <style>
@@ -44,8 +44,8 @@ var modules = [
 		
 		<div class="w-1/2 flex flex-row items-center justify-end">
 			<div class="ms-4 my-auto flex flex-row items-center justify-center">
-				<a href="" class="font-bold text-white me-4 hover:underline">Courses</a>
-				<a href="" class="font-bold text-white me-4">Resources</a>
+				<a href="" class="font-bold text-white me-4 underline-offset-8 hover:underline">Courses</a>
+				<a href="" class="font-bold text-white me-4 underline-offset-8 hover:underline">Resources</a>
 			</div>
 			<a href="/reframingproject/auth" class="">
 				<img src="/avatar-mock.png" alt="Reframe Logo" class="w-[40px] h-auto my-auto me-5" />
@@ -58,10 +58,10 @@ var modules = [
 		
 		<!-- hero : background -->
 		<div class="z-10 absolute top-0 left-0 inset-0">
-			  <!-- <video class="absolute top-0 right-0 w-full h-full object-cover" muted autoplay loop playsinline>
+			  <video class="absolute top-0 right-0 w-full h-full object-cover" muted autoplay loop playsinline>
 				<source src={heroVideo.trailerSrc} type="video/mp4" />
-				</video>			 -->
-			  <img src={heroVideo.backgroundImageSrc} alt="cover" class="subtle-zoom  absolute top-0 right-0 w-full h-auto object-cover" />
+				</video>			
+			  <!-- <img src={heroVideo.backgroundImageSrc} alt="cover" class="subtle-zoom  absolute top-0 right-0 w-full h-auto object-cover" /> -->
 			  <div class="absolute inset-0 bg-gradient-to-r  from-[#000d1a] via-[#002142]/60 to-transparent" />
 		</div>
 
@@ -70,53 +70,53 @@ var modules = [
 			<div class="col-span-1 p-5 flex flex-col items-start justify-center">
 				<img src={heroVideo.poster} alt="Meet Bobby" class="w-[60%] h-auto " />
 				<div class="my-4">
-					<h3 class="text-white opacity-50 font-semibold">Season {heroVideo.courseNumber} | Module {heroVideo.moduleNumber}</h3>
+					<h3 class="text-white opacity-50 font-semibold">Season {heroVideo.courseNumber} | Episode {heroVideo.moduleNumber}</h3>
 					<h2 class="my-3 text-2xl font-bold">{heroVideo.title}</h2>
 					<p class="text-base opacity-70">{heroVideo.description}</p>
 				</div>
-				<div class="cursor-pointer my-5 bg-white text-black rounded-full w-[250px] h-[50px] flex items-center justify-center hover:bg-teal-500 hover:text-white">
-					<p class="font-bold ">Start Module {heroVideo.moduleNumber}</p>
-				</div>
+				<a href="/reframingproject/course" class="cursor-pointer my-5 bg-white text-black rounded-full w-[250px] h-[50px] flex items-center justify-center hover:bg-teal-500 hover:text-white">
+					<p class="font-bold ">Start Episode {heroVideo.moduleNumber}</p>
+				</a>
 			</div>
 
 			<div class="col-span-1 flex items-center justify-center p-5 ">	
-				<img src="/enroll-mock.png" alt="Enroll Mock" class="w-1/2 h-auto" />
+				<!-- <img src="/enroll-mock.png" alt="Enroll Mock" class="w-1/2 h-auto" /> -->
 			</div>
 		</div>
 	</div>
 	 <!--  slider -->
 	   <div>
-		<div class="p-5">
-			<h1 class="text-2xl font-semibold text-white">Continue the course.</h1>
-			<div class="overflow-x-auto flex items-start  whitespace-nowrap">
-				{seasons.map((season) => (
-					<div>
-						{season.isLocked 
-							? <div class="my-5 me-3 opacity-40 bg-teal-800 text-white font-bold rounded-full w-[200px] h-[50px] flex items-center justify-center">{season.title}</div>
-							: <a href="#" class="cursor-pointer my-5 me-3 bg-teal-800 text-white font-bold rounded-full w-[200px] h-[50px] flex items-center justify-center hover:bg-teal-500 hover:text-white">{season.title}</a>
-						}
-					</div>
-				))}	
+			<div class="p-5">
+				<h1 class="text-2xl font-semibold text-white">Continue the course.</h1>
+				<div class="overflow-x-auto flex items-start  whitespace-nowrap">
+					{seasons.map((season) => (
+						<div>
+							{season.isLocked 
+								? <div class="my-5 me-3 opacity-40 bg-teal-800 text-white font-bold rounded-full w-[200px] h-[50px] flex items-center justify-center">{season.title}</div>
+								: <a href="#" class="cursor-pointer my-5 me-3 bg-teal-800 text-white font-bold rounded-full w-[200px] h-[50px] flex items-center justify-center hover:bg-teal-500 hover:text-white">{season.title}</a>
+							}
+						</div>
+					))}	
+				</div>
 			</div>
-		</div>
-		<div class="overflow-x-auto whitespace-nowrap p-5">
-			{modules.map((module) => (
-				<a href={module.link} class="p-2 cursor-pointer relative inline-block w-[400px] h-auto bg-transparent m-2 me-5 rounded-lg overflow-hidden hover:bg-black/90 hover:scale-[1.1] hover:z-10 transition-all ease-in-out">
-					<div class="relative w-full   overflow-hidden rounded-lg">
-						{module.isLocked 
-							? (
-								<img src={module.thumbnail} alt="cover" class="relative blur-xs opacity-50 top-0 left-0 w-full object-cover" />
-								<Lock size={50} className="absolute top-0 right-0 left-0 bottom-0 m-auto" />
-								)
-							: <img src={module.thumbnail} alt="cover" class="relative   top-0 left-0 w-full object-cover" />
-						}
-					</div> 
-					<div class="flex flex-col items-start justify-center whitespace-normal p-3">
-						<h2 class="text-white text-2xl font-bold mb-3">Finding out the news</h2>
-						<p class="text-white text-base  opacity-50">3 credits | video interview</p>
-					</div>
-				</a>
-			))}
-		</div>
+			<div class="overflow-x-auto whitespace-nowrap p-5">
+				{modules.map((module) => (
+					<a href={module.link} class="p-2 cursor-pointer relative inline-block w-[400px] h-auto bg-transparent m-2 me-5 rounded-lg overflow-hidden hover:bg-black/90 hover:scale-[1.1] hover:z-10 transition-all ease-in-out">
+						<div class="relative w-full   overflow-hidden rounded-lg">
+							{module.isLocked 
+								? (
+									<img src={module.thumbnail} alt="cover" class="relative blur-sm opacity-50 top-0 left-0 w-full object-cover" />
+									<Lock size={50} className="absolute top-0 right-0 left-0 bottom-0 m-auto" />
+									)
+								: <img src={module.thumbnail} alt="cover" class="relative   top-0 left-0 w-full object-cover" />
+							}
+						</div> 
+						<div class="flex flex-col items-start justify-center whitespace-normal p-3">
+							<h2 class="text-white text-2xl font-bold mb-3">{module.title}</h2>
+							<p class="text-white text-base  opacity-50">{module.metadata}</p>
+						</div>
+					</a>
+				))}
+			</div>
 	   </div>
 </div>
