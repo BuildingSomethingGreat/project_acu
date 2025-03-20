@@ -10,7 +10,7 @@ var heroVideo = {
   backgroundImageSrc: "/meetboby-bg-photo.png",
   poster: "/meetbobby-logo_1.png",
   videSrc: "https://acu-cdn-pull.b-cdn.net/Module%20ONE%201.2.mp4",
-  trailerSrc: "https://acu-cdn-pull.b-cdn.net/Demo%20Trailer.mp4",
+  trailerSrc: "https://acu-cdn-pull.b-cdn.net/Trailer%202.0.mp4",
 };
 
 var moduleLegend =  [
@@ -23,11 +23,11 @@ var moduleLegend =  [
 ]
 
 var moduleInformation =  [
-{index: 0 , title: "Trailer", description: "Embark on a spiritual journey with Bobby, exploring themes of faith, healing, and rediscovery.", weeks: [], metadata: "Spiritual Journey", graphicSrc: "/spiritual-journey.png", cta: "Start Now"},
-{index: 1 , title: "Episode 1", description: "Discover how to rebuild and find light in the midst of darkness, embracing a renewed sense of purpose and faith.", weeks: [{id: "one", link: "https://community.vocationalformation.com/c/demo-course/sections/495521/lessons/1848394"},{id: "two | part 1", link: "https://community.vocationalformation.com/c/demo-course/sections/495521/lessons/1906110"}, {id: "two | part 2", link: "https://community.vocationalformation.com/c/demo-course/sections/495521/lessons/1934047"}], metadata: "Hope and Renewal", graphicSrc: "/finding-hope.png", cta: "Learn More"},
-{index: 2 , title: "Episode 2", description: "Delve into the complexities of pain, exploring its role in personal growth and spiritual transformation.", weeks: [{id: "three", link: "https://community.vocationalformation.com/c/demo-course/sections/516921/lessons/1933200"}, {id: "four", link:"https://community.vocationalformation.com/c/demo-course/sections/516921/lessons/1975385"}], metadata: "Pain and Growth", graphicSrc: "/understanding-pain.png", cta: "Explore Now"},
-{index: 3 , title: "Episode 3", description: "Delve into the complexities of pain, exploring its role in personal growth and spiritual transformation.", weeks: [{id: "five", link: "https://community.vocationalformation.com/c/demo-course/sections/527435/lessons/1975386"}, {id:"six", link:"https://community.vocationalformation.com/c/demo-course/sections/527435/lessons/1975387"}], metadata: "Pain and Growth", graphicSrc: "/understanding-pain.png", cta: "Explore Now"},
-{index: 4 , title: "Episode 4", description: "Delve into the complexities of pain, exploring its role in personal growth and spiritual transformation.", weeks: [{id: "seven", link: "https://community.vocationalformation.com/c/demo-course/sections/527437/lessons/1975392"}], metadata: "Pain and Growth", graphicSrc: "/understanding-pain.png", cta: "Explore Now"},
+{index: 0 , title: "Trailer", description: "Embark on a spiritual journey with Bobby, exploring the tension between faith, hope, and grief.", weeks: [], metadata: "Spiritual Journey", graphicSrc: "/spiritual-journey.png", cta: "Start Now"},
+{index: 1 , title: "Episode 1", description: "Dr. Bobby Durst, an ACU graduate, shares a her story of unexpected tragedy at an inopportune time. In this episode, Bobby wrestles with pain, grief and unanswered questions.", weeks: [{id: "one", link: "https://community.vocationalformation.com/c/demo-course/sections/495521/lessons/1848394"},{id: "two | part 1", link: "https://community.vocationalformation.com/c/demo-course/sections/495521/lessons/1906110"}, {id: "two | part 2", link: "https://community.vocationalformation.com/c/demo-course/sections/495521/lessons/1934047"}], metadata: "Hope and Renewal", graphicSrc: "/finding-hope.png", cta: "Learn More"},
+{index: 2 , title: "Episode 2", description: "Join Dr. Stephen Johnson, Dr. Cheryl Russell and Pastor D.D. Coleman around the table having an intimate conversation exploring the tragedy of Bobby's story and what the Bible has to say about it.", weeks: [{id: "three", link: "https://community.vocationalformation.com/c/demo-course/sections/516921/lessons/1933200"}, {id: "four", link:"https://community.vocationalformation.com/c/demo-course/sections/516921/lessons/1975385"}], metadata: "Pain and Growth", graphicSrc: "/understanding-pain.png", cta: "Explore Now"},
+{index: 3 , title: "Episode 3", description: "", weeks: [{id: "five", link: "https://community.vocationalformation.com/c/demo-course/sections/527435/lessons/1975386"}, {id:"six", link:"https://community.vocationalformation.com/c/demo-course/sections/527435/lessons/1975387"}], metadata: "Pain and Growth", graphicSrc: "/understanding-pain.png", cta: "Explore Now"},
+{index: 4 , title: "Episode 4", description: "", weeks: [{id: "seven", link: "https://community.vocationalformation.com/c/demo-course/sections/527437/lessons/1975392"}], metadata: "Pain and Growth", graphicSrc: "/understanding-pain.png", cta: "Explore Now"},
 {index: 5 , title: "Completion", description: "Explore the journey of responding to a higher purpose, embracing faith, and stepping into the unknown with courage and conviction.", metadata: "Purpose and Calling", graphicSrc: "/answering-call.png", cta: "Join Now"},
 ]
 ---
@@ -68,10 +68,8 @@ var moduleInformation =  [
 		
 		<!-- hero : background -->
 		<div class="z-10 relative top-0 left-0 inset-0">
-			  <video class="relative top-0 right-0 w-full h-full object-cover" autoplay controls playsinline>
-				<source src={heroVideo.trailerSrc} type="video/mp4" />
-				</video>			
-			  <!-- <img src={heroVideo.backgroundImageSrc} alt="cover" class="subtle-zoom  absolute top-0 right-0 w-full h-auto object-cover" /> -->
+	
+			  <img src={heroVideo.backgroundImageSrc} alt="cover" class="subtle-zoom  absolute blur-sm  opacity-40 top-0 right-0 w-full h-auto object-cover" />
 			  <!-- <div class="absolute inset-0 bg-gradient-to-r  from-[#000d1a] via-[#002142]/60 to-transparent" /> -->
 		</div>
 
@@ -161,6 +159,13 @@ var moduleInformation =  [
 	</div>
 
 </div>
+<div id="modalFrame" class="fixed w-[800px] top-0 bottom-0 left-0 right-0 z-50 m-auto flex items-center  ">
+  <!-- <p class="relative z-50 font-bold text-white opacity-50 hover:opacity-100">close</p> -->
+  <video id="modalVideo"  class="absolute  z-10 top-0 right-0 bottom-0 left-0 m-auto w-full h-auto object-cover rounded-lg overflow-hidden shadow-xl" autoplay controls muted playsinline>
+    <source src={heroVideo.trailerSrc} type="video/mp4" />
+      </video>			
+</div>
+		 
 
 <script>
   (function(){
@@ -173,6 +178,13 @@ var moduleInformation =  [
               event.preventDefault();
               iframe.src = button.href;
             });
+        });
+
+        var frame = document.getElementById("modalFrame");
+        var modal = document.getElementById("modalVideo");
+
+        modal.addEventListener('ended', () => {
+            frame.style.display = 'none';
         });
     });
       
