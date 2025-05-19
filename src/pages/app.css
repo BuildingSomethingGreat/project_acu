@@ -3,8 +3,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 
-body {
+body, html {
+  overflow-x: hidden !important;
   font-size: 1em !important;
+  width: 100%;
+  height: 100%;
 }
 
 @media screen and (max-width: 600px) {
@@ -69,11 +72,6 @@ video {
 .overlay {
   background-image: url('../../public/image-90.png');
   background-size: cover;
-}
-
-body, html {
-  /* max-width: 1500px !important;
-  margin: auto; */
 }
 
 
