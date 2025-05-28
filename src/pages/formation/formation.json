@@ -3,5 +3,6 @@
     {"id":"2",  "link" : "/formation/2", "views": "1.2K",  "category": "devotional","title": "Child of the Creator", "creator": "Dr. Jerry Taylor", "thumbnail": "/vocatio Child of the Creator.jpg", "url": "https://acu-cdn-pull.b-cdn.net/childOfTheCreator_formation.mp4"},
     {"id":"3", "link" : "/formation/3", "views": "1.2K", "category": "devotional","title": "Rest", "creator": "Dr. Christopher Cobbler", "thumbnail": "/vocatio_Rest.jpg", "url": "https://acu-cdn-pull.b-cdn.net/Rest.m4v"},
     {"id":"4",  "link" : "/formation/4", "views": "1.2K", "category": "devotional","title": "The Slow Way", "creator": "Dr. Christopher Cobbler", "thumbnail": "/vocatio The SLow Way.jpg", "url": "https://acu-cdn-pull.b-cdn.net/The%20Slow%20Way%20.m4v"},
-    {"id":"5", "link" : "/formation/5", "views": "1.2K", "category": "moments-of-stillness", "title": "Unfolding", "creator": "Dr. Christopher Cobbler", "thumbnail": "/vocatio Unfolding.jpg", "url": "https://acu-cdn-pull.b-cdn.net/Unfolding%20_%20Moments%20of%20Stillness.mp4"}
+    {"id":"5", "link" : "/formation/5", "views": "1.2K", "category": "moments-of-stillness", "title": "Unfolding", "creator": "Dr. Christopher Cobbler", "thumbnail": "/vocatio Unfolding.jpg", "url": "https://acu-cdn-pull.b-cdn.net/Unfolding%20_%20Moments%20of%20Stillness.mp4"},
+    {"id":"5", "link" : "/formation/6", "views": "1.2K", "category": "devotional", "title": "The Creator In You", "creator": "Sheldon Steele", "thumbnail": "/vocatio_thecreatorinyou.png", "url": "https://acu-cdn-pull.b-cdn.net/The%20Creator%20In%20You%203.0%20(1).mp4"}
 ]
